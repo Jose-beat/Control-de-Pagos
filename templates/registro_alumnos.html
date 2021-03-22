@@ -32,14 +32,7 @@
                 <a href="#" class="list-group-item list-group-item-action bg-light">Pagos</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Reportes</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Grados y Carreras</a>
-
-                <div class="list-group-end">
-
-                </div>
-                <a id="log-out" href="#"
-                    class=" justify-content-end list-group-item list-group-item-action bg-danger">Cerrar Sesion</a>
-
-
+                <a id="log-out" href="#" class=" justify-content-end  list-group-item  list-group-item-action bg-danger">Cerrar Sesion</a>
             </div>
 
         </div>
@@ -81,29 +74,68 @@
                 </div>
             </nav>
 
-            <div class="container-fluid">
+            <div class="container-fluid row">
 
-                <div class="input-group mb-3">
-                    <div class="col-xs-3">
-                        
-                        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div>
+                <div class="form-group col-5">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" class="form-control " id="name" placeholder="Nombre(s) Apellido(s)">
                     
+                    <label for="adress">Domicilio:</label>
+                    <input type="text" class="form-control " id="adress" placeholder="5 Norte #2">
+                    
+                    <label for="phone">Telefono:</label>
+                    <input type="tel" class="form-control " id="phone" placeholder="222-547-5656">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control " id="email" placeholder="Example@email.com">
+                  <!--  <span class="help-block">This is some help text...</span> -->
                 </div>
 
+                <div class="form-group col-2">
+                    <label for="id">Matricula:</label>
+                    <input type="text" class="form-control " id="id" placeholder="18460600">
+                    
+                    <label for="grade">Grado:</label>
+                    <select class="form-select" aria-label="Grado">
+                        <option selected>1°</option>
+                        <option value="1">2°</option>
+                        <option value="2">3°</option>
+                        <option value="3">4°</option>
+                    </select>
+
+                    <label for="scholarship">Beca:</label>
+                    <select class="form-select" aria-label="Beca">
+                        <option value= "0" selected>0 %</option>
+                        <option value="50">50 %</option>
+                        <option value="100">100 %</option>
+                    </select>
+
+                    <label for="Type-Grade">Tipo de Grado:</label>
+                    <select class="form-select" aria-label="Tipo de Grado">
+                        <option value= "Cuatrimestre" selected>Cuatrimestre</option>
+                        <option value="Semestre ">Semestre</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-2">
+                    
+                    <label for="picture">Escoja una Foto</label>
+                    <input type="file" class="form-control-file" id="picture"> 
+
+                    <label for="condition">Estado:</label>
+                    <select class="form-select" aria-label="Estado">
+                        <option value= "Activo" selected>Activo</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+
+                    
+                </div>
+                <!--<button type="button" class="btn btn-primary btn-lg btn-block fixed-bottom col-2">Block level button</button>-->
             </div>
-
-
-
-        </div>
-
-        <!-- /#wrapper -->
-
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery-3.6.0.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/index.js"></script>
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="js/index.js"></script>
 
 </body>
 
