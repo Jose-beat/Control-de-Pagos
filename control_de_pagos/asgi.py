@@ -1,5 +1,5 @@
 """
-ASGI config for control_de_pagos project.
+ASGI config for Control_de_Pagos project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'control_de_pagos.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Control_de_Pagos.settings')
 
 application = get_asgi_application()
