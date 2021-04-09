@@ -1,4 +1,4 @@
-"""control_de_pagos URL Configuration
+"""Control_de_Pagos URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views
 
 urlpatterns = [
+    
+    path('', views.home, name="home"),
+    path('registro', views.registro, name="registro"),
+    path('registro_alumno', views.registro_alumno, name="registro_alumno"),
     path('admin/', admin.site.urls),
 ]
+
+
+    

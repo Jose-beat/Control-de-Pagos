@@ -1,0 +1,41 @@
+{% extends 'core/baseA.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block headers %}
+
+    <h1>Registro</h1>
+    
+  
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="col-md-8 col-sm-12">
+       <div class="login-form">
+          <form>
+             <div class="form-group">
+                <label>Nombre de Usuario</label>
+                <input type="text" class="form-control" placeholder="Nombre de Usuario">
+             </div>
+             <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" placeholder="Contraseña">
+             </div>
+             <div class="form-group">
+              <label> Confirmar Contraseña</label>
+              <input type="password" class="form-control" placeholder="Confirmar Contraseña">
+           </div>
+           <div class="form-group">
+              <label>Matricula de empleado</label>
+              <input type="password" class="form-control" placeholder="Matricuala de Empleado">
+           </div>
+             
+             <button type="submit" class="btn btn-secondary">Registro</button>
+          </form>
+       </div>
+    </div>
+ </div>
+  
+    {% endblock %}
