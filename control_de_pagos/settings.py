@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 #   <======= Apps recien creadas ==========>    
     'core',
-    'alumnos'
+    'alumnos',
 #   <======= Paquetes  ==========>    
 ]
 
