@@ -1,0 +1,29 @@
+
+[
+    {
+        "model": "alumnos.Alumno",
+        "fields":{
+            "matricula": 18460642,
+            "nombre": "Jose Juan",
+            "apellidos": "Gomez Lopez",
+            "domicilio": "4 Norte",
+            "telefono": "2491201514",
+            "grado": 8,
+            "email": "jj786908@gmail.com",
+            "beca": 100
+        }
+    },
+    {
+        "model": "alumnos.Alumno",
+        "fields":{
+            "matricula": 18460643,
+            "nombre": "Alberto",
+            "apellidos": "Rivera Martin",
+            "domicilio": "Av. 6 oriente #4",
+            "telefono": "2495345343",
+            "grado": 9,
+            "email": "alberth78678@gmail.com",
+            "beca": 50
+        }
+    }
+]

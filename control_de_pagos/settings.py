@@ -125,3 +125,23 @@ LOGIN_REDIRECT_URL = reverse_lazy('index')
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+'''
+            <======================= SEEDERS ========================>
+
+            Se definieron seeders para la siembra de datos de prueba. 
+            Se usa el comando (python manage.py loaddata [nombre del seeder])
+                Por ejemplo: 
+                    
+                    py manage.py loaddata alumnos_seeders
+                        
+
+            los cuales estan en la carpeta 'fixtures' la cual ya fue declarada en el 
+            arreglo siguiente. El archivo puede ser un formato .YAML o .JSON.
+            ¡Agrega tus datos en el archivo seeder para poder tener los mismos siempre!
+
+
+'''
+FIXTURE_DIRS = [
+    'fixtures'
+]

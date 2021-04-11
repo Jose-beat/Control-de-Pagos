@@ -10,3 +10,8 @@ class Alumno(models.Model):
     email = models.EmailField(max_length=254)
     beca = models.IntegerField()
 
+    class Meta:
+        ordering=['matricula']
+
+    def __str__(self):
+        return self.matricula
