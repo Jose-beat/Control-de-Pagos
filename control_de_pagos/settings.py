@@ -60,7 +60,12 @@ ROOT_URLCONF = 'Control_de_Pagos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            #<===============Templates================>
+            'templates/alumnos',
+
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

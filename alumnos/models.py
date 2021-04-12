@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 class Alumno(models.Model):
     matricula = models.IntegerField(primary_key=True)
@@ -15,3 +16,9 @@ class Alumno(models.Model):
 
     def __str__(self):
         return self.matricula
+
+class AlumnoForm(ModelForm):
+    class Meta:
+        model = Alumno
+        fields = '__all__'
+        
