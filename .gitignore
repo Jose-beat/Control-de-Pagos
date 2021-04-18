@@ -1,9 +1,9 @@
-Control_de_Pagos/__pycache__/
+Control_de_Pagos/__pycache__
 
-core/__pycache__/
-core/migrations/*
-core/migrations/__pycache__/*
+core/__pycache__
+core/migrations
+core/migrations/__pycache__
 
-alumnos/__pycache__/*
-alumnos/migrations/*
-alumnos/migrations/__pycache__/*
+alumnos/__pycache__
+alumnos/migrations
+alumnos/migrations/__pycache__

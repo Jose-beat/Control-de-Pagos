@@ -1,5 +1,5 @@
 from django.db import models
-from django.forms import ModelForm
+#from django.forms import ModelForm
 
 class Alumno(models.Model):
     matricula = models.IntegerField(primary_key=True)
@@ -15,10 +15,4 @@ class Alumno(models.Model):
         ordering=['matricula']
 
     def __str__(self):
-        return self.matricula
-
-class AlumnoForm(ModelForm):
-    class Meta:
-        model = Alumno
-        fields = '__all__'
-        
+        return str(self.matricula)

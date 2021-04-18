@@ -5,7 +5,7 @@ from alumnos import views
 urlpatterns = [
     path('', views.muestraAlumnos, name='muestraAlumnos'),
     path('registroAlumnos/', views.registroAlumnos ,name='registroAlumnos'),
-    path('alumno<int:alumno_id>/', views.alumno, name='alumno' )
+    path('<int:alumno_id>/', views.alumno, name='alumno' )
     
     
 

@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+
+{% block content %}
     <h1>Vista de un alumno</h1>
     
         <h1>{{alumno.matricula}}</h1>
@@ -16,7 +12,5 @@
             {{alumno.email}}
             {{alumno.grado}}
             {{alumno.beca}}
-            
-    
-</body>
-</html>
+        <button class="btn btn-danger">Borrar Datos</button>
+{% endblock %}

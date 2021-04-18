@@ -6,6 +6,8 @@ class RegistroAlumnos(forms.Form):
     apellidos = forms.CharField()
     domicilio = forms.CharField()
     telefono = forms.CharField()
-  #  grado =  forms.ModelMultipleChoiceField()
-    email = forms.EmailField( required=False)
-    beca = forms.IntegerField()
+    grado =  forms.IntegerField()
+    #grado = forms.MultipleChoiceField(choices=GRADOS)
+    email = forms.EmailField( )
+    beca = forms.IntegerField() 
+    

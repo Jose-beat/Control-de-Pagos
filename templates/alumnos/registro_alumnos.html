@@ -1,19 +1,61 @@
+{% extends 'componentes/base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Alumnos</title>
-</head>
-<body>
-    <form action="" method="POST">
+{% load static %}
+
+{% block content %}
+
+    {% load crispy_forms_tags %}
+    <form   action="" method="POST">
         {% csrf_token %}
-        <table>
-            {{forms}}
-        </table>
-        <input type="submit" value="Submit">
+        <div class="container">
+            <div class="row justify-content-end">
+
+            
+                <div class="row align-items-center justify-content-start">
+                    
+                        <div class="col-4" >
+                            {{forms.nombre|as_crispy_field}}
+                        </div>
+                        <div class="col-sm-3">
+                            {{forms.matricula|as_crispy_field}}
+                        </div>
+                        
+                </div>
+
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.apellidos|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-6" >
+                            {{forms.domicilio|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.telefono|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-2" >
+                            {{forms.grado|as_crispy_field}}
+                        </div>
+                        <div class="col-3" >
+                            {{forms.beca|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    
+                
+                        <div class="col-4" >
+                            {{forms.email|as_crispy_field}}
+                        </div>
+
+                </div>
+        </div>
+    </div> 
+        
+        <input class="btn btn-danger" type="submit" value="Submit">
     </form>
-</body>
-</html>
+{% endblock %}

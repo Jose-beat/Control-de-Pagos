@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
     'alumnos',
 #   <======= Paquetes  ==========>    
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             #<===============Templates================>
-            'templates/alumnos',
+            'templates',
 
 
         ],
@@ -150,3 +151,5 @@ STATIC_URL = '/static/'
 FIXTURE_DIRS = [
     'fixtures'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
