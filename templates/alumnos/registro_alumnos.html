@@ -5,6 +5,7 @@
 {% block content %}
 
     {% load crispy_forms_tags %}
+ 
     <form   action="" method="POST">
         {% csrf_token %}
         <div class="container">
@@ -53,9 +54,14 @@
                         </div>
 
                 </div>
+                <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
+                    <input class="btn btn-danger col-2 " type="submit" value="Submit">
+                </div >
+                    
+                
         </div>
     </div> 
         
-        <input class="btn btn-danger" type="submit" value="Submit">
+        
     </form>
 {% endblock %}

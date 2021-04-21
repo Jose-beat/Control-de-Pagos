@@ -3,14 +3,21 @@
 {% load static %}
 
 {% block content %}
-    <h1>Vista de un alumno</h1>
-    
-        <h1>{{alumno.matricula}}</h1>
-            {{alumno.nombre}}
-            {{alumno.apellidos}}
-            {{alumno.domicilio}}
-            {{alumno.email}}
-            {{alumno.grado}}
-            {{alumno.beca}}
+<h1>Vista de un alumno</h1>
+
+
+        
+            <h1>{{alumno.matricula}}</h1>
+        
+        {{alumno.nombre}}
+        {{alumno.apellidos}}
+        {{alumno.domicilio}}
+        {{alumno.email}}
+        {{alumno.grado}}
+        {{alumno.beca}}
         <button class="btn btn-danger">Borrar Datos</button>
+
+
+
+
 {% endblock %}

@@ -1,39 +1,55 @@
- 
-<div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px;">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-    
-    <span class="fs-4"> {% block headers %}{% endblock %} </span>
-  </a>
-  <hr>
- <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link active">
-            
-            Registro Alumnos
-            </a>
-        </li>
-        <li class="nav-item">
-        <a href="#" class="nav-link text-white">
-            
-        Pagos
-        </a>
-        </li>
-        <li>
-        <a href="#" class="nav-link text-white">
-            Reportes
-        </a>
-        </li>
-        <li>
-        <a href="#" class="nav-link text-white">
-            Grados y Carreras
-        </a>
-        </li>
-        <li>
-        <a href="#" class="nav-link text-white">
-            Registro de pago
-        </a>
-        </li>
-    
-    </ul>
+<div class="w3-sidebar w3-bar-block  w3-card w3-animate-left" style="display:none" id="mySidebar">
+   <!-- <button class="w3-bar-item  w3-teal w3-button " onclick="w3_close()">Cerrar &times;</button>-->
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
+        Alumnos <i class="fa fa-caret-down"></i>
+    </button>
+        <div id="demoAcc" class="w3-hide w3-white w3-card">
+            <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Alumnos Registrados</a>
+            <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
+        </div>
+    <a href="#" class="w3-bar-item w3-button w3-red" style="margin: 10px 0px 0px 0px;" >Cerrar Sesion</a>
 </div>
-</div>
+
+
+
+<script>
+    
+    function w3_open() {
+        
+        let menu = document.getElementById("openNav");
+        document.getElementById("main").style.marginLeft = "25%";
+        document.getElementById("mySidebar").style.width = "25%";
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("openNav").style.display = 'inline-block';
+        
+        menu.innerHTML="&#10510;"
+        menu.onclick=w3_close;
+        
+    }
+
+    
+    function w3_close() {
+        var menu = document.getElementById("openNav");
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
+
+        menu.innerHTML="&#9776;"
+        menu.onclick=w3_open;
+        console.log(menu)
+    }
+
+    function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
+      
+
+</script>
