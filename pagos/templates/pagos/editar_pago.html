@@ -1,0 +1,32 @@
+{% extends 'pagos/base1.html' %}
+
+{% load static %}
+
+{% block title %}Registro Alumnos{% endblock %}
+{% block headers %}Registro Alumnos{% endblock %}
+
+{% block content %}
+
+<br><br>
+    <div class="row">
+      <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h2>Editar Pago</h2>
+        <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+
+          <div class="d-flex justtify-content-end">
+            <input type="reset" value="Cancelar" class="btn btn-secondary">
+            &nbsp;
+            <input type="submit" value="Guardar" class="btn btn-primary">
+          </div>
+        </form>
+        {{mensaje}}
+      </div>
+    </div>
+  </div>
+</div>
+  
+    {% endblock %}
