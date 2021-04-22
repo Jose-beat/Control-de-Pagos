@@ -7,3 +7,5 @@ core/migrations/__pycache__
 alumnos/__pycache__
 alumnos/migrations
 alumnos/migrations/__pycache__
+
+*sqlite3
