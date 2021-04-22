@@ -1,23 +1,22 @@
 {% extends 'componentes/base.html' %}
 
 {% load static %}
-
+{% block title %}Informacion del Alumno{% endblock %}
+{% block seccion %}Informacion del Alumno{% endblock %}
 {% block content %}
-<h1>Vista de un alumno</h1>
-
-
-        
-            <h1>{{alumno.matricula}}</h1>
-        
-        {{alumno.nombre}}
-        {{alumno.apellidos}}
-        {{alumno.domicilio}}
-        {{alumno.email}}
-        {{alumno.grado}}
-        {{alumno.beca}}
-        <button class="btn btn-danger">Borrar Datos</button>
-
-
-
+        <ul class="w3-ul w3-card-4 w3-large" style="width:50%; position: relative; left: 300px;">
+            <li class="w3-grey"><h3>Datos Personales</h3></li>
+            <li><strong>Nombre: </strong>  {{alumno.nombre}}</li>
+            <li><strong>Apellidos: </strong> {{alumno.apellidos}}</li>
+            <li><strong>Domiciilo: </strong> {{alumno.domicilio}}</li>
+            <li class="w3-grey"><h3>Datos Academicos</h3></li>
+            <li><strong>Matricula: </strong>  {{alumno.matricula}}</li>
+            <li><strong>Grado: </strong>  {{alumno.grado}}</li>
+            <li><strong>Beca: </strong>  {{alumno.beca}}</li>
+            <li class="w3-grey"><h3>Datos de Contacto</h3></li>
+            <li><strong>Correo Electronico: </strong>{{alumno.email}}</li>
+            <li><strong>Numero Telefonico: </strong>{{alumno.telefono}}</li>
+        </ul>
+   
 
 {% endblock %}

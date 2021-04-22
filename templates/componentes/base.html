@@ -8,7 +8,7 @@
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/W3/w3.css' %}" rel="stylesheet" />
-    <title>Document</title>
+    <title>Control de Pagos | {% block title %} {% endblock %}</title>
   </head>
   <body>
     {% include "componentes/sidebar.html" %} 
@@ -17,15 +17,17 @@
 <div id="main">
 <div class="w3-teal">
   <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()"><span id="menu">&#9776;</i></span></button>
-  
-  
-  <div class="w3-container">
-    <h3>Control de Pagos</h3>  
-    <div class=" w3-display-container ">
-        Prueba
-    </div>
+  <div class="w3-display-topmiddle">
+    <div class="w3-container"  >
+      <h3>Control de Pagos</h3>  
   </div>
-
+  
+  </div>
+  <div class="w3-container">
+    <h3>{% block seccion %}{% endblock %}</h3>
+  </div>
+  
+  
 </div>
 
 <div class="w3-container" >

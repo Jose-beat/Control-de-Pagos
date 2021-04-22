@@ -1,0 +1,20 @@
+{% load static %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+                
+               <div class="w3-panel   {% if message.tags == "error" %} w3-red {% else %} w3-green {% endif %}w3-display-container">
+                    <span onclick="this.parentElement.style.display='none'"
+                    class="w3-button w3-large w3-display-topright">&times;</span>
+                    {% if message.tags == "error" %}  
+                        <h3>Error!</h3>
+                         <strong><p>{{ message }}</p></strong>
+                    {% else %}
+                        <h3>Dato creado exitosamente!</h3>
+                        <strong><p>{{ message }}</p></strong>
+                    {% endif %}
+                    
+                </div>
+        {% endfor %}
+    </ul>    
+{% endif %}
