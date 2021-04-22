@@ -1,0 +1,53 @@
+{% extends 'pagos/base1.html' %}
+
+{% load static %}
+
+{% block title %}Registro Alumnos{% endblock %}
+{% block headers %}Registro Alumnos{% endblock %}
+
+{% block content %}
+<br><br>
+<table class="table table-striped table-dark">
+    <thead class="font-weight-bold">
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Decripción</td>
+            <td>Monto</td>
+            <td>Fecha</td>
+            <td>Tipo de Pago</td>
+            <td>beca</td>
+            <td>opciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in pagos %}
+        <tr>
+            <td></td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.descripcion }}</td>
+            <td>{{ p.monto }}</td>
+            
+            <td>{{ p.fecha }}</td>
+            <td>{{ p.tipo_pago }}</td>
+            <td>{{ p.beca }}</td>
+            <td>
+                <div class="btn-group-vertical">
+                <a href="{% url 'editar_pago' p.id %}" class="btn btn-info btn-sm">Editar</a>
+                &nbsp;
+                <a href="{% url 'eliminar_pago' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </div>
+            </td>
+    
+        </tr>
+        {% endfor %}
+		
+		
+        
+    </tbody>
+</table>
+<div class="container">
+   
+
+
+{% endblock %}

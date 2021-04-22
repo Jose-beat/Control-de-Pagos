@@ -1,0 +1,77 @@
+{% extends 'pagos/base1.html' %}
+
+{% load static %}
+
+{% block title %}Registro Alumnos{% endblock %}
+{% block headers %}Registro Alumnos{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+  <div class="col-12 col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+
+        <h2>Registrar Pago</h2>
+        <form action="" method="post">
+          {% csrf_token %}
+  
+
+          <div class="main">
+            <div class="col-md-8 col-sm-12">
+              <div class="login-form">
+                <form>
+                  <div class="form-group">
+                    <label>Nombre del pago:</label>
+                    <div class="input-group">
+                      {{form.nombre}}
+                    </div>
+                  </div><br>
+                  <div class="form-group">
+                    <label>Descripcion:</label>
+                    <div class="input-group">
+                      {{form.descripcion}}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label> Monto a Pagar:</label>
+                    <div class="input-group">
+                      {{form.monto}}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Beca:</label>
+                    <div class="input-group">
+                      {{form.beca}}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Fecha de registro de pago:</label>
+                    <div class="input-group">
+                      {{form.fecha}}
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Tipo de pago:</label>
+                    <div class="input-group">
+                      {{form.tipo_pago}}
+                    </div>
+                  </div>
+
+                  <div class="d-flex justtify-content-end">
+                    <input type="reset" value="Cancelar" class="btn btn-secondary">
+                    &nbsp;
+                    <input type="submit" value="Guardar" class="btn btn-primary">
+                  </div>
+                </form>
+                {{mensaje}}
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

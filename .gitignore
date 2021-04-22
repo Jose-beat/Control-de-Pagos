@@ -8,4 +8,8 @@ alumnos/__pycache__
 alumnos/migrations
 alumnos/migrations/__pycache__
 
+pagos/__pycache__
+pagos/migrations
+pagos/migrations/__pycache__
+
 *.sqlite3
