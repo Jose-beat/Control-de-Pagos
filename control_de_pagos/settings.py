@@ -139,7 +139,7 @@ STATIC_URL = '/static/'
             Se usa el comando (python manage.py loaddata [nombre del seeder])
                 Por ejemplo: 
                     
-                    python manage.py migrate --run-syncdb
+                    py manage.py migrate --run-syncdb
                     py manage.py loaddata alumnos_seeders
                         
 
