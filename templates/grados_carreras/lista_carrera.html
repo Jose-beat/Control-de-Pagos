@@ -1,0 +1,33 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+
+{% block title %}Lista de Grados{% endblock %}
+{% block seccion %} <h1>Lista de Grados</h1>{% endblock %}
+
+{% block content %}
+<br>
+<div class="w3-row container-center">
+  <table class="w3-table-all w3-card-4"">
+      <thead class="font-weight-bold">
+          <tr>
+              <td>#Id</td>
+              <td>Nombre</td>
+              <td>Nivel</td>
+              
+          </tr>
+      </thead>
+    {% for grado in grados %}
+    <tr>
+      <td> 
+        <a href="{% url 'Grado' grado.idCarrera %}">
+            {{grado.idCarrera}}
+        </a>
+      </td>
+      <td>{{grado.carrera}}</td>
+      <td>{{grado.grado}}</td>
+    </tr>
+    {% endfor %}
+
+
+    {% endblock %}

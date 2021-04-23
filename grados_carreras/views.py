@@ -30,7 +30,7 @@ def muestraGrados(request):
       except EmptyPage:
             grados = paginator.page(paginator.num_pages)
             
-      return render(request, 'grados_carreras/index.html', {'grados' : grados})
+      return render(request, 'grados_carreras/lista_carrera.html', {'grados' : grados})
 
 
 def registroGrados(request):
