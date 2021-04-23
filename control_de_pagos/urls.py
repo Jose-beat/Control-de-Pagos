@@ -16,18 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from core import views as core_views
+#from core import views as core_views
+from django.conf.urls.static import static
 
 urlpatterns = [
     
-    path('', core_views.home, name="home"),
-    path('registro', core_views.registro, name="registro"),
-    path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
+    #path('', core_views.home, name="home"),
+    path('', include('pagos.urls')),
+    #path('registro', core_views.registro, name="registro"),
+    #path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
     path('alumnos/', include('alumnos.urls')),
     path('admin/', admin.site.urls),
 
 
 ]
-
-
-    
