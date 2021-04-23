@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 #   <======= Apps recien creadas ==========>    
     'pagos',
     'alumnos',
+    'reporte',
 #   <======= Paquetes  ==========>    
     'crispy_forms',
     
