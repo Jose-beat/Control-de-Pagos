@@ -1,77 +1,71 @@
-{% extends 'pagos/base1.html' %}
+{% extends 'componentes/base.html' %}
 
 {% load static %}
 
-{% block title %}Registro Alumnos{% endblock %}
-{% block headers %}Registro Alumnos{% endblock %}
+{% block title %}Registro Pagos {% endblock %}
+{% block seccion %}<h2>Registrar Pago</h2>{% endblock %}
 
 {% block content %}
 
-
-<div class="row">
-  <div class="col-12 col-md-6 offset-md-3">
-    <div class="card">
-      <div class="card-body">
-
-        <h2>Registrar Pago</h2>
+    {% load crispy_forms_tags %}
         <form action="" method="post">
           {% csrf_token %}
   
-
+          <div class="container">
+            <div class="row justify-content-end">
+            
           <div class="main">
             <div class="col-md-8 col-sm-12">
               <div class="login-form">
                 <form>
                   <div class="form-group">
-                    <label>Nombre del pago:</label>
+                    
                     <div class="input-group">
-                      {{form.nombre}}
+                      {{form.nombre|as_crispy_field}}
                     </div>
                   </div><br>
                   <div class="form-group">
-                    <label>Descripcion:</label>
+                    
                     <div class="input-group">
-                      {{form.descripcion}}
+                      {{form.descripcion|as_crispy_field}}
                     </div>
-                  </div>
+                  </div><br>
                   <div class="form-group">
-                    <label> Monto a Pagar:</label>
+                   
                     <div class="input-group">
-                      {{form.monto}}
+                      {{form.monto|as_crispy_field}}
                     </div>
-                  </div>
+                  </div><br>
                   <div class="form-group">
-                    <label>Beca:</label>
+                    
                     <div class="input-group">
-                      {{form.beca}}
+                      {{form.beca|as_crispy_field}}
                     </div>
-                  </div>
+                  </div><br>
                   <div class="form-group">
-                    <label>Fecha de registro de pago:</label>
+                    
                     <div class="input-group">
-                      {{form.fecha}}
+                      {{form.fecha|as_crispy_field}}
                     </div>
-                  </div>
+                  </div><br>
                   <div class="form-group">
-                    <label>Tipo de pago:</label>
+                    
                     <div class="input-group">
-                      {{form.tipo_pago}}
+                      {{form.tipo_pago|as_crispy_field}}
                     </div>
-                  </div>
+                  </div><br>
 
                   <div class="d-flex justtify-content-end">
                     <input type="reset" value="Cancelar" class="btn btn-secondary">
                     &nbsp;
                     <input type="submit" value="Guardar" class="btn btn-primary">
                   </div>
+                </div></div>
                 </form>
                 {{mensaje}}
               </div>
             </div>
           </div>
-      </div>
-    </div>
-  </div>
-</div>
+ 
 
 {% endblock %}

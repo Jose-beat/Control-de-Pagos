@@ -10,8 +10,43 @@
             <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Alumnos Registrados</a>
             <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
         </div>
-    <a href="#" class="w3-bar-item w3-button w3-red" style="margin: 7px 0px 0px 0px;" >Cerrar Sesion</a>
+   
+<!--boton pagos-->
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc1()">
+      Pagos <i class="fa fa-caret-down"></i>
+  </button>
+      <div id="demoAcc1" class="w3-hide w3-white w3-card">
+          <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
+          <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+      </div>
+<!--boton Reportes-->
+<button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()">
+    Reportes <i class="fa fa-caret-down"></i>
+</button>
+  <div id="demoAcc2" class="w3-hide w3-white w3-card">
+      <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
+      <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+  </div>
+<!--boton Grados y Carreras-->
+<button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()">
+  Grados y Carreras <i class="fa fa-caret-down"></i>
+</button>
+  <div id="demoAcc3" class="w3-hide w3-white w3-card">
+      <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
+      <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+  </div>
+<!--boton Registro de Pago-->
+<button class="w3-button w3-block w3-left-align" onclick="myAccFunc4()">
+  Registro de Pago <i class="fa fa-caret-down"></i>
+</button>
+  <div id="demoAcc4" class="w3-hide w3-white w3-card">
+      <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
+      <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+  </div>
+  
+  <a href="#" class="w3-bar-item w3-button w3-red " style="margin: 7px 0px 0px 0px;" >Cerrar Sesion</a>
 </div>
+
 
 
 
@@ -53,6 +88,50 @@
           x.previousElementSibling.className.replace(" w3-green", "");
         }
       }
-      
+      function myAccFunc1() {
+        var x = document.getElementById("demoAcc1");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
+      function myAccFunc2() {
+        var x = document.getElementById("demoAcc2");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
+
+      function myAccFunc3() {
+        var x = document.getElementById("demoAcc3");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
+      function myAccFunc4() {
+        var x = document.getElementById("demoAcc4");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
 
 </script>
