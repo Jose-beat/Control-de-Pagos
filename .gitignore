@@ -12,4 +12,9 @@ pagos/__pycache__
 pagos/migrations
 pagos/migrations/__pycache__
 
+
+grados_carreras/__pycache__
+grados_carreras/migrations
+grados_carreras/migrations/__pycache__
+
 *.sqlite3

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load crispy_forms_tags %}
+    
+    <form   action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-end">
+
+            
+                <div class="row align-items-center justify-content-start">
+                    
+                        <div class="col-4" >
+                            {{form.idCarrera|as_crispy_field}}
+                        </div>
+                        <div class="col-sm-3">
+                            {{form.carrera|as_crispy_field}}
+                        </div>
+                        
+                </div>
+
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{form.grado|as_crispy_field}}
+                    </div>
+                            
+                      
+                </div>
+               
+                <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
+                    <input class="btn btn-success col-2 " type="submit" value="Submit">
+                </div >
+                    
+                
+        </div>
+    </div> 
+        
+        
+</body>
+</html>

@@ -8,8 +8,11 @@ from .models import Alumno
 from .updates import act_matricula
 import datetime
 
+from grados_carreras.models import Grados_carreras
 model = Alumno
 def registroAlumnos(request):
+
+      
       act_matricula()
       if request.method == 'POST':
             form = AlumnoForm(request.POST)
@@ -17,7 +20,9 @@ def registroAlumnos(request):
                   
                   form_data = form.cleaned_data
                   try:
-                       
+                        alumn = Alumno()
+                        alumn.grado_carrera = Grados_carreras.objects.get(idCarrera= form_data.get('carrera'))
+                        
                         alumno = model.objects.create(
                               matricula = form_data.get('matricula'),
                               nombre    = form_data.get('nombre'),
@@ -25,6 +30,7 @@ def registroAlumnos(request):
                               domicilio = form_data.get('domicilio'),
                               telefono  = form_data.get('telefono'),
                               grado     = form_data.get('grado'),
+                              carrera = alumn.grado_carrera,
                               email     = form_data.get('email'),
                               beca      = form_data.get('beca'),
                         )
@@ -32,7 +38,8 @@ def registroAlumnos(request):
                         
                         messages.success(request, 'El alumno ha sido creado exitosamente.')
                         return redirect(reverse('muestraAlumnos'))
-                  except:
+                  except Exception as e:
+
                         alumnos_totales = Alumno.objects.all()
                         llave = form_data.get('matricula')
                         
@@ -42,8 +49,9 @@ def registroAlumnos(request):
                         if alumnos_totales:
                               messages.error(request, 'El alumno ya existe')
                         else:      
+                              print(e)
                               messages.error(request, 'El alumno no se registro en el sistema.')
-                        
+
                         return redirect(reverse('registroAlumnos'))
                   #new_alumno = form.save()
       else:
