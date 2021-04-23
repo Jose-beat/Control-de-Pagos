@@ -10,7 +10,10 @@
             <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Alumnos Registrados</a>
             <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
         </div>
-    <a href="#" class="w3-bar-item w3-button w3-red" style="margin: 7px 0px 0px 0px;" >Cerrar Sesion</a>
+        <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-yellow" style="margin: 7px 0px 0px 0px;" >Crear Perfil</a>
+        <a href="{% url 'profile' %}" class="w3-bar-item w3-button w3-blue" style="margin: 7px 0px 0px 0px;" >Configurar Perfil</a>
+        <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button w3-green" style="margin: 7px 0px 0px 0px;" >Perfiles creados</a>
+        <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-red" style="margin: 7px 0px 0px 0px;" >Cerrar Sesion</a>
 </div>
 
 

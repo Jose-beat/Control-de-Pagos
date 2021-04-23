@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from profiles.urls import profiles_patterns
 #from core import views as core_views
 from django.conf.urls.static import static
 
@@ -26,7 +27,13 @@ urlpatterns = [
     #path('registro', core_views.registro, name="registro"),
     #path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
     path('alumnos/', include('alumnos.urls')),
-    path('admin/', admin.site.urls),
-
-
+    #path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.urls')),
+    path('profiles/', include(profiles_patterns)),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
