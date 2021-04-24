@@ -48,3 +48,10 @@ def eliminar_pago(request, id):
     pago =  get_object_or_404(Pago, id=id)
     pago.delete()
     return redirect(to="lista_pago")
+
+def reporte(request):
+    pagos = Pago.objects.all()
+    data = {
+        'pagos': pagos
+    }
+    return render(request,'pagos/reporte.html', data)
