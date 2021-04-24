@@ -13,7 +13,6 @@ try:
 except:
     carreras = []
 
-
 class RegistroAlumnos(forms.Form):
   
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
@@ -42,6 +41,5 @@ class EditAlumnoForm(forms.ModelForm):
 
         widgets = {
             #"fecha": forms.NumberInput(attrs={'type': 'date'})
-            carrera : forms.ChoiceField(choices=carreras, required=True, label="Seleccione la carrera")
         }
     
