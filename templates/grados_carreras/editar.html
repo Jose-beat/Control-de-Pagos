@@ -1,0 +1,45 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+
+{% block title %}Registro Carrera {% endblock %}
+{% block seccion %}<h2>Registrar Carrera</h2>{% endblock %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+    
+    <form   action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-end">
+            
+          <div class="main">
+            <div class="col-md-8 col-sm-12">
+              <div class="login-form">
+                <form>
+                  <div class="form-group">
+                    <div class="input-group">
+                            {{form.idCarrera|as_crispy_field}}
+                    </div>
+                  </div><br>
+                  <div class="input-group">
+                            {{form.carrera|as_crispy_field}}
+                    </div>
+                  </div><br>
+                    <div class="input-group">
+                        {{form.grado|as_crispy_field}}
+                    </div>
+                    </div><br>
+                <div class="d-flex justtify-content-end">
+                  <input type="reset" value="Cancelar" class="btn btn-secondary">
+                  &nbsp;
+                  <input type="submit" value="Guardar" class="btn btn-primary">
+                </div>
+              </div></div>
+              </form>
+              {{mensaje}}
+            </div>
+          </div>
+        </div>
+    
+    {% endblock %}

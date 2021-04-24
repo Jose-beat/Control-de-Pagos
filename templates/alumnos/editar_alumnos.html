@@ -5,11 +5,9 @@
 {% block seccion %}Registro de Alumnos{% endblock %}
 {% block content %}
 {% include "componentes/alerts.html" %} 
-{% load crispy_forms_tags %}
-<h1>Editar Alumnos</h1>
- <div class="card-body">
-            <h2>Editar Pago</h2>
-        
+    {% load crispy_forms_tags %}
+    
+    
     <form   action="" method="POST">
         {% csrf_token %}
         <div class="container">
@@ -19,34 +17,34 @@
                 <div class="row align-items-center justify-content-start">
                     
                         <div class="col-4" >
-                            {{forms.nombre|as_crispy_field}}
+                            {{form.nombre|as_crispy_field}}
                         </div>
-                        <div class="col-sm-3">
-                            {{forms.matricula|as_crispy_field}}
+                        <div class="col-sm-3 inactive">
+                            {{form.matricula|as_crispy_field}}
                         </div>
                         
                 </div>
 
                 <div class="row align-items-center justify-content-start">
                     <div class="col-4" >
-                        {{forms.apellidos|as_crispy_field}}
+                        {{form.apellidos|as_crispy_field}}
                     </div>
                             
                         <div class="col-6" >
-                            {{forms.domicilio|as_crispy_field}}
+                            {{form.domicilio|as_crispy_field}}
                         </div>
                         
                 </div>
                 <div class="row align-items-center justify-content-start">
                     <div class="col-4" >
-                        {{forms.telefono|as_crispy_field}}
+                        {{form.telefono|as_crispy_field}}
                     </div>
                             
                         <div class="col-2" >
-                            {{forms.grado|as_crispy_field}}
+                            {{form.grado|as_crispy_field}}
                         </div>
                         <div class="col-3" >
-                            {{forms.beca|as_crispy_field}}
+                            {{form.beca|as_crispy_field}}
                         </div>
                         
                 </div>
@@ -54,15 +52,15 @@
                     
                 
                         <div class="col-4" >
-                            {{forms.email|as_crispy_field}}
+                            {{form.email|as_crispy_field}}
                         </div>
                          <div class="col-4" >
-                            {{forms.carrera|as_crispy_field}}
+                            {{form.carrera|as_crispy_field}}
                         </div>
 
                 </div>
                 <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
-                    <input class="btn btn-success col-2 " type="submit" value="Submit">
+                    <input class="btn btn-primary col-2 " type="submit" value="Guardar">
                 </div >
                     
                 
@@ -71,6 +69,4 @@
         
         
     </form>
-        
-      </div>
 {% endblock %}

@@ -94,7 +94,7 @@ def alumno(request, alumno_id):
 def editarAlumno(request, alumno_id):
       alumno =  get_object_or_404(Alumno, matricula=alumno_id)
       data = {
-        'forms': EditAlumnoForm(instance=alumno)
+        'form': EditAlumnoForm(instance=alumno)
       }
       if request.method =='POST':
             formulario = EditAlumnoForm(data=request.POST, instance=alumno)

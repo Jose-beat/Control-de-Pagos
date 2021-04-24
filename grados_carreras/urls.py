@@ -5,6 +5,7 @@ from grados_carreras import views
 urlpatterns = [
     path('', views.muestraGrados, name='muestraGrados'),
     path('registro_grados/', views.registroGrados, name='registroGrados'),
-    path('carrera/<int:carrera_id>', views.Grado, name='Grado')
+    path('carrera/<int:carrera_id>', views.Grado, name='Grado'),
+    path('edit/<int:carrera_id>', views.editarGrado, name='EditGrado')
 
 ]

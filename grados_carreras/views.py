@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import RegistroGrados
+from .forms import RegistroGrados, EditGradoForm
 from .models import Grados_carreras
 from django.db.models import Q
 from django.urls import reverse
@@ -67,6 +67,22 @@ def registroGrados(request):
 
       
     
+def editarGrado(request, carrera_id):
+        carrera =  get_object_or_404(Grados_carreras, idCarrera=carrera_id)
+        data = {
+        'form': EditGradoForm(instance=carrera)
+        }
+
+        if request.method =='POST':
+            formulario = EditGradoForm(data=request.POST, instance=carrera)
+            if formulario.is_valid():
+                  formulario.save()
+                  return redirect(to="muestraGrados")
+            data["form"] = formulario
+      
+   
+        return render(request, 'grados_carreras/editar.html',data)
+
 
 def Grado(request, carrera_id):
       carrera = get_object_or_404(Grados_carreras, idCarrera=carrera_id)

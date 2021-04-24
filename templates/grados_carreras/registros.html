@@ -6,40 +6,54 @@
 {% block seccion %}<h2>Registrar Carrera</h2>{% endblock %}
 
 {% block content %}
-    {% load crispy_forms_tags %}
-    
-    <form   action="" method="POST">
-        {% csrf_token %}
-        <div class="container">
-            <div class="row justify-content-end">
-            
-          <div class="main">
-            <div class="col-md-8 col-sm-12">
-              <div class="login-form">
-                <form>
-                  <div class="form-group">
-                    <div class="input-group">
-                            {{form.idCarrera|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="input-group">
-                            {{form.carrera|as_crispy_field}}
-                    </div>
-                  </div><br>
-                    <div class="input-group">
-                        {{form.grado|as_crispy_field}}
-                    </div>
+{% load crispy_forms_tags %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row justify-content-end">
+
+            <div class="main">
+                <div class="container">
+
+                    <div class="row justify-content-end">
+
+                        <form>
+
+                            <div class="row align-items-center justify-content-start">
+
+                                <div class="class=col-4">
+                                    {{form.idCarrera|as_crispy_field}}
+                                </div>
+
+                            </div><br>
+
+                            <div class="row align-items-center justify-content-start">
+                                <div class="class=col-4">
+                                    {{form.carrera|as_crispy_field}}
+                                </div>
+                               
+                            </div>
+                            <div class="row align-items-center justify-content-start">
+                                <div class="class=col-4">
+                                    {{form.grado|as_crispy_field}}
+                                </div>
+                                
+                            </div>
                     </div><br>
-                <div class="d-flex justtify-content-end">
-                  <input type="reset" value="Cancelar" class="btn btn-secondary">
-                  &nbsp;
-                  <input type="submit" value="Guardar" class="btn btn-primary">
-                </div>
-              </div></div>
-              </form>
-              {{mensaje}}
+                    <div class="d-flex justtify-content-end">
+                        <input type="reset" value="Cancelar" class="btn btn-secondary">
+                        &nbsp;
+                        <input type="submit" value="Guardar" class="btn btn-primary">
+                    </div>
+                </div><br>
+               
             </div>
-          </div>
         </div>
-    
-    {% endblock %}
+</form>
+{{mensaje}}
+</div>
+</div>
+</div>
+
+{% endblock %}
