@@ -9,6 +9,8 @@
     <link href="{% static 'vendor/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/W3/w3.css' %}" rel="stylesheet" />
     <title>Control de Pagos | {% block title %} {% endblock %}</title>
+    {% block css %}{% endblock %}
+
   </head>
   <body>
     {% include "componentes/sidebar.html" %} 

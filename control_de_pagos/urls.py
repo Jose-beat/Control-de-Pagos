@@ -27,17 +27,14 @@ urlpatterns = [
     #path('registro', core_views.registro, name="registro"),
     #path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
     path('alumnos/', include('alumnos.urls')),
-<<<<<<< HEAD
     path('admin/', admin.site.urls),
-    path('carrera/', include('grados_carreras.urls'))
+    path('carrera/', include('grados_carreras.urls')),
 
 
-=======
     #path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
     path('profiles/', include(profiles_patterns)),
->>>>>>> 2e81442642d1e02305b24718cd557f74a2e4987b
 ]
 
 if settings.DEBUG:
