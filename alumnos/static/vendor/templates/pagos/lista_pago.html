@@ -1,0 +1,64 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+
+{% block title %}Lista Pagos{% endblock %}
+{% block seccion %} <h2>Lista Pagos</h2>{% endblock %}
+
+{% block content %}
+<br><br>
+<div class="w3-container" style="margin-top: 30px;">
+    <div class="w3-row">
+        <form  method="get">            
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i> Buscar Nombre</button>
+                <input name="buscar" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Indique el nombre a buscar" style="width: 250px;">
+            </div>
+                   
+           </form>
+    </div>
+<div class="w3-row">
+<table class="w3-table-all w3-card-4"">
+    <thead class="font-weight-bold">
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Decripción</td>
+            <td>Monto</td>
+            <td>Fecha</td>
+            <td>Tipo de Pago</td>
+            <td>beca</td>
+            <td>opciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in pagos %}
+        <tr>
+            <td></td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.descripcion }}</td>
+            <td>{{ p.monto }}</td>
+            
+            <td>{{ p.fecha }}</td>
+            <td>{{ p.tipo_pago }}</td>
+            <td>{{ p.beca }}</td>
+            <td>
+                <div class="btn-group-vertical">
+                <a href="{% url 'editar_pago' p.id %}" class="btn btn-primary btn-sm">Editar</a>
+                &nbsp;
+                <a href="{% url 'eliminar_pago' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </div>
+            </td>
+    
+        </tr>
+        {% endfor %}
+		
+		
+        
+    </tbody>
+</table>
+<div class="container">
+   
+
+
+{% endblock %}

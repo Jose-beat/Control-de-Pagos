@@ -10,7 +10,8 @@
             "telefono": "2491201514",
             "grado": 8,
             "email": "jj786908@gmail.com",
-            "beca": 100
+            "beca": 100,
+            "carrera":6564
         }
     },
     {
@@ -23,7 +24,18 @@
             "telefono": "2495345343",
             "grado": 9,
             "email": "alberth78678@gmail.com",
-            "beca": 50
+            "beca": 50,
+            "carrera":6564
+
+        }
+    },
+    {
+        "model": "grados_carreras.Grados_carreras",
+        "fields":{
+            "idCarrera": 6564,
+            "carrera": "Desarrollo de Software Multiplataforma",
+            "grado": "Ingeniaria"
+            
         }
     }
 ]

@@ -27,6 +27,7 @@ urlpatterns = [
     #path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
     path('alumnos/', include('alumnos.urls')),
     path('admin/', admin.site.urls),
+    path('carrera/', include('grados_carreras.urls'))
 
 
 ]
