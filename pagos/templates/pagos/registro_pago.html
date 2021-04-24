@@ -1,71 +1,35 @@
-{% extends 'componentes/base.html' %}
+{% extends 'pagos/base1.html' %}
+{% load crispy_forms_tags %}
 
 {% load static %}
 
-{% block title %}Registro Pagos {% endblock %}
-{% block seccion %}<h2>Registrar Pago</h2>{% endblock %}
+{% block title %}Registro Alumnos{% endblock %}
+{% block headers %}Registro Alumnos{% endblock %}
 
 {% block content %}
-
-    {% load crispy_forms_tags %}
-        <form action="" method="post">
+    {% if form.errors %}
+    
+        <div class="alert alert-danger" role="alert">
+          A simple danger alert—check it out!
+        </div>
+    
+    {% endif %}
+        <h1 style="text-align: center;" >Registrar Pago</h1>
+        <form action=" {% url 'GuardarPago' %} " method="POST">
           {% csrf_token %}
-  
-          <div class="container">
-            <div class="row justify-content-end">
-            
-          <div class="main">
-            <div class="col-md-8 col-sm-12">
-              <div class="login-form">
-                <form>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.nombre|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.descripcion|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                   
-                    <div class="input-group">
-                      {{form.monto|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.beca|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.fecha|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.tipo_pago|as_crispy_field}}
-                    </div>
-                  </div><br>
 
-                  <div class="d-flex justtify-content-end">
-                    <input type="reset" value="Cancelar" class="btn btn-secondary">
-                    &nbsp;
-                    <input type="submit" value="Guardar" class="btn btn-primary">
-                  </div>
-                </div></div>
-                </form>
-                {{mensaje}}
-              </div>
+          {% if mensaje %}
+            <div class="alert alert-success" role="alert">
+                Pago registrado exitosamente!!!!
             </div>
-          </div>
- 
+          {% endif %}
+
+          {{form|crispy}}
+
+          <button type="button" class="btn btn-outline-primary">Guardar</button>
+        </form>
+  
+
+          
 
 {% endblock %}
