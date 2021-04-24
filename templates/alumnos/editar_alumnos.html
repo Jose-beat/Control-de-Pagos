@@ -1,0 +1,76 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+{% block title %}Registrar Alumno{% endblock %}
+{% block seccion %}Registro de Alumnos{% endblock %}
+{% block content %}
+{% include "componentes/alerts.html" %} 
+{% load crispy_forms_tags %}
+<h1>Editar Alumnos</h1>
+ <div class="card-body">
+            <h2>Editar Pago</h2>
+        
+    <form   action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-end">
+
+            
+                <div class="row align-items-center justify-content-start">
+                    
+                        <div class="col-4" >
+                            {{forms.nombre|as_crispy_field}}
+                        </div>
+                        <div class="col-sm-3">
+                            {{forms.matricula|as_crispy_field}}
+                        </div>
+                        
+                </div>
+
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.apellidos|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-6" >
+                            {{forms.domicilio|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.telefono|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-2" >
+                            {{forms.grado|as_crispy_field}}
+                        </div>
+                        <div class="col-3" >
+                            {{forms.beca|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    
+                
+                        <div class="col-4" >
+                            {{forms.email|as_crispy_field}}
+                        </div>
+                         <div class="col-4" >
+                            {{forms.carrera|as_crispy_field}}
+                        </div>
+
+                </div>
+                <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
+                    <input class="btn btn-success col-2 " type="submit" value="Submit">
+                </div >
+                    
+                
+        </div>
+    </div> 
+        
+        
+    </form>
+        
+      </div>
+{% endblock %}

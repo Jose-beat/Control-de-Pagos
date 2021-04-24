@@ -1,6 +1,7 @@
 from django import forms
 from .updates import act_matricula
 from grados_carreras.models import Grados_carreras
+from .models import Alumno
 
 
 carreras = []
@@ -29,4 +30,17 @@ class RegistroAlumnos(forms.Form):
         'value': act_matricula
         
         })
+
+
+class EditAlumnoForm(forms.ModelForm):
+
+
+    class Meta:
+
+        model=Alumno
+        fields = '__all__'
+
+        widgets = {
+            #"fecha": forms.NumberInput(attrs={'type': 'date'})
+        }
     

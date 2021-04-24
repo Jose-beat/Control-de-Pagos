@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import RegistroAlumnos as AlumnoForm
+from .forms import RegistroAlumnos as AlumnoForm, EditAlumnoForm
 from django.db.models import Q
 from django.contrib import messages
 from django.urls import reverse
@@ -90,3 +90,19 @@ def alumno(request, alumno_id):
       alumno = get_object_or_404(Alumno, matricula=alumno_id)
       print(alumno_id)
       return render(request, 'alumnos/alumno.html', {'alumno': alumno})
+
+def editarAlumno(request, alumno_id):
+      alumno =  get_object_or_404(Alumno, matricula=alumno_id)
+      data = {
+        'forms': EditAlumnoForm(instance=alumno)
+      }
+      if request.method =='POST':
+            formulario = EditAlumnoForm(data=request.POST, instance=alumno)
+            if formulario.is_valid():
+                  formulario.save()
+                  return redirect(to="muestraAlumnos")
+            data["form"] = formulario
+      
+   
+      return render(request, 'alumnos/editar_alumnos.html',data)
+
