@@ -10,6 +10,7 @@ try:
     carrera = Grados_carreras.objects.all()
     for i in carrera:
      carreras.append((i.idCarrera, i.carrera))
+     print(carreras)
 except:
     carreras = []
 

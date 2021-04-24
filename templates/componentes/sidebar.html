@@ -44,7 +44,17 @@
       <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
   </div>
   
-  <a href="#" class="w3-bar-item w3-button w3-red " style="margin: 7px 0px 0px 0px;" >Cerrar Sesion</a>
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc5()">
+    Seción <i class="fa fa-caret-down"></i>
+  </button>
+    <div id="demoAcc5" class="w3-hide w3-white w3-card">
+        <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>
+        <a href="{% url 'profile' %}" class="w3-bar-item w3-button">Configurar Perfil</a>
+        <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
+        <a href="{% url 'logout' %}" class="w3-bar-item w3-button">Cerrar Sesion</a>
+    </div>
+  
+        
 </div>
 
 
@@ -133,5 +143,15 @@
           x.previousElementSibling.className.replace(" w3-green", "");
         }
       }
-
+      function myAccFunc5() {
+        var x = document.getElementById("demoAcc5");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-green";
+        } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-green", "");
+        }
+      }
 </script>

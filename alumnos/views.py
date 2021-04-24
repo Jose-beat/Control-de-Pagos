@@ -7,8 +7,8 @@ from django.urls import reverse
 from .models import Alumno
 from .updates import act_matricula
 import datetime
-
 from grados_carreras.models import Grados_carreras
+
 model = Alumno
 def registroAlumnos(request):
 

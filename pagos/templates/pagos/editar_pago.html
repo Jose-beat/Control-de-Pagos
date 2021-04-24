@@ -8,6 +8,8 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
+
+<br><br>
         <form action="" method="post">
           {% csrf_token %}
   
@@ -36,12 +38,7 @@
                       {{form.monto|as_crispy_field}}
                     </div>
                   </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.beca|as_crispy_field}}
-                    </div>
-                  </div><br>
+              
                   <div class="form-group">
                     
                     <div class="input-group">
