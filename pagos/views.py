@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pago 
 from .forms import PagoForm
+from django.urls import reverse
 
 def index(request):
     return render(request, 'pagos/index.html')
@@ -16,6 +17,7 @@ def registro_pago(request):
             data["mensaje"] = "Guardado Correctamente"
         else:
             data["form"] = formulario
+        return redirect(reverse('lista_pago'))
 
 
     return render(request, 'pagos/registro_pago.html', data)

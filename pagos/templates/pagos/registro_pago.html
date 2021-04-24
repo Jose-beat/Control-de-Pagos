@@ -8,12 +8,16 @@
 {% block content %}
 
     {% load crispy_forms_tags %}
+    <br><br>
+
+    <div class="content">
         <form action="" method="post">
           {% csrf_token %}
   
           <div class="container">
             <div class="row justify-content-end">
-            
+              <div class="row align-items-center justify-content-start">
+              
           <div class="main">
             <div class="col-md-8 col-sm-12">
               <div class="login-form">
@@ -61,11 +65,12 @@
                     <input type="submit" value="Guardar" class="btn btn-primary">
                   </div>
                 </div></div>
+              </div></div>
                 </form>
                 {{mensaje}}
               </div>
             </div>
           </div>
- 
+        </div>
 
 {% endblock %}
