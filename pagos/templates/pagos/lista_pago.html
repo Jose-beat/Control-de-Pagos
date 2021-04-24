@@ -27,7 +27,6 @@
             <td>Monto</td>
             <td>Fecha</td>
             <td>Tipo de Pago</td>
-            <td>beca</td>
             <td>opciones</td>
         </tr>
     </thead>
@@ -41,7 +40,6 @@
             
             <td>{{ p.fecha }}</td>
             <td>{{ p.tipo_pago }}</td>
-            <td>{{ p.beca }}</td>
             <td>
                 <div class="btn-group-vertical">
                 <a href="{% url 'editar_pago' p.id %}" class="btn btn-primary btn-sm">Editar</a>

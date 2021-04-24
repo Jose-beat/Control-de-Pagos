@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-
+from alumnos.models import Alumno
 #seleccion de menu
 
 CLASIFICACION_CHOISE = [
@@ -13,12 +13,6 @@ CLASIFICACION_CHOISE = [
     ('Credencial', 'Credencial'),
   ]
 
-#seleccion de mENO RADIO
-RADIO_CHOISE = [
-    ('si', 'Si'),
-    ('no', 'No'),
-    
-  ]
 
 
 class Pago(models.Model):
@@ -29,8 +23,6 @@ class Pago(models.Model):
         verbose_name="Descripcion")
     monto = models.IntegerField(
         verbose_name="Monto a Pagar", default=0)
-    beca= models.TextField(choices=RADIO_CHOISE,
-        verbose_name="Beca")
     fecha = models.DateTimeField( 
         verbose_name="Fecha de registro de pago")
     tipo_pago= models.TextField(choices=CLASIFICACION_CHOISE,

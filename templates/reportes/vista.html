@@ -1,0 +1,73 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+{% block title %}Alumnos en Sistema{% endblock %}
+{% block seccion %}Alumnos en Sistema{% endblock %}
+{% block content %}
+    {% include "componentes/alerts.html" %}     
+   
+<div class="w3-container" style="margin-top: 30px;">
+    <div class="w3-row">
+        <form  method="get">            
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i> Buscar Matricula</button>
+                <input name="buscar" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Indique la matricula a buscar" style="width: 250px;">
+            </div>
+                   
+           </form>
+    </div>
+<div class="w3-row">
+
+    
+  <table class="w3-table-all w3-card-4">
+    <tr>
+      <th>id del Reporte</th>
+      <th>Matricula</th>
+      <th>Nombre</th>
+      <th>Deuda</th>
+    </tr>
+    {% for reportes in reportes %}
+    <tr>
+      <td>
+        <a href="{% url 'verReporte' reportes.idReporte %}">
+            {{reportes.idReporte}}
+        </a>
+      </td>
+      <td>{{reportes.matricula}}</td>
+      <td>{{reportes.nombreDeudor}}</td>
+      <td>{{reportes.cobro}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+<div class="w3-row">
+    <div class=" w3-display-bottomright " style="margin: 0px 40px 20px 0px">
+        {% if reportes.has_next or reportes.has_previous %}
+        
+            <div class="w3-bar  pagination ">
+                 
+                 {% if reportes.has_previous %}
+                    <a href="?page={{ reportes.previous_page_number }}" class="w3-button w3-teal">&laquo;</a>
+                 {% endif %}
+        
+                 {% for page in reportes.paginator.page_range %}
+                   
+                    <div class="{% if reportes.number == page %}active w3-blue{% endif %}">
+                        <a class="w3-button " href="?page={{ page }}">{{ page }}</a></div>
+        
+                 {% endfor %}
+                 
+                 {% if reportes.has_next %}
+                    <a href="?page={{ reportes.next_page_number }}" class="w3-button w3-teal">&raquo;</a>
+                 {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    
+    
+    </div>
+</div>
+
+
+{% endblock %}
+

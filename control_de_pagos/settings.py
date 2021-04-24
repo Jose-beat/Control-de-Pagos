@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
+    'profiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +45,10 @@ INSTALLED_APPS = [
     'pagos',
     'alumnos',
     'grados_carreras',
+    'reportes',
 #   <======= Paquetes  ==========>    
     'crispy_forms',
+#   Para los registros
     
 ]
 
@@ -127,12 +131,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = reverse_lazy('index')
+#LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGOUT_REDIRECT_URL= 'login'
 
 '''
             <======================= SEEDERS ========================>
@@ -156,3 +162,5 @@ FIXTURE_DIRS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

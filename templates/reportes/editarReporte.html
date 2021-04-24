@@ -1,0 +1,61 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+{% block title %}Registrar Alumno{% endblock %}
+{% block seccion %}Registro de Alumnos{% endblock %}
+{% block content %}
+{% include "componentes/alerts.html" %} 
+    {% load crispy_forms_tags %}
+    <form   action="" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-end">
+
+            
+                <div class="row align-items-center justify-content-start">
+                    
+                        <div class="col-4" >
+                            {{forms.idReporte|as_crispy_field}}
+                        </div>
+                  
+                        <div class="col-sm-3 inactive">
+                            {{forms.matricula|as_crispy_field}}
+                            
+                        </div>
+                      
+                </div>
+
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.cobro|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-6" >
+                            {{forms.nombreDeudor|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    <div class="col-4" >
+                        {{forms.grado|as_crispy_field}}
+                    </div>
+                            
+                        <div class="col-2" >
+                            {{forms.carrera|as_crispy_field}}
+                        </div>
+                        <div class="col-3" >
+                            {{forms.cantidadDeudo|as_crispy_field}}
+                        </div>
+                        
+                </div>
+                <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
+                    <input class="btn btn-success col-2 " type="submit" value="Guardar">
+                </div >
+                    
+                
+        </div>
+    </div> 
+        
+        
+    </form>
+{% endblock %}
