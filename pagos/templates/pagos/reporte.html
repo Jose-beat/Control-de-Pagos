@@ -120,10 +120,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-   
-
-            <div class="card">
+                <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Ordenar por:</h3>
               </div>
@@ -132,67 +129,32 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Apellido(s)</th>
-                    <th>Estado</th>
-                    <th>Deuda</th>
-                    <th>Restante</th>
+                    <th>Nombre de pago</th>
+                   <th>Decripción</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th>Tipo de Pago</th>
+                    <th>beca</th>
                   </tr>
                   </thead>
                 <tbody>
+                {% for p in pagos %}
                   <tr>
-                    <td>18460678</td>
-                    <td>Juan Manuel</td>
-                    <td>Rosas Sanchez</td>
-                    <td>Activo</td>
-                    <td>Incripcion</td>
-                    <td>$870.00</td>
+                    <th>{{ p.nombre }}</th>
+                    <td>{{ p.descripcion }}</td>
+                    <td>{{ p.monto }}</td>
+                    
+                    <td>{{ p.fecha }}</td>
+                    <td>{{ p.tipo_pago }}</td>
+                    <td>{{ p.beca }}</td>
                   </tr>
-                  <tr>
-                    <td>18450767</td>
-                    <td>Jose Miguel</td>
-                    <td>Rosas Sanchez</td>
-                    <td>Activo</td>
-                    <td>reincripcion</td>
-                    <td>$500.00</td>
-                  </tr>
-                  <tr>
-                    <td>18440835</td>
-                    <td>Raul 
-                    </td>
-                    <td>Rosas Sanchez</td>
-                    <td>Activo</td>
-                    <td>Constancias</td>
-                    <td>$70.00</td>
-                  </tr>
-                  <tr>
-                    <td>18420191</td>
-                    <td>Estefani                
-                    </td>
-                    <td>Rosas Sanchez</td>
-                    <td>Baja</td>
-                    <td>Cardex</td>
-                    <td>$50.00</td>
-                  </tr>
-                  <tr>
-                    <td>18420191</td>
-                    <td>Fatima Isabel</td>
-                    <td>Santiago Reynoso</td>
-                    <td>Activo</td>
-                    <td>Credencial</td>
-                    <td>$80.00</td>
-                  </tr>
+                  
                 </tbody>
+                {% endfor %}
                   <tfoot>
-                  <tr>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Apellido(s)</th>
-                    <th>Estado</th>
-                    <th>Deuda</th>
-                    <th>Restante</th>
-                  </tr>
+                 <thead>
+                  
+                  </thead>
                   </tfoot>
                 </table>
               </div>
@@ -205,6 +167,7 @@
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
+      
     </section>
     <!-- /.content -->
   </div>

@@ -48,4 +48,8 @@ def eliminar_pago(request, id):
     return redirect(to="lista_pago")
 
 def reporte(request):
-    return render(request, 'pagos/reporte.html')
+    pagos = Pago.objects.all()
+    data = {
+        'pagos': pagos
+    }
+    return render(request,'pagos/reporte.html', data)
