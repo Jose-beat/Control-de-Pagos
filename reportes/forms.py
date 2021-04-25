@@ -8,8 +8,8 @@ from .updates import act_idReporte
 alumnos_locales = []
 pagos_locales = []
 nombre = ""
-grado = 0
-carrera = ""
+gradoAlumno = 0
+carreraAlumno = ""
 deuda = ""
 try:
     alumnos = Alumno.objects.all()
