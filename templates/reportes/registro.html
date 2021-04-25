@@ -1,11 +1,12 @@
 {% extends 'componentes/base.html' %}
 
 {% load static %}
-{% block title %}Registrar Alumno{% endblock %}
-{% block seccion %}Registro de Alumnos{% endblock %}
+{% block title %}Registrar Reporte{% endblock %}
+{% block seccion %}Registro de Reportes{% endblock %}
 {% block content %}
 {% include "componentes/alerts.html" %} 
     {% load crispy_forms_tags %}
+    <br><br>
     <form   action="" method="POST">
         {% csrf_token %}
         <div class="container">

@@ -9,6 +9,7 @@ from django import forms
 from .models import Profile
 
 # Create your views here.
+@method_decorator(login_required, name='dispatch')
 class SignUpView(CreateView):
     form_class = UserCreationFormWithEmail
     template_name = 'registration/signup.html'
@@ -58,4 +59,4 @@ class EmailUpdate(UpdateView):
             attrs={'class':'form-control mb-2', 'placeholder':'Email'})
         return form
 
-# Create your views here.
+

@@ -7,7 +7,7 @@
         Alumnos <i class="fa fa-caret-down"></i>
     </button>
         <div id="demoAcc" class="w3-hide w3-white w3-card">
-            <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Alumnos Registrados</a>
+            <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Lista Alumnos</a>
             <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
         </div>
    
@@ -16,16 +16,18 @@
       Pagos <i class="fa fa-caret-down"></i>
   </button>
       <div id="demoAcc1" class="w3-hide w3-white w3-card">
-          <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
-          <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+        <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+        <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
+          
       </div>
 <!--boton Reportes-->
 <button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()" style="margin: 7px 0px 0px 0px;">
     Reportes <i class="fa fa-caret-down"></i>
 </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
-      <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
-      <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
+      <a href="{% url 'reporte' %}" class="w3-bar-item w3-button">Lista de Reportes</a>
+      <a href="{% url 'registro' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Reporte</a>
+      
   </div>
 <!--boton Grados y Carreras-->
 <button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()" style="margin: 7px 0px 0px 0px;">
@@ -45,7 +47,7 @@
   </div>
   
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc5()">
-    Seción <i class="fa fa-caret-down"></i>
+    Sesión <i class="fa fa-caret-down"></i>
   </button>
     <div id="demoAcc5" class="w3-hide w3-white w3-card">
         <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>

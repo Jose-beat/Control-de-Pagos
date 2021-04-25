@@ -8,8 +8,11 @@ from .models import Alumno
 from .updates import act_matricula
 import datetime
 from grados_carreras.models import Grados_carreras
+from registration.models import Profile
+from django.contrib.auth.decorators import login_required
 
 model = Alumno
+@login_required
 def registroAlumnos(request):
 
       
@@ -59,7 +62,7 @@ def registroAlumnos(request):
 
       
       return render(request, "alumnos/registro_alumnos.html", {'forms': form})
-
+@login_required
 def muestraAlumnos(request):
 
       queryset = request.GET.get("buscar")
@@ -84,13 +87,13 @@ def muestraAlumnos(request):
 
 
       return render(request, "alumnos/muestra_alumnos.html", {'alumnos' : alumnos})
-
+@login_required
 def alumno(request, alumno_id):
       pass
       alumno = get_object_or_404(Alumno, matricula=alumno_id)
       print(alumno_id)
       return render(request, 'alumnos/alumno.html', {'alumno': alumno})
-
+@login_required
 def editarAlumno(request, alumno_id):
       alumno =  get_object_or_404(Alumno, matricula=alumno_id)
       data = {
