@@ -2,10 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pago 
 from .forms import PagoForm
 from django.urls import reverse
+from registration.models import Profile
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request, 'pagos/index.html')
 
+
+@login_required
 def registro_pago(request):
     data={
         'form': PagoForm()
@@ -22,6 +26,7 @@ def registro_pago(request):
 
     return render(request, 'pagos/registro_pago.html', data)
 
+@login_required
 def lista_pago(request):
     pagos = Pago.objects.all()
     data = {
@@ -29,6 +34,7 @@ def lista_pago(request):
     }
     return render(request,'pagos/lista_pago.html', data)
 
+@login_required
 def editar_pago(request, id):
     pago =  get_object_or_404(Pago, id=id)
 
@@ -44,6 +50,7 @@ def editar_pago(request, id):
    
     return render(request, 'pagos/editar_pago.html', data)
 
+@login_required
 def eliminar_pago(request, id):
     pago =  get_object_or_404(Pago, id=id)
     pago.delete()

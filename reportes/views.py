@@ -8,12 +8,14 @@ from .models import Reportes
 from .forms import RegistroReportes, EditReporteForm
 from django.urls import reverse
 from django.db.models import Q
+from registration.models import Profile
 from django.contrib.auth.decorators import login_required
 from .updates import act_idReporte
+
 # Create your views here.
 #@login_required
 #<======================================REPORTES==============================================>
-
+@login_required
 def registroReporte(request):
       #act_idReporte()
       model = Reportes    
@@ -66,7 +68,7 @@ def registroReporte(request):
 
 
 
-        
+@login_required       
 def reporte(request):
     
       queryset = request.GET.get("buscar")
@@ -90,10 +92,12 @@ def reporte(request):
   
       return render(request,'reportes/vista.html', {'reportes' : reportes})
 
+@login_required
 def verReporte(request, reporte_id):
       reporte = get_object_or_404(Reportes, idReporte=reporte_id)
       return render(request, 'reportes/reporte.html', {'reporte':reporte})
 
+@login_required
 def EditarReporte(request, reporte_id):
       reporte = get_object_or_404(Reportes, idReporte=reporte_id)
       data = {

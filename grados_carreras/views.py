@@ -5,10 +5,12 @@ from .models import Grados_carreras
 from django.db.models import Q
 from django.urls import reverse
 from django.contrib import messages
+from registration.models import Profile
+from django.contrib.auth.decorators import login_required
 
 model = Grados_carreras
 
-
+@login_required
 def muestraGrados(request):
     
       queryset = request.GET.get("buscar")
@@ -32,7 +34,7 @@ def muestraGrados(request):
             
       return render(request, 'grados_carreras/lista_carrera.html', {'grados' : grados})
 
-
+@login_required
 def registroGrados(request):
 
       if request.method == 'POST':
@@ -66,7 +68,7 @@ def registroGrados(request):
       return render(request, 'grados_carreras/registros.html', {'form':form})
 
       
-    
+@login_required  
 def editarGrado(request, carrera_id):
         carrera =  get_object_or_404(Grados_carreras, idCarrera=carrera_id)
         data = {
@@ -83,7 +85,7 @@ def editarGrado(request, carrera_id):
    
         return render(request, 'grados_carreras/editar.html',data)
 
-
+@login_required
 def Grado(request, carrera_id):
       carrera = get_object_or_404(Grados_carreras, idCarrera=carrera_id)
       print(carrera_id)
