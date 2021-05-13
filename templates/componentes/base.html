@@ -8,30 +8,30 @@
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/W3/w3.css' %}" rel="stylesheet" />
+    {% block headers %}{% endblock %}
     <title>Control de Pagos | {% block title %} {% endblock %}</title>
-    {% block css %}{% endblock %}
 
   </head>
   <body>
-  
-    {% include "componentes/sidebar.html" %} 
 
-    
+  {% if user.is_authenticated %}
+      {% include "componentes/sidebar.html" %} 
+  {% endif %}
+
+
+  
+
 <div id="main">
-<div class="w3-teal">
-  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()"><span id="menu">&#9776;</i></span></button>
-  <div class="w3-display-topmiddle">
-    <div class="w3-container"  >
-      <h3>Control de Pagos</h3>  
-  </div>
+  {% include "componentes/nav.html" %} 
+
   
-  </div>
-  <div class="w3-container">
-    <h3>{% block seccion %}{% endblock %}</h3>
-  </div>
-  
-  
-</div>
+  {% if user.is_authenticated %}
+      <div class="w3-teal">
+        <div class="w3-container">
+          <h3>{% block seccion %}{% endblock %}</h3>
+        </div>
+      </div>
+  {% endif %}
 
 <div class="w3-container" >
     <div class="w3-middle">
@@ -41,7 +41,7 @@
 </div>
 
 </div>
-
+    {% block scripts %} {% endblock %}
     <script src="{% static  'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static  'vendor/jquery/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static  'vendor/popper/popper.min.js' %}"></script>

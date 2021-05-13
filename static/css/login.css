@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 body {
   font-family: "Lato", sans-serif;
-
+  background-image: url('img/utt.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: inherit;
+  background-size: cover;
 }
 
-
-
+.contenedor{
+  position: relative;
+  background-color: #fff;
+  left: 200px;
+  bottom: 100px;
+  float: initial;
+  width: 400px;
+  height: 400px;
+  padding: 50px;
+  
+}
 .main-head{
   height: 100px;
   background: #FFF;
@@ -52,7 +65,7 @@ body {
   }
 
   .login-form{
-      margin-top: 40%;
+      margin-top: 18%;
   }
 
   .register-form{

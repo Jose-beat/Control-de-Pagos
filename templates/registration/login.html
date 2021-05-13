@@ -1,17 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'componentes/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %} ">
-    <link rel="stylesheet" href=" {% static 'vendor/fontawesome/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href=" {% static 'css/login.css' %}">
-    <title>Login</title>
-</head>
-<body>
+{% load static %}
+
+{% block headers %} <link rel="stylesheet" href="{% static 'css/login.css' %}">  {% endblock %}
+
+{% block title %}Acceso{% endblock %}
+
+
+
+{% block content %}
+
+
 {% if request.user.is_authenticated %}
     <script>window.location.href = '/accounts/profile/'; </script>
   {% endif %}
@@ -24,7 +23,7 @@
           <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
         {% endif %}
       <div class="login-form">
-        <form action="" method="post">
+        <form class="contenedor" action="" method="post">
         {% csrf_token %}
           <h3 class="mb-4">Iniciar sesión</h3>
           {% if form.non_field_errors %}
@@ -51,11 +50,4 @@
         </form>
        
     </div>
- 
-    <script src="{% static 'vendor/jquery/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static ' vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    
-</body>
-<footer></footer>
-
-</html>
+{% endblock %} 
