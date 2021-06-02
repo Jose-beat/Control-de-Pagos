@@ -8,12 +8,14 @@
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/W3/w3.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block headers %}{% endblock %}
     <title>Control de Pagos | {% block title %} {% endblock %}</title>
 
   </head>
   <body>
-
+    
   {% if user.is_authenticated %}
       {% include "componentes/sidebar.html" %} 
   {% endif %}

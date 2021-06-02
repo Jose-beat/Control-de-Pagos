@@ -1,0 +1,23 @@
+
+.seccion{
+    position: relative;
+    width: 65%;
+    display: inline-block;
+    
+}
+
+.flecha{
+    position: relative;
+    display: inline-block;
+}
+.icono{
+    position: relative;
+    left: 0%;
+    width: 40px;
+    display: inline-block;
+}
+#titulo_sidebar{
+    height: 62px;
+    align-content: center;
+}
+

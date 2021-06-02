@@ -1,28 +1,30 @@
 <div class="w3-sidebar w3-bar-block  w3-card w3-animate-left" style="display:none" id="mySidebar">
    <!-- <button class="w3-bar-item  w3-teal w3-button " onclick="w3_close()">Cerrar &times;</button>-->
-   <div class="w3-container w3-dark-grey">
+   <button class="w3-button w3-dark-grey w3-block w3-left-align" id="titulo_sidebar" onclick="w3_close()">
     <h4>Menu</h4>
-  </div>
-    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc()">
-        Alumnos <i class="fa fa-caret-down"></i>
+   </button>
+
+    <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc()">
+       <i class="fa fa-graduation-cap icono"></i> <span class="seccion">Alumnos</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
     </button>
-        <div id="demoAcc" class="w3-hide w3-white w3-card">
+    
+    <div id="demoAcc" class="w3-hide w3-white w3-card ">
             <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Lista Alumnos</a>
             <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
-        </div>
+    </div>
    
-<!--boton pagos-->
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc1()" style="margin: 7px 0px 0px 0px;">
-      Pagos <i class="fa fa-caret-down"></i>
-  </button>
+
+    <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc1()">
+        <i class="fa fa-credit-card icono"></i> <span class="seccion">Pagos</span>  <span class="flecha"><i class="fa fa-angle-down"></i></span>
+    </button>
       <div id="demoAcc1" class="w3-hide w3-white w3-card">
         <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
         <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
           
       </div>
 <!--boton Reportes-->
-<button class="w3-button w3-block w3-left-align" onclick="myAccFunc2()" style="margin: 7px 0px 0px 0px;">
-    Reportes <i class="fa fa-caret-down"></i>
+<button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc2()" >
+  <i class="fa fa-file-text icono"></i> <span class="seccion">Reportes </span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
 </button>
   <div id="demoAcc2" class="w3-hide w3-white w3-card">
       <a href="{% url 'reporte' %}" class="w3-bar-item w3-button">Lista de Reportes</a>
@@ -30,30 +32,30 @@
       
   </div>
 <!--boton Grados y Carreras-->
-<button class="w3-button w3-block w3-left-align" onclick="myAccFunc3()" style="margin: 7px 0px 0px 0px;">
-  Grados y Carreras <i class="fa fa-caret-down"></i>
+<button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc3()" >
+  <i class="fa fa-sitemap icono"></i> <span class="seccion">Grados y Carreras </span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
 </button>
   <div id="demoAcc3" class="w3-hide w3-white w3-card">
       <a href="{% url 'registroGrados' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Carrera</a>
       <a href="{% url 'muestraGrados' %}" class="w3-bar-item w3-button">Lista de Carreras</a>
   </div>
 <!--boton Registro de Pago-->
-<button class="w3-button w3-block w3-left-align" onclick="myAccFunc4()" style="margin: 7px 0px 0px 0px;">
-  Registro de Pago <i class="fa fa-caret-down"></i>
+<button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc4()" >
+  <i class="fa fa-list-alt icono"></i> <span class="seccion">Registro de Pago</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
 </button>
   <div id="demoAcc4" class="w3-hide w3-white w3-card" >
       <a href="{% url 'registro_pago' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
       <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
   </div>
   
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc5()">
-    Sesión <i class="fa fa-caret-down"></i>
+  <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
+    <i class="fa fa-user icono"></i> <span class="seccion">Usuario</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
   </button>
     <div id="demoAcc5" class="w3-hide w3-white w3-card">
         <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>
         <a href="{% url 'profile' %}" class="w3-bar-item w3-button">Configurar Perfil</a>
         <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
-        <a href="{% url 'logout' %}" class="w3-bar-item w3-button">Cerrar Sesion</a>
+        <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-danger">Cerrar Sesion</a>
     </div>
   
         
@@ -63,12 +65,22 @@
 
 
 <script>
+  function w3_open() {
+    document.getElementById("mySidebar").style.width = "23%";
+    document.getElementById("mySidebar").style.display = "block";
     
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+
+  /*
     function w3_open() {
         
         let menu = document.getElementById("openNav");
-        document.getElementById("main").style.marginLeft = "25%";
-        document.getElementById("mySidebar").style.width = "25%";
+        document.getElementById("main").style.marginLeft = "23%";
+        document.getElementById("mySidebar").style.width = "23%";
         document.getElementById("mySidebar").style.display = "block";
         document.getElementById("openNav").style.display = 'inline-block';
         
@@ -88,7 +100,7 @@
         menu.onclick=w3_open;
         console.log(menu)
     }
-
+*/
     function myAccFunc() {
         var x = document.getElementById("demoAcc");
         if (x.className.indexOf("w3-show") == -1) {
