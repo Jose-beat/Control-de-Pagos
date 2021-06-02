@@ -3,6 +3,7 @@
 _Este proyecto es una practica para la materia de **Desarrollo de Software** con la creacion de una aplicacion web basada en **Django** que permita la administracion de pagos, grados, alumnos, reportes y usuarios de una escuela._
 
 
+
 ### Instalación 🔧
 
 _Vamos a comenzar clonando el proyecto con el siguiente comando._
