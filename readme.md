@@ -77,7 +77,7 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 * **Fatima Isabel Santiago Reynoso** - *Interfaz y modulo de Pagos* - [Fatima9007](https://github.com/Fatima9007)
 * **Melissa Dominguez Guarneros** - *Documentación* - [Melissa8717-do](https://github.com/Melissa8717-do)
 * **Miguel Sanchez Contreras** - *Sistema de Acceso* - [ayoy147](https://github.com/ayoy147)
-* **Arturo Gonzales Perez** - *Modulo de Reportes* - [Arturo2308](https://github.com/Arturo2308)
+
 
 ---
 Creditos y Saludos a _Andrés Villanueva_ - [Villanuevand](https://github.com/Villanuevand) 😊 Gracias por la Plantilla

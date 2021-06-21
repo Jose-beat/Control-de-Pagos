@@ -1,0 +1,7 @@
+0.0.1: Version Actual
+
+Lista de Cambios Pendientes:
+    . Mensaje de error en el sistema de acceso
+    . Diseño Responsive del sidebar
+    . Verificar ambas secciones de Pagos
+    . Cambiar el diseño de la seccion de vista de registros
