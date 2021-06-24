@@ -23,32 +23,7 @@ window.addEventListener("resize",w3_open)
     document.getElementById("mySidebar").style.display = "none";
   }
 
-  /*
-    function w3_open() {
-        
-        let menu = document.getElementById("openNav");
-        document.getElementById("main").style.marginLeft = "23%";
-        document.getElementById("mySidebar").style.width = "23%";
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("openNav").style.display = 'inline-block';
-        
-        menu.innerHTML="&#10510;"
-        menu.onclick=w3_close;
-        
-    }
 
-    
-    function w3_close() {
-        var menu = document.getElementById("openNav");
-        document.getElementById("main").style.marginLeft = "0%";
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("openNav").style.display = "inline-block";
-
-        menu.innerHTML="&#9776;"
-        menu.onclick=w3_open;
-        console.log(menu)
-    }
-*/
     function myAccFunc() {
         var x = document.getElementById("demoAcc");
         if (x.className.indexOf("w3-show") == -1) {
