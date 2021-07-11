@@ -49,6 +49,8 @@ INSTALLED_APPS = [
 #   <======= Paquetes  ==========>    
     'crispy_forms',
 #   Para los registros
+#   <======= App de usuario alumno  ==========>  
+    'usuari_alumno'
     
 ]
 
