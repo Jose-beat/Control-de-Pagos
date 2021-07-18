@@ -10,7 +10,21 @@
 
 
 {% block content %}
-    <div id="content">
+   
+  {% if user.is_authenticated %}
+       <div id="content_auth">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="text-white-50 mx-auto my-0 text-uppercase">UTT</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">CONTROL DE PAGOS</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="{% url 'lista_pago' %}">Continuar</a>
+                    <a class="btn btn-danger js-scroll-trigger" href="{% url 'logout' %}">Cerrar Sesion</a>
+
+                </div>
+            </div>
+        </div>     
+  {% else %}
+           <div id="content">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
                     <h1 class="text-white-50 mx-auto my-0 text-uppercase">UTT</h1>
@@ -18,8 +32,8 @@
                     <a class="btn btn-primary js-scroll-trigger" href="{% url 'logout' %}">INICIAR</a>
                 </div>
             </div>
-        </div>     
-
+        </div> 
+  {% endif %}
 
 {% endblock %} 
         

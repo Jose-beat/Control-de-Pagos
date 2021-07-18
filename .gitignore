@@ -29,4 +29,8 @@ reportes/__pycache__
 reportes/migrations
 reportes/migrations/__pycache__
 
+usuari_alumno/__pycache__
+usuari_alumno/migrations
+usuari_alumno/migrations/__pycache__
+
 *.sqlite3

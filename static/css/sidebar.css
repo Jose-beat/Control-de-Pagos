@@ -21,3 +21,34 @@
     align-content: center;
 }
 
+
+
+
+
+@media only screen and (max-width: 992px) {
+ 
+    .contenedor{
+      position: relative;
+      
+      left: 10%;
+      top: 100px;
+      width: 400px;
+      height: 400px;
+      padding: 50px;
+      
+    }
+  
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    .contenedor{
+      position: relative;
+      
+      margin: 0;
+      left: initial;
+      top: initial;
+      width: 100%;
+    }
+  
+  }

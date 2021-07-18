@@ -7,12 +7,14 @@ window.addEventListener("resize",w3_open)
   function w3_open(event) {
 
     console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
-    
+    let width = document.body.clientWidth
     if( document.body.clientWidth > 1069){
 
         tamanioActual = "23%";
-    }else if(document.body.clientWidth < 1069){
+    }else if(document.body.clientWidth < 1069 && document.body.clientWidth > 450 ){
         tamanioActual = "50%";
+    }else if(document.body.clientWidth < 450){
+      tamanioActual = "100%";
     }
     document.getElementById("mySidebar").style.width = tamanioActual;
     document.getElementById("mySidebar").style.display = "block";

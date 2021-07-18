@@ -48,8 +48,8 @@
       <a href="{% url 'lista_pago' %}" class="w3-bar-item w3-button">Lista de Pago</a>
   </div>
   
-  <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
-    <i class="fa fa-user icono"></i> <span class="seccion">Usuario</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
+  <button id="btnUsr" class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
+    <i class="fa fa-user icono"></i> <span class="seccion">{{request.user}}</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
   </button>
     <div id="demoAcc5" class="w3-hide w3-white w3-card">
         <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>

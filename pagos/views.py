@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import permission_required
 from .models import Pago 
 from .forms import PagoForm
 from django.urls import reverse
@@ -8,8 +9,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'pagos/index.html')
 
-
+@permission_required('alumno.can_edit')
 @login_required
+
 def registro_pago(request):
     data={
         'form': PagoForm()
