@@ -10,54 +10,91 @@
     
     <form   action="" method="POST">
         {% csrf_token %}
+
+        
         <div class="container">
             <div class="row justify-content-end">
 
+                <div class="row align-items-center justify-content-start">
+                        <div class="col-sm-5">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                  <div class="col-md-4">
+                                    <img id="profileImage" src="{% static 'css/img/profile.jpg' %}" class="img-fluid rounded-start" alt="Imagen del Perfil">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Foto de Perfil</h5>
+                                    
+                                      <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" type="button">Button</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                        </div>
+                        
+                        
+
+                </div>
             
                 <div class="row align-items-center justify-content-start">
                     
-                        <div class="col-4" >
+                        <div class="col-sm-5" >
                             {{form.nombre|as_crispy_field}}
+                             
                         </div>
-                        <div class="col-sm-3 inactive">
+                        <div class="col-sm-5 inactive">
                             {{form.matricula|as_crispy_field}}
                         </div>
                         
                 </div>
 
                 <div class="row align-items-center justify-content-start">
-                    <div class="col-4" >
+                    <div class="col-sm-5" >
                         {{form.apellidos|as_crispy_field}}
                     </div>
-                            
-                        <div class="col-6" >
-                            {{form.domicilio|as_crispy_field}}
+                    <div class="col-sm-5" >
+                            {{form.grado|as_crispy_field}}
                         </div>
+                            
+                     
                         
                 </div>
                 <div class="row align-items-center justify-content-start">
-                    <div class="col-4" >
+                    <div class="col-sm-5" >
                         {{form.telefono|as_crispy_field}}
                     </div>
                             
-                        <div class="col-2" >
-                            {{form.grado|as_crispy_field}}
-                        </div>
-                        <div class="col-3" >
+                        
+                        <div class="col-sm-5" >
                             {{form.beca|as_crispy_field}}
                         </div>
                         
                 </div>
                 <div class="row align-items-center justify-content-start">
                     
-                
-                        <div class="col-4" >
-                            {{form.email|as_crispy_field}}
+              
+
+                        <div class="col-sm-5" >
+                            {{form.domicilio|as_crispy_field}}
                         </div>
-                         <div class="col-4" >
+
+                        <div class="col-sm-5" >
                             {{form.carrera|as_crispy_field}}
                         </div>
 
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    
+                
+                        <div class="col-sm-5" >
+                            {{form.email|as_crispy_field}}
+                        </div>
+
+                       
                 </div>
                 <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">
                     <input class="btn btn-primary col-2 " type="submit" value="Guardar">

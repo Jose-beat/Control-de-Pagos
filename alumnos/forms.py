@@ -2,6 +2,8 @@ from django import forms
 from .updates import act_matricula
 from grados_carreras.models import Grados_carreras
 from .models import Alumno
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout
 
 
 carreras = []
@@ -15,6 +17,14 @@ except:
     carreras = []
 
 class RegistroAlumnos(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_class = 'alumno-form'
+        self.helper.layout = Layout(
+            'nombre',
+            
+        )
   
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
     nombre =  forms.CharField()
@@ -30,7 +40,6 @@ class RegistroAlumnos(forms.Form):
         'value': act_matricula
         
         })
-
 
 class EditAlumnoForm(forms.ModelForm):
 

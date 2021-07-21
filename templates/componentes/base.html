@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
     <link rel="stylesheet" href="{% static 'css/nav.css' %}">
-    
     {% block headers %}{% endblock %}
     <title>Control de Pagos | {% block title %} {% endblock %}</title>
 
@@ -29,10 +28,9 @@
   {% include "componentes/nav.html" %} 
 
   
-<div class="container">
-  
 
-      
+<div class="container">
+  <div class="row">
       {% if user.is_authenticated %}
       
         <div  id="marco" class="card">
@@ -53,7 +51,7 @@
         
     </div>
     
-
+    </div>
 
 </div>
     {% block scripts %} {% endblock %}

@@ -1,0 +1,54 @@
+
+.seccion{
+    position: relative;
+    width: 65%;
+    display: inline-block;
+    
+}
+
+.flecha{
+    position: relative;
+    display: inline-block;
+}
+.icono{
+    position: relative;
+    left: 0%;
+    width: 40px;
+    display: inline-block;
+}
+#titulo_sidebar{
+    height: 52px;
+    align-content: center;
+}
+
+
+
+
+
+@media only screen and (max-width: 992px) {
+ 
+    .contenedor{
+      position: relative;
+      
+      left: 10%;
+      top: 100px;
+      width: 400px;
+      height: 400px;
+      padding: 50px;
+      
+    }
+  
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    .contenedor{
+      position: relative;
+      
+      margin: 0;
+      left: initial;
+      top: initial;
+      width: 100%;
+    }
+  
+  }
