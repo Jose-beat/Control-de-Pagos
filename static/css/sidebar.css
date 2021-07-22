@@ -1,4 +1,15 @@
-
+#mySidebar{
+  display:none;
+  z-index: 3;
+}
+#back{
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 .seccion{
     position: relative;
     width: 65%;
@@ -16,6 +27,7 @@
     width: 40px;
     display: inline-block;
 }
+
 #titulo_sidebar{
     height: 52px;
     align-content: center;

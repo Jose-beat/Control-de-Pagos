@@ -16,7 +16,9 @@
 
   </head>
   <body>
-    
+    <div id="back"  >
+  
+    </div>
   {% if user.is_authenticated %}
       {% include "componentes/sidebar.html" %} 
   {% endif %}
@@ -29,7 +31,7 @@
 
   
 
-<div class="container">
+<div id="contenido"  class="container">
   <div class="row">
       {% if user.is_authenticated %}
       

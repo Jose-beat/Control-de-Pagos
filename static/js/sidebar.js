@@ -1,10 +1,13 @@
 
 let tamanioActual;
 
-window.addEventListener("resize",w3_open)
+window.addEventListener("resize",window_option)
 
+  function window_option(event){
+    w3_close();
+  }
 
-  function w3_open(event) {
+  function w3_open() {
 
     console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
     let width = document.body.clientWidth
@@ -12,17 +15,23 @@ window.addEventListener("resize",w3_open)
 
         tamanioActual = "23%";
     }else if(document.body.clientWidth < 1069 && document.body.clientWidth > 450 ){
-        tamanioActual = "50%";
+        tamanioActual = "40%";
     }else if(document.body.clientWidth < 450){
       tamanioActual = "100%";
     }
+    
     document.getElementById("mySidebar").style.width = tamanioActual;
     document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("back").style.display = "block";
+    document.getElementById("back").addEventListener("click", w3_close)
+    
  
   }
   
   function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("back").style.display = "none";
+   
   }
 
 
