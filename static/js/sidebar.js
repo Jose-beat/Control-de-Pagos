@@ -12,11 +12,10 @@ window.addEventListener("resize",window_option)
     console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
     let width = document.body.clientWidth
     if( document.body.clientWidth > 1069){
-
-        tamanioActual = "23%";
-    }else if(document.body.clientWidth < 1069 && document.body.clientWidth > 450 ){
+        tamanioActual = "27%";
+    }else if(document.body.clientWidth < 1069 && document.body.clientWidth > 660 ){
         tamanioActual = "40%";
-    }else if(document.body.clientWidth < 450){
+    }else if(document.body.clientWidth < 770 && document.body.clientWidth > 467){
       tamanioActual = "100%";
     }
     
