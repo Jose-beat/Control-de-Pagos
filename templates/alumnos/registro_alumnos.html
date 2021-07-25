@@ -2,31 +2,40 @@
 {% load static %}
 {% block title %}Registrar Alumno{% endblock %}
 {% block seccion %}Registro de Alumnos{% endblock %}
-{% block headers %}<link rel="stylesheet" href="{% static 'css/formComponent.css' %}">{% endblock %}
+{% block headers %}
+    
+{% endblock %}
+
 {% block content %}
 {% include "componentes/alerts.html" %} 
     {% load crispy_forms_tags %}
-    <form   action="" method="POST">
+    <form   action="" method="POST" enctype="multipart/form-data" >
         {% csrf_token %}
+
         <div class="container">
             
     
             <div class="row justify-content-end">
                 
                 <div class="row align-items-center justify-content-start">
-                        <div class="col-sm-5">
-                            <div class="card mb-3" style="max-width: 540px;">
+
+                        <div class="col-sm-13">
+                            <div class="card mb-3" style="max-width: 840px;">
                                 <div class="row g-0">
                                   <div class="col-md-4">
+                        
                                     <img id="profileImage" src="{% static 'css/img/profile.jpg' %}" class="img-fluid rounded-start" alt="Imagen del Perfil">
+                                    
+                                    
                                   </div>
                                   <div class="col-md-8">
                                     <div class="card-body">
-                                      <h5 class="card-title">Foto de Perfil</h5>
-                                    
-                                      <div class="d-grid gap-2">
-                                        <button class="btn btn-primary" type="button">Button</button>
-                                      </div>
+                                        <div class="input-group mb-3" >
+                                            {{forms.imagen_perfil|as_crispy_field}}
+                                        </div>
+                                        
+                                      
+                    
                                     </div>
                                   </div>
                                 </div>
@@ -39,7 +48,9 @@
                 </div>
                 
                 <div class="row align-items-center justify-content-start">
-                        
+
+
+
                         <div class="col-sm-5 form-floating" >
                             {{forms.nombre|as_crispy_field}}
                             
@@ -56,10 +67,15 @@
                         {{forms.apellidos|as_crispy_field}}
                     </div>
 
-                     <div class="col-sm-5" >
-                            {{forms.grado|as_crispy_field}}
-                        </div>
-                           
+                     <div class="col-sm-2" >
+                        {{forms.grado|as_crispy_field}}
+                    </div>
+                        
+                    
+                    <div class="col-sm-3" >
+                        {{forms.grupo|as_crispy_field}}
+                    </div>
+                        
                 </div>
 
                 <div class="row align-items-center justify-content-start">
@@ -77,9 +93,9 @@
                     <div class="col-sm-5" >
                         {{forms.domicilio|as_crispy_field}}
                     </div>
-                      <div class="col-sm-5" >
+                    <div class="col-sm-5" >
                             {{forms.carrera|as_crispy_field}}
-                        </div>
+                    </div>
                             
                        
                 </div>
@@ -89,7 +105,27 @@
                         <div class="col-sm-5" >
                             {{forms.email|as_crispy_field}}
                         </div>
+                        
                        
+
+                </div>
+                <div class="row align-items-center justify-content-start">
+                    
+                
+                    
+                    <div class="col-sm-5" >
+                        {{forms.justificacion_estado|as_crispy_field}}
+                    </div>
+                   
+
+                </div>
+                <div class="row align-items-center justify-content-start">
+                        
+                    
+                    <div class="col-sm-5" >
+                        {{forms.estado|as_crispy_field}}
+                    </div>
+                
 
                 </div>
                 <div class="row align-items-center justify-content-start" style="margin: 10px -23px 0px 0px;">

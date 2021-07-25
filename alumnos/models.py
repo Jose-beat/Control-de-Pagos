@@ -10,8 +10,12 @@ class Alumno(models.Model):
     domicilio = models.CharField(max_length=80)
     telefono = models.CharField(max_length=10)
     grado = models.IntegerField()
+    grupo = models.CharField(max_length=2, default="A")
     email = models.EmailField(max_length=254)
     beca = models.IntegerField()
+    imagen_perfil = models.ImageField(upload_to='alumnos/')
+    estado = models.BooleanField(default=True)
+    justificacion_estado = models.CharField(max_length=100, default="")
     carrera = models.ForeignKey(Grados_carreras, on_delete=models.CASCADE)
     class Meta:
         ordering=['matricula']

@@ -1,0 +1,11 @@
+#profile_image{
+    width: 50%;
+    height: 50%;
+}
+
+.labelex {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: none;
+}

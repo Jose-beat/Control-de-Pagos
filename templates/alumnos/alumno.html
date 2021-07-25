@@ -2,14 +2,17 @@
 
 {% load static %}
 {% block title %}Informacion del Alumno{% endblock %}
+{% block headers %}{% endblock %}
 {% block seccion %}Informacion del Alumno{% endblock %}
 {% block content %}
 
 <br><br>
         <ul class="w3-ul w3-card-4 w3-large" style="width:50%; position: relative; left: 300px;">
             <li class="w3-grey"><h3>Datos Personales</h3></li>
+            <img id="profile_image" src="{{  alumno.imagen_perfil.url }}" alt="">
             <li><strong>Edicion</strong> <a href="{% url 'editarAlumno' alumno.matricula %}">Editar</a></li>    
             <li><strong>Nombre: </strong>  {{alumno.nombre}}</li>
+            <li><strong>Nombre: </strong>  {{alumno.imagen_perfil}}</li>
             <li><strong>Apellidos: </strong> {{alumno.apellidos}}</li>
             <li><strong>Domiciilo: </strong> {{alumno.domicilio}}</li>
             <li class="w3-grey"><h3>Datos Academicos</h3></li>

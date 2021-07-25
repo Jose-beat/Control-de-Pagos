@@ -3,7 +3,7 @@ from .updates import act_matricula
 from grados_carreras.models import Grados_carreras
 from .models import Alumno
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout
+from crispy_forms.layout import Layout, Fieldset, Field
 
 
 carreras = []
@@ -18,14 +18,8 @@ except:
 
 class RegistroAlumnos(forms.Form):
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.form_class = 'alumno-form'
-        self.helper.layout = Layout(
-            'nombre',
-            
-        )
+
+        
   
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
     nombre =  forms.CharField()
@@ -33,10 +27,18 @@ class RegistroAlumnos(forms.Form):
     domicilio = forms.CharField()
     telefono = forms.CharField()
     grado =  forms.IntegerField()
+    grupo = forms.CharField()
     #grado = forms.MultipleChoiceField(choices=GRADOS)
     email = forms.EmailField( )
     beca = forms.IntegerField() 
     carrera = forms.ChoiceField(choices=carreras, required=True, label="Seleccione la carrera")
+    imagen_perfil = forms.ImageField(label='Foto de Perfil')
+    estado = forms.BooleanField()
+    justificacion_estado = forms.CharField()
+    imagen_perfil.widget.attrs.update({
+        'id' : "imagenPerfil",
+      
+    })
     matricula.widget.attrs.update({
         'value': act_matricula
         

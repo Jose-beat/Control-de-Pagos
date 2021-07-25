@@ -18,9 +18,9 @@ def registroAlumnos(request):
       
       act_matricula()
       if request.method == 'POST':
-            form = AlumnoForm(request.POST)
+            form = AlumnoForm(request.POST ,request.FILES)
             if form.is_valid():                  
-                  
+                  print("SI HAY VALIDEZ")
                   form_data = form.cleaned_data
                   try:
                         alumn = Alumno()
@@ -33,9 +33,13 @@ def registroAlumnos(request):
                               domicilio = form_data.get('domicilio'),
                               telefono  = form_data.get('telefono'),
                               grado     = form_data.get('grado'),
+                              grupo     = form_data.get('grupo'),                                
                               carrera = alumn.grado_carrera,
                               email     = form_data.get('email'),
                               beca      = form_data.get('beca'),
+                              imagen_perfil = form_data.get('imagen_perfil'),
+                              estado = form_data.get('estado'),
+                              justificacion_estado = form_data.get('justificacion_estado'),
                         )
 
                         
@@ -58,6 +62,7 @@ def registroAlumnos(request):
                         return redirect(reverse('registroAlumnos'))
                   #new_alumno = form.save()
       else:
+            print("NO HAY VALIDEZ")
             form = AlumnoForm()
 
       
@@ -97,11 +102,15 @@ def alumno(request, alumno_id):
 def editarAlumno(request, alumno_id):
       alumno =  get_object_or_404(Alumno, matricula=alumno_id)
       data = {
-        'form': EditAlumnoForm(instance=alumno)
+        'form': EditAlumnoForm(instance=alumno),
+        'alumno': alumno
       }
       if request.method =='POST':
-            formulario = EditAlumnoForm(data=request.POST, instance=alumno)
+            
+            formulario = EditAlumnoForm(request.POST,request.FILES, instance=alumno)
+            print("si HAY VALIDEZ" + str(formulario.is_valid()))
             if formulario.is_valid():
+                  print("si HAY MAS VALIDEZ")
                   formulario.save()
                   return redirect(to="muestraAlumnos")
             data["form"] = formulario
