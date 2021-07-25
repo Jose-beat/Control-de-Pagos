@@ -111,7 +111,12 @@
                 </div>
                 <div class="row align-items-center justify-content-start">
                     
-                
+                    <div class="col-sm-5"  style="margin-top: 20px; margin-bottom: 20px;" >
+                        <div class="form-check form-switch">
+                            {{forms.estado|as_crispy_field}}
+                        </div>
+                    </div>
+                    
                     
                     <div class="col-sm-5" >
                         {{forms.justificacion_estado|as_crispy_field}}
@@ -121,10 +126,9 @@
                 </div>
                 <div class="row align-items-center justify-content-start">
                         
+                   
+                        
                     
-                    <div class="col-sm-5" >
-                        {{forms.estado|as_crispy_field}}
-                    </div>
                 
 
                 </div>
