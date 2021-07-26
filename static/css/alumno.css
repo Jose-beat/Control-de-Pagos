@@ -9,3 +9,14 @@
     white-space: nowrap;
     display: none;
 }
+
+.sect{
+    display: inline-block;
+    width: 85px;
+    
+    margin-right: 1%;
+}
+.contenido{
+    display: inline-block;
+    
+}
