@@ -7,6 +7,10 @@ from crispy_forms.layout import Layout, Fieldset, Field
 
 
 carreras = []
+#Añadir selectores en algunos formularios
+justificaciones = [
+
+]
 
 try:
     carrera = Grados_carreras.objects.all()
