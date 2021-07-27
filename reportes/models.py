@@ -1,6 +1,7 @@
 from django.db import models
 from alumnos.models import Alumno
 from pagos.models import Pago
+
 class Reportes(models.Model):
     
     idReporte = models.IntegerField(primary_key=True,  default=0000 )

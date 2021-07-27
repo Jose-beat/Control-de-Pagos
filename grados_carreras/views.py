@@ -35,6 +35,7 @@ def muestraGrados(request):
       return render(request, 'grados_carreras/lista_carrera.html', {'grados' : grados})
 
 @login_required
+
 def registroGrados(request):
 
       if request.method == 'POST':
@@ -47,6 +48,7 @@ def registroGrados(request):
                               idCarrera=form_data.get('idCarrera'),
                               carrera=form_data.get('carrera'),
                               grado=form_data.get('grado'),
+                              cantidad_grupos=form_data.get('cantidad_grupos'),
                         )
                         messages.success(
                             request, 'La carrera ha sido creado exitosamente.')

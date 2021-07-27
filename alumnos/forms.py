@@ -5,7 +5,18 @@ from .models import Alumno
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, Field
 
-
+grupo_lista = [
+    ('A','a'),
+    ('B','b'),
+    ('C','c'),
+    ('D','d'),
+    ('E','e'),
+    ('F','f'),
+    ('G','g'),
+    ('H','h'),
+    ('I','i'),
+    ('J','j'),
+]
 carreras = []
 #Añadir selectores en algunos formularios
 justificaciones = [
@@ -14,24 +25,25 @@ justificaciones = [
 
 try:
     carrera = Grados_carreras.objects.all()
+    numero_grupos = 0
     for i in carrera:
      carreras.append((i.idCarrera, i.carrera))
+     numero_grupos = i.cantidad_grupos
      print(carreras)
+    
+    
 except:
     carreras = []
 
-class RegistroAlumnos(forms.Form):
-    
 
-        
-  
+class RegistroAlumnos(forms.Form):
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
     nombre =  forms.CharField()
     apellidos = forms.CharField()
     domicilio = forms.CharField()
     telefono = forms.CharField()
     grado =  forms.IntegerField()
-    grupo = forms.CharField()
+    grupo = forms.ChoiceField(choices=grupo_lista[0:numero_grupos], required = True, label="Grupo")
     #grado = forms.MultipleChoiceField(choices=GRADOS)
     email = forms.EmailField( )
     beca = forms.IntegerField() 
