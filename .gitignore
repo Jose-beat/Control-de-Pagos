@@ -33,4 +33,13 @@ usuari_alumno/__pycache__
 usuari_alumno/migrations
 usuari_alumno/migrations/__pycache__
 
+tipo_pago/__pycache__
+tipo_pago/migrations
+tipo_pago/migrations/__pycache__
+
+media/profiles/*
+media/alumnos/*
+
+!profile.jpg
+
 *.sqlite3

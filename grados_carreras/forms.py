@@ -1,3 +1,4 @@
+from django.forms.widgets import SelectMultiple, Select
 from django import forms
 from .models import Grados_carreras
 
@@ -15,7 +16,7 @@ for i in range(1,13):
 
 class RegistroGrados(forms.Form):
   
-    idCarrera = forms.IntegerField( widget= forms.NumberInput())
+    idCarrera = forms.CharField(max_length=5)
     carrera =  forms.CharField()
     nivel = forms.ChoiceField(choices=NIVEL, label="Nivel de Estudio")
     grado = forms.ChoiceField(choices=GRADOS, label="Cantidad de Grados")
@@ -28,9 +29,8 @@ class EditGradoForm(forms.ModelForm):
     class Meta:
 
         model=Grados_carreras
-        fields = '__all__'
-
+        fields = ['idCarrera', 'carrera', 'nivel', 'grado', 'cantidad_grupos']
+        
         widgets = {
-            #"fecha": forms.NumberInput(attrs={'type': 'date'})
+            'nivel': Select(choices=NIVEL)
         }
-    

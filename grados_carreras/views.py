@@ -47,6 +47,7 @@ def registroGrados(request):
                         GC = model.objects.create(
                               idCarrera=form_data.get('idCarrera'),
                               carrera=form_data.get('carrera'),
+                              nivel = form_data.get('nivel'),
                               grado=form_data.get('grado'),
                               cantidad_grupos=form_data.get('cantidad_grupos'),
                         )

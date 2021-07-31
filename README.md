@@ -4,6 +4,7 @@ _Este proyecto es una practica para la materia de **Desarrollo de Software** con
 
 
 
+
 ### Instalación 🔧
 
 _Vamos a comenzar clonando el proyecto con el siguiente comando._
@@ -63,6 +64,19 @@ _Esta aplicacion fue construida con las siguientes herramientas:_
 * [Django](https://www.djangoproject.com/) - Framework para construir la aplicacion web
 * [Pillow](https://pypi.org/project/Pillow/) - Libreria para subir imagenes al servidor
 * [Crispy-Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - Libreria para el manejo de formularios en Django
+
+## Nota de Versiones ⏱
+_Se describiran las versiones actuales y futuras para tener mejor perspectivas de los cambios:_
+* [v0.0.1](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.1) - Version de Origen que contiene la fase mas basica de la aplicacion
+* [v0.0.2](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.2) - Version con sidebar y navBar corregidos
+* [v0.0.3](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.3) - Se añadieron Modulos a la aplicacion
+* [v0.0.4](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.4) - Correccion Responsive de la aplicacion
+* [v0.0.5](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.5) -  Cambios en la estructura de base de datos y algunos formularios, ademas de los seeders y la adicion del modulo que se encargara de registrar los pagos y deudas.
+
+* v0.1.0 - Se añadieron Mas usuarios. Por lo que ahora la aplicacion puede crear un usuario ADMIN y un usuario ALUMNO, el cual tendra acceso controlado por el admin
+* v0.2.0 - Se cambiaron las estructuras de todos los formularios para hacerlos mas dinamicos con las ventanas del navegador (Se añadio NodeJs como conexion con el DOM y la BD)
+* v1.0.0 - La aplicacion ya es funcional en la mayoria de sus modulos y puede ejecutarse en modo produccion
+
 
 
 ## Versionado 📌

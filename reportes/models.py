@@ -11,7 +11,8 @@ class Reportes(models.Model):
     grado = models.IntegerField(verbose_name="Grado", default=0)
     carrera = models.CharField(max_length=100, blank=True, null=True)
     cantidadDeudo = models.IntegerField(verbose_name="Monto a Pagar", default=0)
-
+    nombrePago = models.IntegerField(verbose_name="Nombre del Pago", default=0)
+    descripcionPago = models.IntegerField(verbose_name="Descripcion del Pago", default=0)
     class Meta:
         verbose_name = "Reporte"
         verbose_name_plural = "Reportes"
