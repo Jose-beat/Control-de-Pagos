@@ -2,20 +2,22 @@
 
 {% load static %}
 
-{% block title %}Editar Pago{% endblock %}
-{% block seccion %}Editar Pago{% endblock %}
+{% block title %}Registro Cobros {% endblock %}
+{% block seccion %}Registrar Cobros{% endblock %}
 
 {% block content %}
 
-{% load crispy_forms_tags %}
+    {% load crispy_forms_tags %}
+    <br><br>
 
-<br><br>
+    <div class="content">
         <form action="" method="post">
           {% csrf_token %}
   
           <div class="container">
             <div class="row justify-content-end">
-            
+              <div class="row align-items-center justify-content-start">
+              
           <div class="main">
             <div class="col-md-8 col-sm-12">
               <div class="login-form">
@@ -38,7 +40,7 @@
                       {{form.monto|as_crispy_field}}
                     </div>
                   </div><br>
-              
+                
                   <div class="form-group">
                     
                     <div class="input-group">
@@ -48,20 +50,22 @@
                   <div class="form-group">
                     
                     <div class="input-group">
-                      {{form.tipo_pago|as_crispy_field}}
+                      {{form.tipo_Cobro|as_crispy_field}}
                     </div>
                   </div><br>
 
-          <div class="d-flex justtify-content-end">
-            <input type="reset" value="Cancelar" class="btn btn-secondary">
-            &nbsp;
-            <input type="submit" value="Guardar" class="btn btn-primary">
+                  <div class="d-flex justtify-content-end">
+                    <input type="reset" value="Cancelar" class="btn btn-secondary">
+                    &nbsp;
+                    <input type="submit" value="Guardar" class="btn btn-primary">
+                  </div>
+                </div></div>
+              </div></div>
+                </form>
+                {{mensaje}}
+              </div>
+            </div>
           </div>
-        </form>
-        {{mensaje}}
-      </div>
-    </div>
-  </div>
-</div>
-  
-    {% endblock %}
+        </div>
+
+{% endblock %}

@@ -2,8 +2,8 @@
 
 {% load static %}
 
-{% block title %}Lista Pagos{% endblock %}
-{% block seccion %}Lista Pagos{% endblock %}
+{% block title %}Lista Cobros{% endblock %}
+{% block seccion %}Lista Cobros{% endblock %}
 
 {% block content %}
 <br><br>
@@ -32,7 +32,7 @@
         </tr>
     </thead>
     <tbody>
-        {% for p in pagos %}
+        {% for p in cobros %}
         <tr>
             <td></td>
             <td>{{ p.nombre }}</td>
@@ -40,7 +40,7 @@
             <td>{{ p.monto }}</td>
             
             <td>{{ p.fecha }}</td>
-            <td>{{ p.tipo_pago }}</td>
+            <td>{{ p.tipo_Cobro }}</td>
             <td>
                 <div class="btn-group-vertical">
                 <a href="{% url 'editar_pago' p.id %}" class="btn btn-primary btn-sm">Editar</a>
