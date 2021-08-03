@@ -67,6 +67,8 @@ def registroAlumnos(request):
 
       
       return render(request, "alumnos/registro_alumnos.html", {'forms': form})
+
+      
 @login_required
 def muestraAlumnos(request):
 
