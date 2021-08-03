@@ -20,7 +20,7 @@ grupo_lista = [
 CARRERAS = []
 #Añadir selectores en algunos formularios
 justificaciones = [
-
+    
 ]
 
 try:
