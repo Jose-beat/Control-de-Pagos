@@ -20,11 +20,17 @@ class UserCreationFormWithEmail(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['avatar', 'bio', 'link']
+        fields = ['avatar', 'bio', 'link', 'telefono', 'nombre', 'apellidos', 'clave','domicilio']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file mt-3'}),
-            'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':3, 'placeholder':'Biografía'}),
+            'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'Biografía'}),
             'link': forms.URLInput(attrs={'class':'form-control mt-3', 'placeholder':'Enlace'}),
+            'telefono': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'telefono'}),
+            'nombre': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'nombre'}),
+            'apellidos': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'apellidos'}),
+            'clave': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'ID'}),
+            'domicilio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'Domicilio'}),
+
         }
 
 
