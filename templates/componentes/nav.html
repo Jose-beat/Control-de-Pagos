@@ -1,3 +1,4 @@
+{% load static %}
 {% if user.is_authenticated %}
   <div class="w3-teal" id="nave">
   <button id="openNav" class="w3-button w3-teal w3-xlarge w3-hover-black" onclick="w3_open()"><span id="menu">&#9776;</i></span></button>
@@ -41,3 +42,5 @@
   
 </nav>
 {% endif %}
+
+{% block scripts %}<script defer src="{% static  'js/nav.js' %}"></script>{% endblock %}

@@ -1,25 +1,9 @@
+{% load static %}
 <div class="w3-sidebar w3-bar-block  w3-card w3-animate-left" id="mySidebar">
    <!-- <button class="w3-bar-item  w3-teal w3-button " onclick="w3_close()">Cerrar &times;</button>-->
    <button class="w3-button  w3-block w3-left-align w3-teal" id="titulo_sidebar" onclick="w3_close()">
     <i class="fa fa-arrow-left icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-github-alt"></i></span>
    </button>
-   {% if request.user.profile.avatar %}
-    <img id="imgSidebarUser" src="{{request.user.profile.avatar.url}}" alt="Imagen_de_Perfil" style="width:100%">
-   {% else %}
-   
-   {% endif %}
- 
-  
-
-   <button id="btnUsr" class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
-    <i class="fa fa-user icono"></i> <span class="seccion">{{request.user}}</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
-  </button>
-    <div id="demoAcc5" class="w3-hide w3-white w3-card">
-        <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>
-        <a href="{% url 'profile' %}" class="w3-bar-item w3-button">Configurar Perfil</a>
-        <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
-        <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-danger">Cerrar Sesion</a>
-    </div>
     <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc()">
        <i class="fa fa-graduation-cap icono"></i> <span class="seccion">Alumnos</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
     </button>
@@ -57,8 +41,22 @@
       <a href="#" class="w3-bar-item w3-button">Lista de Pago</a>
   </div>
 
- 
+  <button id="btnUsr" class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
+    {% if request.user.profile.avatar %}
+          <img id="imgUserSD" src="{{request.user.profile.avatar.url}}" alt="Image_Profile">   
+    {% else %}
+          <i class="fa fa-user icono"></i>       
+    {% endif %}
+    <span class="seccion">{{request.user}}</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
+  </button>
+    <div id="demoAcc5" class="w3-hide w3-white w3-card">
+        <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>
+        <a href="{% url 'profile' %}" class="w3-bar-item w3-button">Configurar Perfil</a>
+        <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
+        <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-danger">Cerrar Sesion</a>
+    </div>
   
         
 </div>
 
+{% block scripts %} <script defer src="{% static  'js/sidebar.js' %}"></script> {% endblock %}

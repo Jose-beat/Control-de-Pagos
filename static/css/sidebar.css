@@ -33,6 +33,16 @@
     align-content: center;
 }
 
+#imgUserSD{
+  position: relative;
+  display: inline-block;
+  object-fit: cover;
+  border-radius: 50px;
+  left: 0%;
+  width: 40px;
+  height: 40px;
+  
+}
 
 
 
