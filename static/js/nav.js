@@ -10,12 +10,15 @@ function dropUser(event) {
 
     document.getElementById("dropUser").style.display = "block";
     document.getElementById("btnUsr").style.display = "none";
+    document.getElementById("imgUser").style.display = "inline-block";
+    document.getElementById("imgSidebarUser").style.display = "none";
 
   }else if(document.body.clientWidth < 625){
 
     document.getElementById("dropUser").style.display = "none";
     document.getElementById("btnUsr").style.display = "block";
-      
+    document.getElementById("imgUser").style.display = "none";
+    document.getElementById("imgSidebarUser").style.display = "block";
   }
   
 

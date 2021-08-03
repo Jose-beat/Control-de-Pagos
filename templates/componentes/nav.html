@@ -9,7 +9,15 @@
   
     <div id="dropUser" class="w3-dropdown-click w3-display-topright">
       
-      <button onclick="dropDownUser()" id="ddu" class="w3-button"><i id="iconUser"  class="fa fa-user"></i>   {{request.user}} <i class="fa fa-angle-down"></i></button>
+      <button onclick="dropDownUser()" id="ddu" class="w3-button">
+        {% if request.user.profile.avatar %}
+          <img id="imgUser" src="{{request.user.profile.avatar.url}}" alt="">   
+        {% else %}
+          <i id="iconUser"  class="fa fa-user"></i>
+        {% endif %}
+        
+        
+        {{request.user}} <i class="fa fa-angle-down"></i></button>
       <div   id="listAction" class="w3-dropdown-content w3-bar-block w3-card-4" >
       <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Crear Perfil</a>
       <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
