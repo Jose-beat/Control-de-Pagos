@@ -27,12 +27,14 @@
                     </div>
                   </div><br>
                     <div class="input-group">
-                        {{form.grado|as_crispy_field}}
+                        {{form.cantidad_grados|as_crispy_field}}
                     </div>
                     <div class="input-group">
                       {{form.nivel|as_crispy_field}}
                     </div>
-                    
+                    <div class="input-group">
+                      {{form.cantidad_grupos|as_crispy_field}}
+                  </div>
                     </div><br>
                 <div class="d-flex justtify-content-end">
                   <input type="reset" value="Cancelar" class="btn btn-secondary">

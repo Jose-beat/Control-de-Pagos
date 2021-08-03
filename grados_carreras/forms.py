@@ -19,7 +19,7 @@ class RegistroGrados(forms.Form):
     idCarrera = forms.CharField(max_length=5)
     carrera =  forms.CharField()
     nivel = forms.ChoiceField(choices=NIVEL, label="Nivel de Estudio")
-    grado = forms.ChoiceField(choices=GRADOS, label="Cantidad de Grados")
+    cantidad_grados = forms.ChoiceField(choices=GRADOS, label="Cantidad de Grados")
     cantidad_grupos = forms.ChoiceField(choices=GRUPOS, label="Cantidad de Grupos")
     
 
@@ -29,7 +29,7 @@ class EditGradoForm(forms.ModelForm):
     class Meta:
 
         model=Grados_carreras
-        fields = ['idCarrera', 'carrera', 'nivel', 'grado', 'cantidad_grupos']
+        fields = ['idCarrera', 'carrera', 'nivel', 'cantidad_grados', 'cantidad_grupos']
         
         widgets = {
             'nivel': Select(choices=NIVEL)

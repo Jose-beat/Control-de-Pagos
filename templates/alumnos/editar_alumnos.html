@@ -1,8 +1,8 @@
 {% extends 'componentes/base.html' %}
 
 {% load static %}
-{% block title %}Registrar Alumno{% endblock %}
-{% block seccion %}Registro de Alumnos{% endblock %}
+{% block title %}Editar Informacion del Alumno{% endblock %}
+{% block seccion %}Editar Informacion del Alumno{% endblock %}
 {% block content %}
 {% include "componentes/alerts.html" %} 
     {% load crispy_forms_tags %}
@@ -19,7 +19,7 @@
                 <div class="row align-items-center justify-content-start">
                         
                     <div class="col-sm-13">
-                            <div class="card mb-3" style="max-width: 840px;">
+                            <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
                                   <div class="col-md-4">
                                     <img id="profileImage" src="{{  alumno.imagen_perfil.url }}" class="img-fluid rounded-start" alt="Imagen del Perfil">
@@ -101,6 +101,9 @@
                         <div class="col-sm-5" >
                             {{form.email|as_crispy_field}}
                         </div>
+                        <div class="col-sm-5" >
+                            {{form.justificacion_estado|as_crispy_field}}
+                        </div>
 
                        
                 </div>
@@ -112,9 +115,7 @@
                         </div>
                         
                     </div>
-                    <div class="col-sm-5" >
-                        {{form.justificacion_estado|as_crispy_field}}
-                    </div>
+               
                    
 
                 </div>
@@ -136,4 +137,7 @@
         
         
     </form>
+{% endblock %}
+{% block scripts %}
+    <script defer src="{% static 'js/formComponents.js' %}"></script>
 {% endblock %}

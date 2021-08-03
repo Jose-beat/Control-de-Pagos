@@ -1,0 +1,25 @@
+[
+    {
+        "model": "grados_carreras.Grados_carreras",
+        "fields":{
+            "idCarrera": "IRC",
+            "carrera": "Redes y CiberSeguridad",
+            "nivel": "Ingenieria",
+            "cantidad_grados": "5",
+            "cantidad_grupos": "6"
+            
+        }
+    },
+    {
+        "model": "grados_carreras.Grados_carreras",
+        "fields":{
+            "idCarrera": "IDSM",
+            "carrera": "Desarrollo de Software Multiplataforma",
+            "nivel": "Ingenieria",
+            "cantidad_grados": "5",
+            "cantidad_grupos": "6"
+            
+        }
+    }
+    
+]

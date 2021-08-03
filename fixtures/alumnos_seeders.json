@@ -17,16 +17,5 @@
             "justificacion_estado" : "Pues anda Activo",
             "carrera": "IRC"
         }
-    },
-    {
-        "model": "grados_carreras.Grados_carreras",
-        "fields":{
-            "idCarrera": "IRC",
-            "carrera": "Redes y CiberSeguridad",
-            "nivel": "Ingenieria",
-            "grado": "5",
-            "cantidad_grupos": "6"
-            
-        }
-    }
+    }  
 ]

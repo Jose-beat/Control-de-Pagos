@@ -16,7 +16,7 @@
                       <h5 class="card-title">
                           <strong>Nombre: </strong> {{alumno.nombre}} {{alumno.apellidos}}
                       </h5>
-                      <p class="card-text">
+                      <p class="card-title">
                         <strong>Estado: </strong>
                         {% if alumno.estado %}
                             <span class="badge bg-success">Alumno Activo</span>
@@ -25,14 +25,29 @@
                         {% endif %}
                         
                       </p>
-                      <p class="card-text">
-                        <strong>Justificacion: </strong>
-                        {{alumno.justificacion_estado}}
-                        
+                      <p class="card-title">
+                        {% if alumno.estado %}
+                          {% else %}
+                            <strong>Justificacion: </strong>
+                            {% if alumno.justificacion_estado == "Graduado"%}
+                            <span class="badge bg-success">{{alumno.justificacion_estado}}</span> 
+                            {% else %}
+                              {% if alumno.justificacion_estado == "Baja Temporal"%}
+                                <span class="badge bg-warning text-dark">{{alumno.justificacion_estado}}</span> 
+                              {% else %}
+                                <span class="badge bg-danger">{{alumno.justificacion_estado}}</span> 
+                              {% endif %}    
+
+                            {% endif %}
+                        {% endif %}
+                      
                       </p>
-                      <a href="{% url 'editarAlumno' alumno.matricula %}" class="btn btn-primary">
-                          <Em>Editar Datos</Em>
-                      </a>
+                      <div class="d-grid gap-2" >
+                        <a href="{% url 'editarAlumno' alumno.matricula %}" class="btn btn btn-warning">
+                          Editar Datos
+                        </a>
+                    </div>
+                      
                     </div>
                   </div>
                   

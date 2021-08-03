@@ -19,8 +19,12 @@ grupo_lista = [
 ]
 CARRERAS = []
 #Añadir selectores en algunos formularios
-justificaciones = [
-    
+JUSTIFICACIONES = [
+    ('No Necesaria','No Necesaria'),
+    ('Baja Temporal','Baja Temporal'),
+    ('Baja Definitiva', 'Baja Definitiva'),
+    ('Graduado', 'Graduado'),
+
 ]
 
 try:
@@ -51,7 +55,7 @@ class RegistroAlumnos(forms.Form):
     carrera = forms.ChoiceField(choices=CARRERAS, label="Seleccione la carrera" )
     imagen_perfil = forms.ImageField(label='Foto de Perfil')
     estado = forms.BooleanField()
-    justificacion_estado = forms.CharField()
+    justificacion_estado = forms.ChoiceField(choices=JUSTIFICACIONES, label="Justificacion")
     imagen_perfil.widget.attrs.update({
         'id' : "imagenPerfil",
       
@@ -71,6 +75,7 @@ class EditAlumnoForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'grupo': Select(choices=grupo_lista[0:numero_grupos]),
+            'justificacion_estado': Select(choices=JUSTIFICACIONES)
             #'carrera': Select(choices=CARRERAS)
         }
     

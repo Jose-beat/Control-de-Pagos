@@ -10,7 +10,7 @@ class Alumno(models.Model):
     domicilio = models.CharField(max_length=80)
     telefono = models.CharField(max_length=10)
     grado = models.IntegerField()
-    grupo = models.CharField(max_length=2, default="A")
+    grupo = models.CharField(max_length=2, default="a")
     email = models.EmailField(max_length=254)
     beca = models.IntegerField()
     imagen_perfil = models.ImageField(upload_to='alumnos/')
