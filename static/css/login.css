@@ -17,7 +17,14 @@ body {
   width: 400px;
   height: 400px;
   padding: 50px;
-  
+  z-index: initial;
+}
+.aviso{
+    position: relative;
+    width: 400px;
+    top: 30px;
+    left: 350px;
+    z-index: 3;
 }
 
 /*pantalla 992*/
@@ -33,6 +40,15 @@ body {
     padding: 50px;
     
   }
+  .aviso{
+    position: relative;
+    width: 400px;
+    top: 30px;
+    left: 150px;
+    z-index: 3;
+}
+
+
 
 }
 
@@ -46,5 +62,13 @@ body {
     top: initial;
     width: 100%;
   }
+
+  .aviso{
+    position: relative;
+    width: 400px;
+    top: 30px;
+    left:40px;
+    z-index: 3;
+}
 
 }
