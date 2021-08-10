@@ -17,6 +17,18 @@ class Alumno(models.Model):
     estado = models.BooleanField(default=True)
     justificacion_estado = models.CharField(max_length=100, default="")
     carrera = models.ForeignKey(Grados_carreras, on_delete=models.CASCADE)
+    
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Fecha de Creacion"
+    )
+    
+    updated = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Fecha de Edicion'
+    )
+
+
     class Meta:
         ordering=['matricula']
 

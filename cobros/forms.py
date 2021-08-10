@@ -12,5 +12,5 @@ class CobroForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            "fecha": forms.NumberInput(attrs={'type': 'date'})
+            
         }

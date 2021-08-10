@@ -25,11 +25,19 @@ class Cobro(models.Model):
         verbose_name="Descripcion")
     monto = models.IntegerField(
         verbose_name="Monto a Pagar", default=0)
-    fecha = models.DateTimeField( 
-        verbose_name="Fecha de registro de pago")
+    
     tipo_Cobro= models.TextField(choices=CLASIFICACION_CHOISE,
         verbose_name="Tipo de pago")
-  
+    
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Fecha de Creacion"
+    )
+    
+    updated = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Fecha de Edicion'
+    )
 
     class Meta:
         verbose_name = "cobro"

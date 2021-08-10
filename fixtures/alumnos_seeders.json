@@ -15,7 +15,9 @@
             "imagen_perfil": "alumnos/profile.jpg",
             "estado": true,
             "justificacion_estado" : "Pues anda Activo",
-            "carrera": "IRC"
+            "carrera": "IRC",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
         }
     }  
 ]

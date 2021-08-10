@@ -6,7 +6,9 @@
             "carrera": "Redes y CiberSeguridad",
             "nivel": "Ingenieria",
             "cantidad_grados": "5",
-            "cantidad_grupos": "6"
+            "cantidad_grupos": "6",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
             
         }
     },
@@ -17,7 +19,9 @@
             "carrera": "Desarrollo de Software Multiplataforma",
             "nivel": "Ingenieria",
             "cantidad_grados": "5",
-            "cantidad_grupos": "6"
+            "cantidad_grupos": "6",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
             
         }
     }

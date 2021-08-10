@@ -20,6 +20,15 @@ class Profile(models.Model):
     grado = models.TextField(null=True, blank=True)
     domicilio = models.TextField(max_length=80, null=True, blank=True)
     link = models.URLField(max_length=200, null=True, blank=True)
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Fecha de Creacion"
+    )
+    
+    updated = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Fecha de Edicion'
+    )
 
     class Meta:
         ordering = ['user__username']
