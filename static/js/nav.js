@@ -8,17 +8,31 @@ function dropUser(event) {
   //625
   if( document.body.clientWidth >= 625){
 
+    let dropWI = document.getElementById("imgUser")
+    let sidWI = document.getElementById("imgSidebarUser")
     document.getElementById("dropUser").style.display = "block";
     document.getElementById("btnUsr").style.display = "none";
-    document.getElementById("imgUser").style.display = "inline-block";
-    document.getElementById("imgSidebarUser").style.display = "none";
+    
+    if( dropWI !== null &&  sidWI !==null){
+      document.getElementById("imgUser").style.display = "inline-block";
+      document.getElementById("imgSidebarUser").style.display = "none";
+    }else{
+
+    }
+    
+    
 
   }else if(document.body.clientWidth < 625){
 
+    let dropWI = document.getElementById("imgUser")
+    let sidWI = document.getElementById("imgSidebarUser")
+    if(dropWI !== null && sidWI !== null){
+      document.getElementById("imgUser").style.display = "none";
+      document.getElementById("imgSidebarUser").style.display = "block";
+    }
     document.getElementById("dropUser").style.display = "none";
     document.getElementById("btnUsr").style.display = "block";
-    document.getElementById("imgUser").style.display = "none";
-    document.getElementById("imgSidebarUser").style.display = "block";
+    
   }
   
 

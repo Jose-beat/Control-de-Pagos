@@ -31,7 +31,7 @@ try:
     carrera = Grados_carreras.objects.all()
     numero_grupos = 0
     for i in carrera:
-     CARRERAS.append((i.carrera, i.carrera))
+     CARRERAS.append((i.idCarrera, i.carrera))
      
      numero_grupos = i.cantidad_grupos
      print(CARRERAS)
