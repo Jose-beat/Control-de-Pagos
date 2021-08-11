@@ -5,7 +5,7 @@ from .models import Alumno
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, Field
 from django.forms.widgets import Select, SelectMultiple
-grupo_lista = [
+GRUPOS = [
     ('A','a'),
     ('B','b'),
     ('C','c'),
@@ -18,7 +18,12 @@ grupo_lista = [
     ('J','j'),
 ]
 CARRERAS = []
-#Añadir selectores en algunos formularios
+GRADOS = []
+BECAS = [
+    ("100","Beca de Excelencia (100%)" ),
+    ("50", "Beca de Excelencia (50%)"),
+    
+]
 JUSTIFICACIONES = [
     ('No Necesaria','No Necesaria'),
     ('Baja Temporal','Baja Temporal'),
@@ -28,14 +33,19 @@ JUSTIFICACIONES = [
 ]
 
 try:
+    
     carrera = Grados_carreras.objects.all()
-    numero_grupos = 0
+    #numero_grupos = 0
+    #numero_grados = 0
     for i in carrera:
      CARRERAS.append((i.idCarrera, i.carrera))
+     #numero_grupos = i.cantidad_grupos
+     #numero_grados = i.cantidad_grados
      
-     numero_grupos = i.cantidad_grupos
-     print(CARRERAS)
     
+    for j in range(0,12):
+        
+        GRADOS.append((j, j))
     
 except:
     CARRERAS = []
@@ -47,11 +57,12 @@ class RegistroAlumnos(forms.Form):
     apellidos = forms.CharField()
     domicilio = forms.CharField()
     telefono = forms.CharField()
-    grado =  forms.IntegerField()
-    grupo = forms.ChoiceField(choices=grupo_lista[0:numero_grupos], required = True, label="Grupo")
-    #grado = forms.MultipleChoiceField(choices=GRADOS)
+    grado =  forms.ChoiceField(choices=GRADOS, required=True, label="Grado")
+    #grupo = forms.ChoiceField(choices=grupo_lista[0:numero_grupos], required = True, label="Grupo")
+    grupo = forms.ChoiceField(choices=GRUPOS, required = True, label="Grupo")
     email = forms.EmailField( )
-    beca = forms.IntegerField() 
+    #beca = forms.IntegerField() 
+    beca = forms.ChoiceField(choices=BECAS, required=True, label="Becas")
     carrera = forms.ChoiceField(choices=CARRERAS, label="Seleccione la carrera" )
     imagen_perfil = forms.ImageField(label='Foto de Perfil')
     estado = forms.BooleanField()
@@ -74,7 +85,10 @@ class EditAlumnoForm(forms.ModelForm):
         model=Alumno
         fields = '__all__'
         widgets = {
-            'grupo': Select(choices=grupo_lista[0:numero_grupos]),
+            #'grupo': Select(choices=grupo_lista[0:numero_grupos]),
+            'beca': Select(choices=BECAS),
+            'grado': Select(choices=GRADOS),
+            'grupo': Select(choices=GRUPOS),
             'justificacion_estado': Select(choices=JUSTIFICACIONES)
             #'carrera': Select(choices=CARRERAS)
         }

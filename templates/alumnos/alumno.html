@@ -127,20 +127,27 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <p>
-                    
-                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Mostrar Informacion de Registro
-                    </button>
-                  </p>
-                  <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                      <p>El Alumno fue registrado el <strong>{{alumno.created}}</strong></p>
-                      <p>El Alumno fue editado el <strong>{{alumno.updated}}</strong></p>
-
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Actividad de Registro
+                        </button>
+                      </h2>
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <li class="list-group-item">
+                                <strong class="sect">Fecha de Registro:</strong>
+                                {{alumno.created}}
+                            </li>
+                            <li class="list-group-item">
+                                <strong class="sect">Fecha de Edicion:</strong>
+                                {{alumno.updated}}
+                            </li>
+                        </div>
+                      </div>
                     </div>
                   </div>
+          
             </div>
             
 
