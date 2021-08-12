@@ -6,6 +6,6 @@ from .models import Alumno
 
 class AlumnoAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
-    list_display=('matricula', 'nombre', 'apellidos')
+    list_display=('matricula', 'nombre', 'apellido_primero', 'apellido_segundo')
 
 admin.site.register(Alumno, AlumnoAdmin)

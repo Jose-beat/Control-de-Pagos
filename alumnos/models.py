@@ -6,7 +6,8 @@ class Alumno(models.Model):
     
     matricula = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    apellidos = models.CharField(max_length=100)
+    apellido_primero = models.CharField(max_length=100)
+    apellido_segundo = models.CharField(max_length=100)
     domicilio = models.CharField(max_length=80)
     telefono = models.CharField(max_length=10)
     grado = models.IntegerField()

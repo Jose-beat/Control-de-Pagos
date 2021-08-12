@@ -29,7 +29,8 @@ def registroAlumnos(request):
                         alumno = model.objects.create(
                               matricula = form_data.get('matricula'),
                               nombre    = form_data.get('nombre'),
-                              apellidos = form_data.get('apellidos'),
+                              apellido_primero = form_data.get('apellido_primero'),
+                              apellido_segundo = form_data.get('apellido_segundo'),
                               domicilio = form_data.get('domicilio'),
                               telefono  = form_data.get('telefono'),
                               grado     = form_data.get('grado'),

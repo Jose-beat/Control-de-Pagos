@@ -150,7 +150,7 @@ LOGOUT_REDIRECT_URL= 'login'
                 Por ejemplo: 
                     
                     py manage.py migrate --run-syncdb
-                     py manage.py loaddata grados_seeders
+                    py manage.py loaddata grados_seeders
                     py manage.py loaddata alumnos_seeders
                    
                         

@@ -5,7 +5,8 @@
         "fields":{
             "matricula": 18460646,
             "nombre": "Jose Juan",
-            "apellidos": "Gomez Lopez",
+            "apellido_primero": "Valiente",
+            "apellido_segundo": "Gonzales",
             "domicilio": "4 Norte",
             "telefono": "2491201514",
             "grado": 8,
@@ -16,6 +17,69 @@
             "estado": true,
             "justificacion_estado" : "Pues anda Activo",
             "carrera": "IRC",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
+        }
+    },
+     {
+        "model": "alumnos.Alumno",
+        "fields":{
+            "matricula": 18460647,
+            "nombre": "Manuel",
+            "apellido_primero": "Mendez",
+            "apellido_segundo": "Camarillo",
+            "domicilio": "6 Sur #2",
+            "telefono": "2494567897",
+            "grado": 2,
+            "grupo": "c",
+            "email": "manu.men@gmail.com",
+            "beca": 50,
+            "imagen_perfil": "alumnos/profile.jpg",
+            "estado": true,
+            "justificacion_estado" : "No Necesario",
+            "carrera": "IDSM",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
+        }
+    },
+    {
+        "model": "alumnos.Alumno",
+        "fields":{
+            "matricula": 18460648,
+            "nombre": "Luis Armando",
+            "apellido_primero": "Rosas",
+            "apellido_segundo": "Perez",
+            "domicilio": "7 Oriente #67",
+            "telefono": "2497894561",
+            "grado": 2,
+            "grupo": "A",
+            "email": "ar.lui@hotmail.com",
+            "beca": 100,
+            "imagen_perfil": "alumnos/profile.jpg",
+            "estado": true,
+            "justificacion_estado" : "No necesario",
+            "carrera": "IRC",
+            "created": "2001-01-01 00:00",
+            "updated": "2000-01-01 00:00"
+        }
+    },
+    {
+        "model": "alumnos.Alumno",
+        "fields":{
+            "matricula": 18460649,
+            "nombre": "Pedro",
+            "apellido_primero": "Solis",
+            "apellido_segundo": "Uriarte",
+            "domicilio": "10 Sur #23",
+            "telefono": "2497894561",
+            "grado": 8,
+            "grupo": "C",
+            "email": "pedri.sol@gmail.com",
+            "beca": 50,
+            "imagen_perfil": "alumnos/profile.jpg",
+            "estado": true,
+            "justificacion_estado" : "No necesario",
+            "carrera": "IDSM",
             "created": "2001-01-01 00:00",
             "updated": "2000-01-01 00:00"
         }

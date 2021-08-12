@@ -34,6 +34,7 @@
 
 <div id="contenido"  class="container">
 
+  {% if user.is_authenticated %}
   <div id="sectionBread" class="card">
     <nav id="breadcrumber"  aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -42,10 +43,11 @@
       </ol>
     </nav>
   </div>
-  
+  {% endif %}
+
 
       {% if user.is_authenticated %}
-      
+    
         <div  id="marco" class="card">
           <div class="card-header">
             <h3>{% block seccion %}{% endblock %}</h3>

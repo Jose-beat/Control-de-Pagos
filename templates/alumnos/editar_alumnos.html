@@ -61,8 +61,11 @@
                 </div>
 
                 <div class="row align-items-center justify-content-start">
-                    <div class="col-sm-6" >
-                        {{form.apellidos|as_crispy_field}}
+                    <div class="col-sm-3" >
+                        {{form.apellido_primero|as_crispy_field}}
+                    </div>
+                    <div class="col-sm-3" >
+                        {{form.apellido_segundo|as_crispy_field}}
                     </div>
                     <div class="col-sm-3" >
                             {{form.grado|as_crispy_field}}

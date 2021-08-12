@@ -54,7 +54,8 @@ except:
 class RegistroAlumnos(forms.Form):
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
     nombre =  forms.CharField()
-    apellidos = forms.CharField()
+    apellido_primero = forms.CharField()
+    apellido_segundo = forms.CharField()
     domicilio = forms.CharField()
     telefono = forms.CharField()
     grado =  forms.ChoiceField(choices=GRADOS, required=True, label="Grado")

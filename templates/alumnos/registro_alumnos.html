@@ -68,10 +68,12 @@
                 </div>
 
                 <div class="row align-items-center justify-content-start">
-                    <div class="col-sm-6" >
-                        {{forms.apellidos|as_crispy_field}}
+                    <div class="col-sm-3" >
+                        {{forms.apellido_primero|as_crispy_field}}
                     </div>
-
+                    <div class="col-sm-3" >
+                        {{forms.apellido_segundo|as_crispy_field}}
+                    </div>
                      <div class="col-sm-3" >
                         {{forms.grado|as_crispy_field}}
                     </div>
