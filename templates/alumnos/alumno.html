@@ -3,6 +3,12 @@
 {% block title %}Informacion del Alumno{% endblock %}
 {% block headers %}{% endblock %}
 {% block seccion %}Informacion del Alumno{% endblock %}
+
+{% block pista %}
+  <li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
+  <li class="breadcrumb-item active" aria-current="page">{{alumno.nombre}} {{alumno.apellidos}}</li>
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="row justify-content-end">

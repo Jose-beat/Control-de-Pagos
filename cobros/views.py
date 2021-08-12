@@ -47,7 +47,7 @@ def editar_cobro(request, id):
         formulario = CobroForm(data=request.POST, instance=cobro)
         if formulario.is_valid():
             formulario.save()
-            return redirect(to="lista_cobro")
+            return redirect(to="lista_cobros")
         data["form"] = formulario
    
     return render(request, 'cobros/editar_cobro.html', data)
@@ -56,4 +56,4 @@ def editar_cobro(request, id):
 def eliminar_cobro(request, id):
     cobro =  get_object_or_404(Cobro, id=id)
     cobro.delete()
-    return redirect(to="lista_cobro")
+    return redirect(to="lista_cobros")

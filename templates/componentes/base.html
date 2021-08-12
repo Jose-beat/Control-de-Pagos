@@ -33,7 +33,17 @@
   
 
 <div id="contenido"  class="container">
+
+  <div id="sectionBread" class="card">
+    <nav id="breadcrumber"  aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+        {% block pista %}{% endblock %}
+      </ol>
+    </nav>
+  </div>
   
+
       {% if user.is_authenticated %}
       
         <div  id="marco" class="card">

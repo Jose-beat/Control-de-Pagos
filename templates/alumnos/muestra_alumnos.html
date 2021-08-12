@@ -3,11 +3,12 @@
 {% load static %}
 {% block title %}Alumnos en Sistema{% endblock %}
 {% block seccion %}Alumnos en Sistema{% endblock %}
+{% block pista %}<li class="breadcrumb-item active" aria-current="page">Alumnos</li>{% endblock %}
 {% block content %}
     {% include "componentes/alerts.html" %}     
    
-<div class="w3-container" style="margin-top: 30px;">
-    <div class="w3-row">
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
         <form  method="get">      
                 
             <div class="input-group mb-3">
@@ -19,31 +20,44 @@
                    
            </form>
     </div>
-<div class="w3-row">
-
+<div class="row">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Matricula</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
     
-  <table class="w3-table-all w3-card-4">
-    <tr>
-      <th>Matricula</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Grado</th>
-    </tr>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    
+    <tbody>
     {% for alumno in alumnos %}
-    <tr>
-      <td> 
-        <a href="{% url 'alumno' alumno.matricula %}">
-            {{alumno.matricula}}
-        </a>
-      </td>
-      <td>{{alumno.nombre}}</td>
-      <td>{{alumno.apellidos}}</td>
-      <td>{{alumno.grado}}</td>
-    </tr>
+    
+      <tr>
+        <td> 
+          <a class="btn btn-outline-primary" href="{% url 'alumno' alumno.matricula %}">
+              {{alumno.matricula}}
+          </a>
+        </td>
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellidos}}</td>
+        <td>
+          {% if alumno.estado %}
+              <span class="badge bg-success">Alumno Activo</span>
+          {% else %}
+              <span class="badge bg-danger">Alumno Inactivo</span>
+          {% endif %}
+        </td>
+      </tr>
+    
+    
     {% endfor %}
+  </tbody>
   </table>
   </div>
-<div class="w3-row">
+<div class="row">
     <div class=" w3-display-bottomright " style="margin: 0px 40px 20px 0px">
         {% if alumnos.has_next or alumnos.has_previous %}
         

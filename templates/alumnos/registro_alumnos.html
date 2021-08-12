@@ -6,6 +6,11 @@
     
 {% endblock %}
 
+{% block pista %}
+  <li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Registrar Alumnos</li>
+{% endblock %}
+
 {% block content %}
 {% include "componentes/alerts.html" %} 
     {% load crispy_forms_tags %}

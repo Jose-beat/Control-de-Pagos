@@ -4,7 +4,10 @@
 
 {% block title %}Editar Cobro{% endblock %}
 {% block seccion %}Editar Cobro{% endblock %}
-
+{% block pista %}
+  <li class="breadcrumb-item"><a href="{% url 'lista_cobros' %}">Cobros</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Editar un Cobro</li>
+{% endblock %}
 {% block content %}
 
 {% load crispy_forms_tags %}

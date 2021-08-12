@@ -4,7 +4,10 @@
 
 {% block title %}Registro Carrera {% endblock %}
 {% block seccion %}<h2>Registrar Carrera</h2>{% endblock %}
-
+{% block pista %}
+  <li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Grados y Carreras</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Editar una carrera</li>
+{% endblock %}
 {% block content %}
     {% load crispy_forms_tags %}
     
