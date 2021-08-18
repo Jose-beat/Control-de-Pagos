@@ -6,7 +6,7 @@
 
 {% block pista %}
   <li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
-  <li class="breadcrumb-item active" aria-current="page">{{alumno.nombre}} {{alumno.apellidos}}</li>
+  <li class="breadcrumb-item active" aria-current="page">{{alumno.nombre}} {{alumno.apellido_primero}} {{alumno.apellido_segundo}}</li>
 {% endblock %}
 
 {% block content %}
