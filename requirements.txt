@@ -3,4 +3,7 @@
 #Crispy-forms
 #django-crispy-forms
 #Pillow
-#pillow
+
+django-crispy-forms
+pillow
+django
