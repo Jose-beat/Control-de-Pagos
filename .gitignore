@@ -43,3 +43,4 @@ media/alumnos/*
 !profile.jpg
 
 *.sqlite3
+*.txt

@@ -3,7 +3,6 @@
 #Crispy-forms
 #django-crispy-forms
 #Pillow
-
-django-crispy-forms
-pillow
-django
+django-crispy-forms==1.11.2
+pillow==8.2.0
+django==3.2.2
