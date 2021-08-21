@@ -72,8 +72,7 @@ _Se describiran las versiones actuales y futuras para tener mejor perspectivas d
 * [v0.0.3](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.3) - Se añadieron Modulos a la aplicacion
 * [v0.0.4](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.4) - Correccion Responsive de la aplicacion
 * [v0.0.5](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.0.5) -  Cambios en la estructura de base de datos y algunos formularios, ademas de los seeders y la adicion del modulo que se encargara de registrar los pagos y deudas.
-
-* v0.1.0 - Se añadieron Mas usuarios. Por lo que ahora la aplicacion puede crear un usuario ADMIN y un usuario ALUMNO, el cual tendra acceso controlado por el admin
+* [v0.1.0](https://github.com/Jose-beat/Control-de-Pagos/releases/tag/v0.1.0) - Se añadieron Mas usuarios. Por lo que ahora la aplicacion puede crear un usuario ADMIN y un usuario ALUMNO, el cual tendra acceso controlado por el admin
 * v0.2.0 - Se cambiaron las estructuras de todos los formularios para hacerlos mas dinamicos con las ventanas del navegador (Se añadio NodeJs como conexion con el DOM y la BD)
 * v1.0.0 - La aplicacion ya es funcional en la mayoria de sus modulos y puede ejecutarse en modo produccion
 
