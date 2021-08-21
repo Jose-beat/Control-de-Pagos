@@ -1,0 +1,82 @@
+[
+    {
+        "model": "auth.user",
+        "fields":{
+            "id": "123456789",
+            "password": "UsuarioEjemplo345",
+            "last_login": "2006-06-06 00:00",
+            "is_superuser": true,
+            "username": "exampleUser",
+            "last_name": "Apellidos Ejemplo",
+            "email": "admin@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2006-06-06 00:00",
+            "first_name": "Nombre Ejemplo"
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields":{
+            "id": "18460646",
+            "password": "UsuarioEjemplo345",
+            "last_login": "2001-01-01 00:00",
+            "is_superuser": false,
+            "username": "exampleUser1",
+            "last_name": "Apellidos Ejemplo",
+            "email": "admin@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2006-06-06 00:00",
+            "first_name": "Nombre Ejemplo"
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields":{
+            "id": "18460647",
+            "password": "UsuarioEjemplo345",
+            "last_login": "2001-01-01 00:00",
+            "is_superuser": false,
+            "username": "exampleUser2",
+            "last_name": "Apellidos Ejemplo",
+            "email": "admin@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2006-06-06 00:00",
+            "first_name": "Nombre Ejemplo"
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields":{
+            "id": "18460648",
+            "password": "UsuarioEjemplo345",
+            "last_login": "2001-01-01 00:00",
+            "is_superuser": false,
+            "username": "exampleUser3",
+            "last_name": "Apellidos Ejemplo",
+            "email": "admin@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2006-06-06 00:00",
+            "first_name": "Nombre Ejemplo"
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields":{
+            "id": "18460649",
+            "password": "UsuarioEjemplo345",
+            "last_login": "2001-01-01 00:00",
+            "is_superuser": false,
+            "username": "exampleUser4",
+            "last_name": "Apellidos Ejemplo",
+            "email": "admin@gmail.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2006-06-06 00:00",
+            "first_name": "Nombre Ejemplo"
+        }
+    }
+]

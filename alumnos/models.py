@@ -3,7 +3,6 @@ from grados_carreras.models import Grados_carreras
 #from django.forms import ModelForm
 
 class Alumno(models.Model):
-    
     matricula = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
     apellido_primero = models.CharField(max_length=100)
@@ -13,6 +12,7 @@ class Alumno(models.Model):
     grado = models.IntegerField()
     grupo = models.CharField(max_length=2, default="a")
     email = models.EmailField(max_length=254)
+    password = models.CharField(max_length=10)
     beca = models.IntegerField()
     imagen_perfil = models.ImageField(upload_to='alumnos/')
     estado = models.BooleanField(default=True)

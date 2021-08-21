@@ -4,7 +4,7 @@ from grados_carreras.models import Grados_carreras
 from .models import Alumno
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, Field
-from django.forms.widgets import Select, SelectMultiple
+from django.forms.widgets import Select, SelectMultiple, PasswordInput, NumberInput, Input
 GRUPOS = [
     ('A','a'),
     ('B','b'),
@@ -62,12 +62,14 @@ class RegistroAlumnos(forms.Form):
     #grupo = forms.ChoiceField(choices=grupo_lista[0:numero_grupos], required = True, label="Grupo")
     grupo = forms.ChoiceField(choices=GRUPOS, required = True, label="Grupo")
     email = forms.EmailField( )
+    password = forms.CharField(widget= forms.PasswordInput())
     #beca = forms.IntegerField() 
     beca = forms.ChoiceField(choices=BECAS, required=True, label="Becas")
     carrera = forms.ChoiceField(choices=CARRERAS, label="Seleccione la carrera" )
     imagen_perfil = forms.ImageField(label='Foto de Perfil')
     estado = forms.BooleanField()
     justificacion_estado = forms.ChoiceField(choices=JUSTIFICACIONES, label="Justificacion")
+    
     imagen_perfil.widget.attrs.update({
         'id' : "imagenPerfil",
       
@@ -87,10 +89,13 @@ class EditAlumnoForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             #'grupo': Select(choices=grupo_lista[0:numero_grupos]),
+            'matricula': NumberInput(attrs={'readonly':True}),
             'beca': Select(choices=BECAS),
             'grado': Select(choices=GRADOS),
             'grupo': Select(choices=GRUPOS),
-            'justificacion_estado': Select(choices=JUSTIFICACIONES)
+            'justificacion_estado': Select(choices=JUSTIFICACIONES),
+            'password' : Input(attrs={'type':'password'})
+            
             #'carrera': Select(choices=CARRERAS)
         }
     

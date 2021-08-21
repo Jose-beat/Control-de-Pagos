@@ -9,9 +9,30 @@ from .updates import act_matricula
 import datetime
 from grados_carreras.models import Grados_carreras
 from registration.models import Profile
+from django.contrib.auth.models import User
+
+
 from django.contrib.auth.decorators import login_required
 
 model = Alumno
+
+def alumnoUser(username, email, active, password, name, lastname1, lastname2):
+      user = User.objects.create_user(
+            username=username, 
+            email=email, 
+            password=password
+      )
+      user.first_name = name
+      user.last_name = lastname1 + " " + lastname2
+      user.is_active = active
+      
+      user.save()
+
+def alumnoEdit(username, active):
+      user = User.objects.get(username=username)
+      user.is_active = active
+      user.save()
+      pass
 @login_required
 def registroAlumnos(request):
 
@@ -25,7 +46,15 @@ def registroAlumnos(request):
                   try:
                         alumn = Alumno()
                         alumn.grado_carrera = Grados_carreras.objects.get(idCarrera= form_data.get('carrera'))
-                        
+                        alumnoUser(
+                              form_data.get('matricula'),
+                              form_data.get('email'),
+                              form_data.get('estado'),
+                              form_data.get('password'),
+                              form_data.get('nombre'),
+                              form_data.get('apellido_primero'),
+                              form_data.get('apellido_segundo'),
+                        )
                         alumno = model.objects.create(
                               matricula = form_data.get('matricula'),
                               nombre    = form_data.get('nombre'),
@@ -37,6 +66,7 @@ def registroAlumnos(request):
                               grupo     = form_data.get('grupo'),                                
                               carrera = alumn.grado_carrera,
                               email     = form_data.get('email'),
+                              password =  form_data.get('password'),
                               beca      = form_data.get('beca'),
                               imagen_perfil = form_data.get('imagen_perfil'),
                               estado = form_data.get('estado'),
@@ -101,6 +131,8 @@ def alumno(request, alumno_id):
       alumno = get_object_or_404(Alumno, matricula=alumno_id)
       print(alumno_id)
       return render(request, 'alumnos/alumno.html', {'alumno': alumno})
+
+
 @login_required
 def editarAlumno(request, alumno_id):
       alumno =  get_object_or_404(Alumno, matricula=alumno_id)
@@ -114,6 +146,11 @@ def editarAlumno(request, alumno_id):
             print("si HAY VALIDEZ" + str(formulario.is_valid()))
             if formulario.is_valid():
                   print("si HAY MAS VALIDEZ")
+                  form_data = formulario.cleaned_data
+                  alumnoEdit(
+                        username=form_data.get('matricula'),
+                        active=form_data.get('estado'),
+                  )
                   formulario.save()
                   return redirect(to="muestraAlumnos")
             data["form"] = formulario
