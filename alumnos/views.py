@@ -9,7 +9,7 @@ from .updates import act_matricula
 import datetime
 from grados_carreras.models import Grados_carreras
 from registration.models import Profile
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 from django.contrib.auth.decorators import login_required
@@ -25,14 +25,28 @@ def alumnoUser(username, email, active, password, name, lastname1, lastname2):
       user.first_name = name
       user.last_name = lastname1 + " " + lastname2
       user.is_active = active
-      
+      try:
+            grupo = Group.objects.get(name='Alumnos')
+            user.groups.add(grupo)
+      except Exception as e :
+            Group.objects.create(name="Alumnos")
+            grupo = Group.objects.get(name='Alumnos')
+            user.groups.add(grupo)
       user.save()
 
-def alumnoEdit(username, active):
+def alumnoEdit(username, email, active, password, name, lastname1, lastname2):
+
       user = User.objects.get(username=username)
+      
+      user.email = email
+      User.email_user = email
+      user.set_password(password)
+      user.first_name = name
+      user.last_name = lastname1 + " " + lastname2
       user.is_active = active
       user.save()
-      pass
+
+
 @login_required
 def registroAlumnos(request):
 
@@ -148,8 +162,13 @@ def editarAlumno(request, alumno_id):
                   print("si HAY MAS VALIDEZ")
                   form_data = formulario.cleaned_data
                   alumnoEdit(
-                        username=form_data.get('matricula'),
-                        active=form_data.get('estado'),
+                        username = form_data.get('matricula'),
+                        email    = form_data.get('email'),
+                        active   = form_data.get('estado'),
+                        password = form_data.get('password'),
+                        name     = form_data.get('nombre'),
+                        lastname1= form_data.get('apellido_primero'),
+                        lastname2= form_data.get('apellido_segundo'),
                   )
                   formulario.save()
                   return redirect(to="muestraAlumnos")
