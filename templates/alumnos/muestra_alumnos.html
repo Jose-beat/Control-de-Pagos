@@ -58,28 +58,28 @@
   </table>
   </div>
 <div class="row">
-    <div class=" w3-display-bottomright " style="margin: 0px 40px 20px 0px">
-        {% if alumnos.has_next or alumnos.has_previous %}
-        
-            <div class="w3-bar  pagination ">
-                 
-                 {% if alumnos.has_previous %}
-                    <a href="?page={{ alumnos.previous_page_number }}" class="w3-button w3-teal">&laquo;</a>
-                 {% endif %}
-        
-                 {% for page in alumnos.paginator.page_range %}
-                   
-                    <div class="{% if alumnos.number == page %}active w3-blue{% endif %}">
-                        <a class="w3-button " href="?page={{ page }}">{{ page }}</a></div>
-        
-                 {% endfor %}
-                 
-                 {% if alumnos.has_next %}
-                    <a href="?page={{ alumnos.next_page_number }}" class="w3-button w3-teal">&raquo;</a>
-                 {% endif %}
-            </div>
-        </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      {% if alumnos.has_next or alumnos.has_previous %}
+        {% if alumnos.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ alumnos.previous_page_number }}" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
         {% endif %}
+
+        {% for page in alumnos.paginator.page_range %}           
+          <li class="{% if alumnos.number == page %}page-item active{% endif %}"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+        {% endfor %}
+
+        {% if alumnos.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ alumnos.next_page_number }}">Next</a>
+          </li>
+        {% endif %}
+        {% endif %}
+    </ul>
+  </nav>
+    
     
     
     </div>
