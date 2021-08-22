@@ -2,8 +2,8 @@
     FROM python:3.9.2
     
     # CREAMOS Y DEFINIMOS EL DIRECTORIO DE TRABAJO
-    RUN mkdir /code
-    WORKDIR /code
+    RUN mkdir /usr/src/app
+    WORKDIR /usr/src/app
 
     # DEFINIMOS VARIABLES DE ENTORNO
     ENV PYTHONDONTWRITEBYTECODE 1
@@ -12,12 +12,12 @@
     # INSTALAMOS DEPENDENCIAS
     RUN pip install --upgrade pip 
 
-    COPY ./requirements.txt /code
+    COPY ./requirements.txt /usr/src/app/
 
     RUN pip install -r requirements.txt
 
     # COPIAMOS EL PROYECTO 
-    COPY . /code
+    COPY . /usr/src/app/
     # EJECUTAMOS LAS MIGRACIONES
     RUN python manage.py makemigrations
 
