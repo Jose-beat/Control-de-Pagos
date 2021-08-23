@@ -25,9 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '_uqzykf@vi4ztoylpt+q6e+is8%f65mn30c-0w=%g9-o4-te7_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#!!!!!!!!!!!!!!!!!DESACTIVAR EL MODO DEBUG ASIGNANDOLE "FALSE" PARA MAYOR SEGURIDAD AL DESPLEGAR EN EL SERVIDOR¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#!!!!!!!!!!!!!!!!!COLOCAR EL HOST DONDE ESTARA ALOJADA LA APLICACION¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -137,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+#!!!!!!!!!!!!!!!!!DEFINIR LA STATIC ROOT DEL PROYECTO PARA DESPLEGAR EN EL SERVIDOR¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 STATIC_ROOT = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), # El directorio raíz del proyecto necesita una carpeta llamada static
@@ -155,7 +159,7 @@ LOGOUT_REDIRECT_URL= 'login'
                     py manage.py loaddata user_seeders
                     py manage.py loaddata grados_seeders
                     py manage.py loaddata alumnos_seeders
-                   
+                    py manage.py createsuperuser
                         
 
             los cuales estan en la carpeta 'fixtures' la cual ya fue declarada en el 
