@@ -93,7 +93,7 @@ Usamos [Git](https://git-scm.com/) para el versionado local de la app y [GitHub]
 
 
 ## [Despliegue en contenedores Azure ](res/despliegue_Azure.md) 🔷
-<img src="res/icons/Azure.png" width="70" style="position: relative; left:110px" >
+<img src="res/icons/azure.png" width="70" style="position: relative; left:110px" >
 
 
 
