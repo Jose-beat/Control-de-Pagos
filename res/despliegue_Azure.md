@@ -11,8 +11,8 @@
 
 ## Creación de una instancia de Azure Container Registry
 
+<img src="icons/acr.png" width="180">
 
-<img src="icons/acr.png" width="170">
 
 **Estos pasos podemos hacerlos en la shell de azure**
 
@@ -122,7 +122,12 @@ También necesita el nombre completo del servidor de inicio de sesión del regis
 ```
 $ az acr show --name ControlPagos --query loginServer
 ```
+
 Ahora, utilice comando az container create para implementar el contenedor. Reemplace _aciDnsLabel_ por el nombre de DNS que desee.
+
+<img src="icons/accontainer.png" width="180">
+
+
 ```
 $ az container create -g Container-Control-Pagos --name controlpagos --image controlpagos.azurecr.io/control_pagos_docker:v2 --cpu 1 --memory 1 --dns-name-label aciDnsLabel --port 8000
 ```
