@@ -1,6 +1,6 @@
 ## Despliegue en contenedores Azure 
 
-<img src="icons/Azure.png" width="70" style="position: relative; left:150px">
+<img src="icons/azure.png" width="70" style="position: relative; left:150px">
 
 **LA MAYORIA DE LOS PASOS SE HARAN DESDE AZURE CLI POR LO QUE HAY QUE TENERLO INSTALADO**
 
