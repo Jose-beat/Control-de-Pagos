@@ -5,7 +5,8 @@ _Este proyecto es una practica para la materia de **Desarrollo de Software** con
 
 
 
-### Instalación 🔧
+### Instalación local 🔧
+![Azure-icon](res/icons/computer.png)
 
 _Vamos a comenzar clonando el proyecto con el siguiente comando._
 
@@ -26,11 +27,11 @@ _Ahora vamos a la carpeta de nuestro entorno y lo activamos_
 ```
 $ source entornoControlPagos/bin/activate
 ```
-_Instalaremos las siguientes librerias definidas en los comandos_
+_Instalaremos las librerias en el archivo requirements.txt_
 ```
-$ pip install django
-$ pip freeze
-$ pip install django-crispy-forms
+$ cd ..
+$ cd Control_de_Pagos/
+$ pip install -r requirements.txt
 ```
 _Volvemos a la carpeta de nuestro proyecto y generamos una migracion_
 ```
@@ -42,16 +43,19 @@ $ python3 manage.py migrate --run-syncdb
 ```
 _Por ultimo vamos a ejecutar nuestros **Seeders** para meter algunos datos de forma automatica_
 ```
+$ python3 manage.py loaddata user_seeders
+$ python3 manage.py loaddata grados_seeders
 $ python3 manage.py loaddata alumnos_seeders
-```
-_Ahora ya podemos ejecutar nuestro servidor_
-```
-$ python3 manage.py runserver
 ```
 _Por ultimo creamos un **Super Usuario** para acceder al sistema completo_
 
 ```
 $ python3 manage.py createsuperuser
+```
+
+_Ahora ya podemos ejecutar nuestro servidor_
+```
+$ python3 manage.py runserver
 ```
 
 ## Construido con 🛠️
@@ -82,6 +86,20 @@ _Se describiran las versiones actuales y futuras para tener mejor perspectivas d
 
 Usamos [Git](https://git-scm.com/) para el versionado local de la app y [GitHub](https://github.com) para el trabajo con versionado remoto y colaborativo.
 
+## [Despliegue en contenedores Docker](res/despliegue_Docker.md) 🟦
+
+<img src="res/icons/docker.png" width="70" style="position: relative; left:110px">
+
+
+
+## [Despliegue en contenedores Azure ](res/despliegue_Azure.md) 🔷
+<img src="res/icons/Azure.png" width="70" style="position: relative; left:110px" >
+
+
+
+**LA MAYORIA DE LOS PASOS SE HARAN DESDE AZURE CLI POR LO QUE HAY QUE TENERLO INSTALADO**
+
+
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
@@ -93,4 +111,5 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 
 
 ---
-Creditos y Saludos a _Andrés Villanueva_ - [Villanuevand](https://github.com/Villanuevand) 😊 Gracias por la Plantilla
+Creditos y Saludos a _Andrés Villanueva_ - [Villanuevand](https://github.com/Villanuevand) y
+Repositorio de la biblioteca de Iconos Azure a _RichardSlater_ - [Iconos](https://github.com/amido/azure-vector-icons/)

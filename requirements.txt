@@ -1,5 +1,5 @@
 #Todas las bibliotecas aqui son esenciales para ejecutar la aplicacion
-#pip install -r requeriments.txt
+#pip install -r requirements.txt
 #Crispy-forms
 #django-crispy-forms
 #Pillow
