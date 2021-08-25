@@ -1,6 +1,6 @@
 ## Despliegue en contenedores Azure 
 
-<img src="icons/azure.png" width="70" style="position: relative; left:150px">
+<img src="icons/azure.png" width="70">
 
 **LA MAYORIA DE LOS PASOS SE HARAN DESDE AZURE CLI POR LO QUE HAY QUE TENERLO INSTALADO**
 
@@ -12,7 +12,7 @@
 ## Creación de una instancia de Azure Container Registry
 
 
-<img src="icons/acr.png" width="170" style="position: relative; left:110px">
+<img src="icons/acr.png" width="170">
 
 **Estos pasos podemos hacerlos en la shell de azure**
 
@@ -139,3 +139,5 @@ También puede ver la salida de registro del contenedor:
 ```
 $ az container logs --resource-group Container-Control-Pago --name controlpagos
 ```
+
+![app-acr](images/acr-app.png)

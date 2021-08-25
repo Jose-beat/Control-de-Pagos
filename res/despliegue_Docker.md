@@ -1,4 +1,7 @@
 ## Despliegue en contenedores Docker
+
+<img src="icons/docker.png" width="70">
+
 Se utilizo Docker para empaquetar el proyecto en un contenedor. Esto ayuda a poder distribuir el  proyecto sin importar el sistema o entorno donde funcione. Vamos a describir el proceso de empaquetado:
 
 Vamos a localizarnos en el archivo _settings.py_ para configurar lo siguiente:
