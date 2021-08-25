@@ -63,7 +63,7 @@ $ az acr login --name ControlPagos
  ```
  {
    "accessToken": "Token",
-   "loginServer": "controlpagos.azurecr.io"
+   "loginServer": "loginServer"
  }
 ```
 
@@ -95,7 +95,7 @@ $ docker images
 Etiquete la imagen _control_pagos_docker:latest_ con el servidor de inicio de sesión del registro de contenedor. Además, agregue la etiqueta :v1 al final del nombre de imagen para indicar el número de versión de la imagen. Reemplace _acrLoginServer_ por el resultado del comando az acr show que ha ejecutado antes.
 
 ```
-$ docker tag control_pagos_docker controlpagos.azurecr.io/control_pagos_docker:v2
+$ docker tag control_pagos_docker acrloginServer/control_pagos_docker:v2
 ```
 Vuelva a ejecutar docker images para comprobar la operación de etiquetado:
 
@@ -106,7 +106,7 @@ $ docker images
 Ahora que ha etiquetado la imagen _control_pagos_docker:latest_ con el nombre del servidor de inicio de sesión completo del registro privado, puede insertarla en el registro con el comando _docker push_. Reemplace _acrLoginServer_ por el nombre del servidor de inicio de sesión completo obtenido en el paso anterior.
 
 ```
-$ docker push controlpagos.azurecr.io/control_pagos_docker:v2
+$ docker push acrloginServer/control_pagos_docker:v2
 ```
 ### Lista de imágenes en Azure Container Registry
 
@@ -129,7 +129,7 @@ Ahora, utilice comando az container create para implementar el contenedor. Reemp
 
 
 ```
-$ az container create -g Container-Control-Pagos --name controlpagos --image controlpagos.azurecr.io/control_pagos_docker:v2 --cpu 1 --memory 1 --dns-name-label aciDnsLabel --port 8000
+$ az container create -g Container-Control-Pagos --name controlpagos --image acrloginServer/control_pagos_docker:v2 --cpu 1 --memory 1 --dns-name-label aciDnsLabel --port 8000
 ```
 Para ver el estado de la implementación, use az container show:
 
