@@ -22,6 +22,8 @@
     RUN python manage.py makemigrations
 
     RUN python manage.py migrate --run-syncdb
+    
+    RUN python manage.py migrate --run-syncdb
     # SEMBRAMOS LOS DATOS DE EJEMPLO
     RUN python manage.py loaddata grados_seeders
 
