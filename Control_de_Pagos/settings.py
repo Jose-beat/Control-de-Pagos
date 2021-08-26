@@ -93,14 +93,24 @@ WSGI_APPLICATION = 'Control_de_Pagos.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+'''
+DATABASES = {
+    'default':{
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'control_pagos',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -154,12 +164,13 @@ LOGOUT_REDIRECT_URL= 'login'
             Se usa el comando (python manage.py loaddata [nombre del seeder])
                 Por ejemplo: 
                     
-                    py manage.py makemigrations
-                    py manage.py migrate --run-syncdb
-                    py manage.py loaddata user_seeders
-                    py manage.py loaddata grados_seeders
-                    py manage.py loaddata alumnos_seeders
-                    py manage.py createsuperuser
+                    python3 manage.py makemigrations
+                    python3 manage.py migrate --run-syncdb
+                    python3 manage.py migrate --run-syncdb //Esta se ejecuta dos veces si usamos MySQL
+                    python3 manage.py loaddata user_seeders
+                    python3 manage.py loaddata grados_seeders
+                    python3 manage.py loaddata alumnos_seeders
+                    python3 manage.py createsuperuser
                         
 
             los cuales estan en la carpeta 'fixtures' la cual ya fue declarada en el 
