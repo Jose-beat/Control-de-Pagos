@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %} Carrera {% endblock %}
-{% block seccion %}<h2>Carrera</h2>{% endblock %}
+{% block seccion %}<i class="fa fa-sitemap icono"></i> Carrera{% endblock %}
 {% block pista %}
   <li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Grados y Carreras</a></li>
   <li class="breadcrumb-item active" aria-current="page">{{carrera.carrera}}</li>

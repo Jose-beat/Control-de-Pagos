@@ -1,12 +1,13 @@
 {% load static %}
 {% if user.is_authenticated %}
+<nav >
   <div class="w3-teal" id="nave">
-  <button id="openNav" class="w3-button w3-teal w3-xlarge w3-hover-black" onclick="w3_open()"><span id="menu">&#9776;</i></span></button>
-  <div class="w3-display-topmiddle">
-    <div class="w3-container"  >
-      <h3>Control de Pagos</h3>  
-    </div>
-  </div>
+  <button id="openNav" class="w3-button w3-teal w3-xlarge w3-hover-black" onclick="w3_open()">
+    <span id="menu">&#9776;</i></span>
+  </button>
+
+    <h3 class="text-center" id="encabezado">Control de Pagos</h3>  
+
   
     <div id="dropUser" class="w3-dropdown-click w3-display-topright">
       
@@ -31,6 +32,7 @@
     
  
 </div>
+</nav>
 {% else %}
 <nav id="navegacion">
   <div class="w3-teal">
@@ -38,8 +40,6 @@
         <h3 id="titulo" class="mx-auto text-center">Control de Pagos</h3>  
     </div>
   </div>
-
-  
 </nav>
 {% endif %}
 

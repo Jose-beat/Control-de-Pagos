@@ -27,3 +27,12 @@
     height: 50px;
     border-radius: 3px;
 }
+
+#encabezado{
+    position: relative;
+    left: 30px;
+    display: inline-block;
+    
+    margin-top: 0;
+    margin-bottom: 0;
+}

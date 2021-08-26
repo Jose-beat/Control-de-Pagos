@@ -3,67 +3,56 @@
 {% load static %}
 
 {% block title %}Registro Cobros {% endblock %}
-{% block seccion %}Registrar Cobros{% endblock %}
+{% block seccion %} <i class="fa fa-plus-circle "></i> Registrar Cobros{% endblock %}
 {% block pista %}
-  <li class="breadcrumb-item"><a href="{% url 'lista_cobros' %}">Cobros</a></li>
-  <li class="breadcrumb-item active" aria-current="page">Registrar un Cobro</li>
+<li class="breadcrumb-item"><a href="{% url 'lista_cobros' %}">Cobros</a></li>
+<li class="breadcrumb-item active" aria-current="page">Registrar un Cobro</li>
 {% endblock %}
 {% block content %}
 
-    {% load crispy_forms_tags %}
-    <br><br>
+{% load crispy_forms_tags %}
 
-    <div class="content">
-        <form action="" method="post">
-          {% csrf_token %}
-  
-          <div class="container">
-            <div class="row justify-content-end">
-              <div class="row align-items-center justify-content-start">
-              
-          <div class="main">
-            <div class="col-md-8 col-sm-12">
-              <div class="login-form">
-                <form>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.nombre|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.descripcion|as_crispy_field}}
-                    </div>
-                  </div><br>
-                  <div class="form-group">
-                   
-                    <div class="input-group">
-                      {{form.monto|as_crispy_field}}
-                    </div>
-                  </div><br>
-                
-                  
-                  <div class="form-group">
-                    
-                    <div class="input-group">
-                      {{form.tipo_Cobro|as_crispy_field}}
-                    </div>
-                  </div><br>
 
-                  <div class="d-flex justtify-content-end">
-                    <input type="reset" value="Cancelar" class="btn btn-secondary">
-                    &nbsp;
-                    <input type="submit" value="Guardar" class="btn btn-primary">
-                  </div>
-                </div></div>
-              </div></div>
-                </form>
-                {{mensaje}}
-              </div>
-            </div>
-          </div>
+<form action="" method="post">
+  {% csrf_token %}
+  {{mensaje}}
+  <div class="container">
+    <div class="row justify-content-end">
+
+      <div class="row align-items-center justify-content-start">
+        
+        <div class="col-sm-6 form-floating">
+          {{form.nombre|as_crispy_field}}
         </div>
+        <div class="col-sm-6 form-floating">
+          {{form.descripcion|as_crispy_field}}
+        </div>
+
+      </div>
+
+      <div class="row align-items-center justify-content-start">
+        <div class="col-sm-6 form-floating">
+          {{form.monto|as_crispy_field}}
+        </div>
+        <div class="col-sm-6 form-floating">
+          {{form.tipo_Cobro|as_crispy_field}}
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-start" style="position: relative; top: 10px;">
+        
+        <div class="d-grid gap-2">
+            <input class="btn btn-lg btn-success " type="submit" value="Guardar">
+        </div>
+
+
+    </div>
+     
+
+    </div>
+
+  </div>
+</form>
+
+
 
 {% endblock %}

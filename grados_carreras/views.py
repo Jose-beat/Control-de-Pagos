@@ -32,7 +32,7 @@ def muestraGrados(request):
       except EmptyPage:
             grados = paginator.page(paginator.num_pages)
             
-      return render(request, 'grados_carreras/lista_carrera.html', {'grados' : grados})
+      return render(request, 'grados_carreras/lista_carreras.html', {'grados' : grados})
 
 @login_required
 
@@ -68,7 +68,7 @@ def registroGrados(request):
                   # new_alumno = form.save()
       else:
             form = RegistroGrados()
-      return render(request, 'grados_carreras/registros.html', {'form':form})
+      return render(request, 'grados_carreras/registro_carrera.html', {'form':form})
 
       
 @login_required  
@@ -86,7 +86,7 @@ def editarGrado(request, carrera_id):
             data["form"] = formulario
       
    
-        return render(request, 'grados_carreras/editar.html',data)
+        return render(request, 'grados_carreras/editar_carrera.html',data)
 
 @login_required
 def Grado(request, carrera_id):

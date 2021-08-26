@@ -1,162 +1,161 @@
 {% extends 'componentes/base.html' %}
 {% load static %}
 {% block title %}Registrar Alumno{% endblock %}
-{% block seccion %}Registro de Alumnos{% endblock %}
+{% block seccion %} <i class="fa fa-user-plus"></i> Registro de Alumnos{% endblock %}
 {% block headers %}
-    
+
 {% endblock %}
 
 {% block pista %}
-  <li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
-  <li class="breadcrumb-item active" aria-current="page">Registrar Alumnos</li>
+<li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
+<li class="breadcrumb-item active" aria-current="page">Registrar Alumnos</li>
 {% endblock %}
 
 {% block content %}
-{% include "componentes/alerts.html" %} 
-    {% load crispy_forms_tags %}
-    <form   action="" method="POST" enctype="multipart/form-data" >
-        {% csrf_token %}
+{% include "componentes/alerts.html" %}
+{% load crispy_forms_tags %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
 
-        <div class="container">
-            
-    
-            <div class="row justify-content-end">
-                
-                <div class="row align-items-center justify-content-start">
+    <div class="container">
 
-                        <div class="col-sm-13">
-                            <div class="card mb-3" style="max-width: 640px;">
-                                <div class="row g-0">
-                                  <div class="col-md-4">
-                        
-                                    <img id="profileImage" src="{% static 'css/img/profile.jpg' %}" class="img-fluid rounded-start" alt="Imagen del Perfil">
-                                    
-                                    
-                                  </div>
-                                  <div class="col-md-8">
-                                    <div class="card-body">
-                                        <div class="input-group mb-3" >
-                                            {{forms.imagen_perfil|as_crispy_field}}
-                                        </div>
-                                        
-                                      
-                    
+
+        <div class="row justify-content-end">
+
+            <div class="row align-items-center justify-content-start">
+
+                <div class="col-sm-13">
+                    <div class="card mb-3" style="max-width: 640px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+
+                                <img id="profileImage" src="{% static 'css/img/profile.jpg' %}"
+                                    class="img-fluid rounded-start" alt="Imagen del Perfil">
+
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="input-group mb-3">
+                                        {{forms.imagen_perfil|as_crispy_field}}
                                     </div>
-                                  </div>
+
+
+
                                 </div>
-                              </div>
-                              
+                            </div>
                         </div>
-                        
-                        
+                    </div>
 
                 </div>
+
+
+
+            </div>
+
+            <div class="row align-items-center justify-content-start">
+
+
+
+                <div class="col-sm-6 form-floating">
+                    {{forms.nombre|as_crispy_field}}
+
+
+                </div>
+                <div class="col-sm-6 inactive">
+                    {{forms.matricula|as_crispy_field}}
+                </div>
+
+            </div>
+
+            <div class="row align-items-center justify-content-start">
+                <div class="col-sm-3">
+                    {{forms.apellido_primero|as_crispy_field}}
+                </div>
+                <div class="col-sm-3">
+                    {{forms.apellido_segundo|as_crispy_field}}
+                </div>
+                <div class="col-sm-3">
+                    {{forms.grado|as_crispy_field}}
+                </div>
+
+
+                <div class="col-sm-3">
+                    {{forms.grupo|as_crispy_field}}
+                </div>
+
+            </div>
+
+            <div class="row align-items-center justify-content-start">
+                <div class="col-sm-6">
+                    {{forms.telefono|as_crispy_field}}
+                </div>
+                <div class="col-sm-6">
+                    {{forms.beca|as_crispy_field}}
+                </div>
+
+
+            </div>
+
+            <div class="row align-items-center justify-content-start">
+                <div class="col-sm-6">
+                    {{forms.domicilio|as_crispy_field}}
+                </div>
+                <div class="col-sm-6">
+                    {{forms.carrera|as_crispy_field}}
+                </div>
+
+
+            </div>
+            <div class="row align-items-center justify-content-start">
+
+
+                <div class="col-sm-6">
+                    {{forms.email|as_crispy_field}}
+                </div>
+                <div class="col-sm-6">
+                    {{forms.justificacion_estado|as_crispy_field}}
+                </div>
+
+            </div>
+            <div class="row align-items-center justify-content-start">
+
+
+                <div class="col-sm-6">
+                    {{forms.password|as_crispy_field}}
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-start">
+
+                <div class="col-sm-6" style="margin-top: 20px; margin-bottom: 20px;">
+                    <div class="form-check form-switch">
+                        {{forms.estado|as_crispy_field}}
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+            <div class="row align-items-center justify-content-start" style="position: relative; top: 10px;">
                 
-                <div class="row align-items-center justify-content-start">
-
-
-
-                        <div class="col-sm-6 form-floating" >
-                            {{forms.nombre|as_crispy_field}}
-                            
-    
-                        </div>
-                        <div class="col-sm-6 inactive">
-                            {{forms.matricula|as_crispy_field}}
-                        </div>
-    
+                <div class="d-grid gap-2">
+                    <input class="btn btn-lg btn-success " type="submit" value="Guardar">
                 </div>
 
-                <div class="row align-items-center justify-content-start">
-                    <div class="col-sm-3" >
-                        {{forms.apellido_primero|as_crispy_field}}
-                    </div>
-                    <div class="col-sm-3" >
-                        {{forms.apellido_segundo|as_crispy_field}}
-                    </div>
-                     <div class="col-sm-3" >
-                        {{forms.grado|as_crispy_field}}
-                    </div>
-                        
-                    
-                    <div class="col-sm-3" >
-                        {{forms.grupo|as_crispy_field}}
-                    </div>
-                        
-                </div>
 
-                <div class="row align-items-center justify-content-start">
-                    <div class="col-sm-6" >
-                        {{forms.telefono|as_crispy_field}}
-                    </div>
-                    <div class="col-sm-6" >
-                            {{forms.beca|as_crispy_field}}
-                    </div>   
-                       
-                        
-                </div>
+            </div>
 
-                <div class="row align-items-center justify-content-start">
-                    <div class="col-sm-6" >
-                        {{forms.domicilio|as_crispy_field}}
-                    </div>
-                    <div class="col-sm-6" >
-                            {{forms.carrera|as_crispy_field}}
-                    </div>
-                            
-                       
-                </div>
-                <div class="row align-items-center justify-content-start">
-                    
-                
-                        <div class="col-sm-6" >
-                            {{forms.email|as_crispy_field}}
-                        </div>
-                        <div class="col-sm-6" >
-                            {{forms.justificacion_estado|as_crispy_field}}
-                        </div>
-
-                </div>
-                <div class="row align-items-center justify-content-start">
-                    
-                
-                    <div class="col-sm-6" >
-                        {{forms.password|as_crispy_field}}
-                    </div>
-                </div>
-                <div class="row align-items-center justify-content-start">
-                    
-                    <div class="col-sm-6"  style="margin-top: 20px; margin-bottom: 20px;" >
-                        <div class="form-check form-switch">
-                            {{forms.estado|as_crispy_field}}
-                        </div>
-                    </div>
-                    
-               
-                    
-                 
-                   
-
-                </div>
-               
-                <div class="row align-items-center justify-content-start" style="position: relative; top: 10px;" >
-                    <div class="col-sm-6" >
-                        
-                    </div>
-                    <div class="d-grid gap-2" >
-                        <input class="btn btn-lg btn-success " type="submit" value="Guardar">
-                    </div>
-                   
-                 
-                </div >
-                
         </div>
-    </div> 
-        
-        
-    </form>
+    </div>
+
+
+</form>
 {% endblock %}
 {% block scripts %}
-    <script defer src="{% static 'js/formComponents.js' %}"></script>
-    
+<script defer src="{% static 'js/formComponents.js' %}"></script>
+
 {% endblock %}

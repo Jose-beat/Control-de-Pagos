@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block title %}Editar Informacion del Alumno{% endblock %}
-{% block seccion %}Editar Informacion del Alumno{% endblock %}
+{% block seccion %}<i class="fa fa-edit"></i> Editar Informacion del Alumno{% endblock %}
 {% block pista %}
   <li class="breadcrumb-item"><a href="{% url 'muestraAlumnos' %}">Alumnos</a></li>
   <li class="breadcrumb-item active" aria-current="page">{{alumno.nombre}} {{alumno.apellido_primero}} {{alumno.apellido_segundo}} </li>

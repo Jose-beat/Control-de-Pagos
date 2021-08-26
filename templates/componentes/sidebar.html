@@ -4,41 +4,63 @@
    <button class="w3-button  w3-block w3-left-align w3-teal" id="titulo_sidebar" onclick="w3_close()">
     <i class="fa fa-arrow-left icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-github-alt"></i></span>
    </button>
+   <a class="w3-button w3-block w3-left-align w3-border-bottom" href="{% url 'index' %}">
+    <i class="fa fa-home icono"></i> <span class="seccion">Home</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+   </a>
+ 
     <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc()">
        <i class="fa fa-graduation-cap icono"></i> <span class="seccion">Alumnos</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
     </button>
     
-    <div id="demoAcc" class="w3-hide w3-white w3-card ">
-            <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">Lista Alumnos</a>
-            <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">Registrar nuevo Alumno</a>
+    <div id="demoAcc" class="w3-hide w3-white w3-card w3-border-bottom">
+            <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button">
+              <i class="fa fa-user-plus icono"></i> <span class="seccion">Registrar nuevo Alumno</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+            </a>
+            <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">
+              <i class="fa fa-users icono"></i> <span class="seccion">Lista de Alumnos</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+            </a>
+           
     </div>
    
 
   <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc1()">
         <i class="fa fa-credit-card icono"></i> <span class="seccion">Cobros</span>  <span class="flecha"><i class="fa fa-angle-down"></i></span>
     </button>
-      <div id="demoAcc1" class="w3-hide w3-white w3-card">
-        <a href="{% url 'lista_cobros' %}" class="w3-bar-item w3-button">Lista de Cobros</a>
-        <a href="{% url 'registro_cobro' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar Cobro</a>
-          
+      <div id="demoAcc1" class="w3-hide w3-white w3-card w3-border-bottom">
+        <a href="{% url 'registro_cobro' %}" class="w3-bar-item w3-button w3-border-bottom">
+          <i class="fa fa-plus-circle icono"></i> <span class="seccion">Registrar Cobro</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+        </a>
+
+        <a href="{% url 'lista_cobros' %}" class="w3-bar-item w3-button w3-border-bottom">
+          <i class="fa fa-th-list icono"></i> <span class="seccion">Lista de cobros</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+        </a>
       </div>
 
 <!--boton Grados y Carreras-->
 <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc3()" >
   <i class="fa fa-sitemap icono"></i> <span class="seccion">Grados y Carreras </span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
 </button>
-  <div id="demoAcc3" class="w3-hide w3-white w3-card">
-      <a href="{% url 'registroGrados' %}" class="w3-bar-item w3-button w3-border-bottom">Registrar  Carrera</a>
-      <a href="{% url 'muestraGrados' %}" class="w3-bar-item w3-button">Lista de Carreras</a>
+  <div id="demoAcc3" class="w3-hide w3-white w3-card w3-border-bottom">
+      <a href="{% url 'registroGrados' %}" class="w3-bar-item w3-button w3-border-bottom">
+        <i class="fa fa-plus-circle  icono"></i> <span class="seccion">Registrar  Carrera</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+      </a>
+      <a href="{% url 'muestraGrados' %}" class="w3-bar-item w3-button">
+        <i class="fa fa-th-list icono"></i> <span class="seccion">Lista de Carreras</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+
+      </a>
   </div>
 
 
 <button class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc4()" >
   <i class="fa fa-list-alt icono"></i> <span class="seccion">Registro de Pago</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
 </button>
-  <div id="demoAcc4" class="w3-hide w3-white w3-card" >
-      <a href="#" class="w3-bar-item w3-button w3-border-bottom">Registrar  Pago</a>
-      <a href="#" class="w3-bar-item w3-button">Lista de Pago</a>
+  <div id="demoAcc4" class="w3-hide w3-white w3-card w3-border-bottom" >
+      <a href="#" class="w3-bar-item w3-button w3-border-bottom">
+          <i class="fa fa-money icono"></i> <span class="seccion">Registrar un Pago</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+      </a>
+      <a href="#" class="w3-bar-item w3-button">
+        <i class="fa fa-home icono"></i> <span class="seccion">Lista de Pago</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+      </a>
   </div>
 
   <button id="btnUsr" class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
@@ -49,7 +71,7 @@
     {% endif %}
     <span class="seccion">{{request.user}}</span> <span class="flecha"><i class="fa fa-angle-down"></i></span>
   </button>
-    <div id="demoAcc5" class="w3-hide w3-white w3-card">
+    <div id="demoAcc5" class="w3-hide w3-white w3-card w3-border-bottom">
         <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-border-bottom">Crear Perfil</a>
         <a href="{% url 'profile' %}" class="w3-bar-item w3-button">Configurar Perfil</a>
         <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>
