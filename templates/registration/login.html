@@ -13,27 +13,25 @@
   {% endif %}
       {% if form.non_field_errors %}
         {% include "componentes/icons.html" %} 
-        <div class="alert alert-danger d-flex align-items-center aviso" role="alert">
+        <div id="alerta" class="alert alert-danger d-flex align-items-center aviso" role="alert">
           <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
             <use xlink:href="#exclamation-triangle-fill"/>
           </svg>
           <div>
-            Usuario o contraseña incorrectos, prueba de nuevo.
+            <strong>Usuario o contraseña incorrectos, Verificaque sus credenciales</strong>
           </div>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          
         </div>
 
       {% endif %}     
       <div class="col-md-9 mx-auto mb-5">
-        {% if 'register' in request.GET %}
-          <p style="color:green;">Usuario registrado correctamente, ya puedes identificarte.</p>
-        {% endif %}
+   
         
       <div class="login-form">   
         <form class="contenedor" action="" method="post">
         {% csrf_token %}
           <h3 class="mb-4">Iniciar sesión</h3>
-            <h2 class="text-center">Login</h2>       
+            <h2 class="text-center">Control de Pagos</h2>       
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Username" required="required" name="username" id="id_username">
             </div>
@@ -55,3 +53,7 @@
        
     </div>
 {% endblock %} 
+
+{% block scripts %}
+  <script src="{% static 'js/login.js' %}"></script>
+{% endblock scripts %}

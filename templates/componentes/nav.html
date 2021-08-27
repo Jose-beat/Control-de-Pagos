@@ -43,4 +43,6 @@
 </nav>
 {% endif %}
 
-{% block scripts %}<script defer src="{% static  'js/nav.js' %}"></script>{% endblock %}
+{% if user.is_authenticated %}
+  {% block scripts %}<script defer src="{% static  'js/nav.js' %}"></script>{% endblock %}
+{% endif %}

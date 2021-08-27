@@ -13,19 +13,30 @@ body {
   position: relative;
   background-color: #fff;
   left: 26%;
-  top: 100px;
+  top: 30px;
   width: 400px;
   height: 400px;
   padding: 50px;
   z-index: initial;
 }
 .aviso{
-    position: relative;
-    width: 400px;
-    top: 30px;
-    left: 350px;
-    z-index: 3;
+  position: relative;
+  width: 100%;  
+  z-index: 3;
 }
+
+.ocultar{
+
+  animation-name: desaparece;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+@keyframes desaparece {
+  from {opacity: 100;}
+  to {opacity: 0;}
+}
+
 
 /*pantalla 992*/
 @media only screen and (max-width: 992px) {
@@ -42,11 +53,10 @@ body {
   }
   .aviso{
     position: relative;
-    width: 400px;
-    top: 30px;
-    left: 150px;
+    width: 100%;  
     z-index: 3;
 }
+
 
 
 
@@ -65,9 +75,7 @@ body {
 
   .aviso{
     position: relative;
-    width: 400px;
-    top: 30px;
-    left:40px;
+    width: 100%;  
     z-index: 3;
 }
 
