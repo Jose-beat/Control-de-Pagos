@@ -7,3 +7,8 @@
 .asteriskField {
     display: none;
 }
+
+#main{
+    position: relative;
+    top: 50px;
+}

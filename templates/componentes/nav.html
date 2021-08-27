@@ -1,8 +1,8 @@
 {% load static %}
 {% if user.is_authenticated %}
-<nav >
-  <div class="w3-teal" id="nave">
-  <button id="openNav" class="w3-button w3-teal w3-xlarge w3-hover-black" onclick="w3_open()">
+<nav id="navegacion" class="newnav">
+  <div class="w3-highway-blue" id="nave">
+  <button id="openNav" class="w3-button w3-xlarge w3-hover-black" onclick="w3_open()">
     <span id="menu">&#9776;</i></span>
   </button>
 
@@ -35,7 +35,7 @@
 </nav>
 {% else %}
 <nav id="navegacion">
-  <div class="w3-teal">
+  <div class="w3-highway-blue">
     <div class="w3-container"  >
         <h3 id="titulo" class="mx-auto text-center">Control de Pagos</h3>  
     </div>
@@ -44,5 +44,6 @@
 {% endif %}
 
 {% if user.is_authenticated %}
+
   {% block scripts %}<script defer src="{% static  'js/nav.js' %}"></script>{% endblock %}
 {% endif %}

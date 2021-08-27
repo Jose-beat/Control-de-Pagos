@@ -12,8 +12,11 @@
     width: 35px;
     height: 35px;
 }
-#nave{
+
+#navegacion{
     z-index: 2;
+    position: fixed;
+    width: 100%;
     
 }
 #breadcrumber{
