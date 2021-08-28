@@ -1,5 +1,5 @@
 from django import forms
-from .updates import act_matricula
+from .updates import act_matricula, act_Grados_Carreras
 from grados_carreras.models import Grados_carreras
 from .models import Alumno
 from crispy_forms.helper import FormHelper
@@ -35,11 +35,11 @@ JUSTIFICACIONES = [
 try:
     
     carrera = Grados_carreras.objects.all()
-    #numero_grupos = 0
+    numero_grupos = 0
     #numero_grados = 0
     for i in carrera:
      CARRERAS.append((i.idCarrera, i.carrera))
-     #numero_grupos = i.cantidad_grupos
+     numero_grupos = i.cantidad_grupos
      #numero_grados = i.cantidad_grados
      
     
@@ -59,8 +59,8 @@ class RegistroAlumnos(forms.Form):
     domicilio = forms.CharField()
     telefono = forms.CharField()
     grado =  forms.ChoiceField(choices=GRADOS, required=True, label="Grado")
-    #grupo = forms.ChoiceField(choices=grupo_lista[0:numero_grupos], required = True, label="Grupo")
-    grupo = forms.ChoiceField(choices=GRUPOS, required = True, label="Grupo")
+    grupo = forms.ChoiceField(choices=GRUPOS[0:numero_grupos], required = True, label="Grupo")
+    #grupo = forms.ChoiceField(choices=GRUPOS, required = True, label="Grupo")
     email = forms.EmailField( )
     password = forms.CharField(widget= forms.PasswordInput())
     #beca = forms.IntegerField() 
@@ -78,6 +78,7 @@ class RegistroAlumnos(forms.Form):
         'value': act_matricula
         
         })
+
 
 class EditAlumnoForm(forms.ModelForm):
   

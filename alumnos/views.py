@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.urls import reverse
 from .models import Alumno
-from .updates import act_matricula
+from .updates import act_matricula, act_Grados_Carreras
 import datetime
 from grados_carreras.models import Grados_carreras
 from registration.models import Profile
@@ -50,13 +50,16 @@ def alumnoEdit(username, email, active, password, name, lastname1, lastname2):
 @login_required
 def registroAlumnos(request):
 
+    
       
+
       act_matricula()
       if request.method == 'POST':
             form = AlumnoForm(request.POST ,request.FILES)
             if form.is_valid():                  
                   print("SI HAY VALIDEZ")
                   form_data = form.cleaned_data
+                  
                   try:
                         alumn = Alumno()
                         alumn.grado_carrera = Grados_carreras.objects.get(idCarrera= form_data.get('carrera'))
@@ -86,7 +89,7 @@ def registroAlumnos(request):
                               estado = form_data.get('estado'),
                               justificacion_estado = form_data.get('justificacion_estado'),
                         )
-
+                        
                         
                         messages.success(request, 'El alumno ha sido creado exitosamente.')
                         return redirect(reverse('muestraAlumnos'))

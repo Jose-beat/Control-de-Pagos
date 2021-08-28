@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import registro_pago, lista_pago, editar_pago, index, eliminar_pago
-
+from .views import index, registroPago
 urlpatterns = [
-   # path('', index, name="index"),
+    #path('', index, name="index"),
+    path('', index, name="index"),
+    path('RegistroPagos', registroPago, name="registroPagos"),
    
 ]

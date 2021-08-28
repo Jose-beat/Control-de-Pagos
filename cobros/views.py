@@ -6,8 +6,6 @@ from django.urls import reverse
 from registration.models import Profile
 from django.contrib.auth.decorators import login_required
 
-def index(request):
-    return render(request, 'index.html')
 
 @permission_required('alumno.can_edit')
 @login_required
