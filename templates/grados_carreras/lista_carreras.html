@@ -3,32 +3,65 @@
 {% load static %}
 
 {% block title %}Lista de Grados{% endblock %}
+{% block headers %}
+  <link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lista_carreras.css' %}">
+{% endblock headers %}
 {% block seccion %}<i class="fa fa-sitemap icono"></i> Lista de Carreras{% endblock %}
 {% block pista %}<li class="breadcrumb-item active" aria-current="page">Grados y Carreras</li>{% endblock %}
+
 {% block content %}
-<br>
-<div class="w3-row container-center">
-  <table class="w3-table-all w3-card-4"">
-      <thead class="font-weight-bold">
-          <tr>
-              <td>#Id</td>
-              <td>Nombre</td>
-              <td>Nivel</td>
-              
-          </tr>
-      </thead>
-    {% for grado in grados %}
-    <tr>
-      <td> 
-        <a href="{% url 'Grado' grado.idCarrera %}">
+<form  method="get">      
+          
+      
+  <div class="input-group mb-3">
+      
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i> Buscar Codigo</button>
+      </div>
+        <input name="buscar" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Indique el codigo sa buscar" style="width: 250px;">
+    </div>
+           
+   </form>
+   <div class="row">
+   <table class="table">
+     <thead class="table-dark">
+       <tr>
+        <th>Codigo</th>
+        <th>Carrera</th>
+        <th>C. Grados</th>
+        <th>C. Grupos</th>
+       </tr>
+     </thead>
+     
+     <tbody>
+      {% for grado in grados %}
+     
+       <tr>
+         <td> 
+          <button class="btn btn-outline-primary" onclick="abriModalVista('{% url 'Grado' grado.idCarrera %}')" id="myBtn" >
             {{grado.idCarrera}}
-        </a>
-      </td>
-      <td>{{grado.carrera}}</td>
-      <td>{{grado.cantidad_grados}}</td>
-      <td>{{grado.cantidad_grupos}}</td>
-    </tr>
-    {% endfor %}
+          </button>
+         </td>
+         <td>{{grado.carrera}}</td>
+         <td>{{grado.cantidad_grados}}</td>
+         <td>{{grado.cantidad_grupos}}</td>
+       </tr>
+     
+     
+     {% endfor %}
+   </tbody>
+   </table>
+   </div>
+<div class="modal fade" id="myModal" role="dialog">
+</div>
 
-
+    
     {% endblock %}
+
+
+
+    {% block scripts %}
+    <script  type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>  
+    {% endblock scripts %}
+    

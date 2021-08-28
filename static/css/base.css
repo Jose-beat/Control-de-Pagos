@@ -1,7 +1,12 @@
+body{
+    margin:0px; 
+    padding:0px; 
+    border:0px;
+}
 #marco{
     position: relative;
     top: 30px;
-    
+    height: 400px;
 }
 
 .asteriskField {
@@ -11,4 +16,9 @@
 #main{
     position: relative;
     top: 50px;
+    
+}
+
+.botoIdentify{
+    width: 100px;
 }

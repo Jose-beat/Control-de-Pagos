@@ -1,27 +1,25 @@
-{% extends 'componentes/base.html' %}
-
-{% load static %}
-
-{% block title %} Carrera {% endblock %}
-{% block seccion %}<i class="fa fa-sitemap icono"></i> Carrera{% endblock %}
-{% block pista %}
-  <li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Grados y Carreras</a></li>
-  <li class="breadcrumb-item active" aria-current="page">{{carrera.carrera}}</li>
-{% endblock %}
-{% block content %}
-    {% load crispy_forms_tags %}
-
-<br><br>
-
-                <ul class="w3-ul w3-card-4 w3-large" style="width:50%; position: relative; left: 300px;">
-                    <li><strong>Edicion</strong> <a href="{% url 'EditGrado' carrera.idCarrera %}">Editar</a></li>    
-                    <li class="w3-grey"><h3>Datos Personales</h3></li>
-                    <li><strong>idCarrera: </strong>  {{carrera.idCarrera}}</li>
-                    <li><strong>carrera: </strong> {{carrera.carrera}}</li>
-                    <li><strong>Grados: </strong> {{carrera.cantidad_grados}}</li>
-                    <li><strong>Grupos: </strong> {{carrera.cantidad_grupos}}</li>
-                </ul>
-             
-            
-    
-      {% endblock %}
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{carrera.carrera}}</h5>
+      <button onclick="cerrarModalVista()" type="button" class="btn" data-dismiss="modal" aria-label="Close">
+        <span  aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{carrera.idCarrera}}</p>
+      <p>{{carrera.carrera}}</p>
+      <p>{{carrera.nivel}}</p>
+      <p>{{carrera.cantidad_grados}}</p>
+      <p>{{carrera.cantidad_grupos}}</p>
+      <p>{{carrera.idCarrera}}</p>
+      <a href="{% url 'EditGrado' carrera.idCarrera %}" class="btn btn btn-warning">
+        Editar Datos
+      </a>
+    </div>
+    <div class="modal-footer">
+      <button  onclick="cerrarModalVista()" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      
+    </div>
+  </div>
+</div>
