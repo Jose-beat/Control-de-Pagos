@@ -1,0 +1,93 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Alumnos</h5>
+        <button onclick="cerrarModal('#modalAlumnos')" type="button" class="btn" data-dismiss="modal" aria-label="Close">
+          <span  aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container" >
+    
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{% url 'registroAlumnos' %}" class="btn btn-outline-secondary"><i class="fa fa-address-card"></i> Añadir Nuevo Alumno </a>
+          </div>  
+          <br>
+            
+        <div class="row">
+          <table class="table">
+            <thead class="table-dark">
+              <tr>
+                <th>Matricula</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+            
+                <th>Estado</th>
+                <th>Seleccion</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+            {% for alumno in alumnos %}
+            
+              <tr>
+                <td> 
+                  <a class="btn btn-outline-primary" href="{% url 'alumno' alumno.matricula %}">
+                      {{alumno.matricula}}
+                  </a>
+                </td>
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.apellido_primero}} {{alumno.apellido_segundo}} </td>
+                <td>
+                  {% if alumno.estado %}
+                      <span class="badge bg-success">Alumno Activo</span>
+                  {% else %}
+                      <span class="badge bg-danger">Alumno Inactivo</span>
+                  {% endif %}
+                </td>
+                <td>
+                  <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValor('#modalAlumnos', '#id_datos_alumno', '{{ alumno.matricula }}')">
+                    Seleccionar
+                  </button>
+                </td>
+              </tr>
+            
+            
+            {% endfor %}
+          </tbody>
+          </table>
+          </div>
+        <div class="row">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              {% if alumnos.has_next or alumnos.has_previous %}
+                {% if alumnos.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ alumnos.previous_page_number }}" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                {% endif %}
+        
+                {% for page in alumnos.paginator.page_range %}           
+                  <li class="{% if alumnos.number == page %}page-item active{% endif %}"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                {% endfor %}
+        
+                {% if alumnos.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ alumnos.next_page_number }}">Next</a>
+                  </li>
+                {% endif %}
+                {% endif %}
+            </ul>
+          </nav>
+            
+            
+            
+            </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button  onclick="cerrarModal('#modalAlumnos')" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>

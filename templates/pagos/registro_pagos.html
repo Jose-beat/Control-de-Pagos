@@ -11,7 +11,7 @@
 {% block content %}
 {% include "componentes/alerts.html" %}
 {% load crispy_forms_tags %}
-<form action="" method="get"></form>
+
 <form action="" method="post">
   {% csrf_token %}
   <p>A well-known quote, contained in a blockquote element.</p>
@@ -19,9 +19,21 @@
   {{forms.cantidad|as_crispy_field}}
   {{forms.descuento|as_crispy_field}}
   {{forms.importe_total|as_crispy_field}}
-  {{forms.datos_cobro|as_crispy_field}}
-  {{forms.datos_alumno|as_crispy_field}}
-  <div class="row align-items-center justify-content-start" style="position: relative; top: 10px;">
+  <div class="input-group mb-3">
+    <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'ver_cobro' %}', '#modalCobros')">
+      Buscar Cobro
+    </button>
+    {{forms.datos_cobro|as_crispy_field}}
+  </div>
+
+  <div class="input-group ">
+    <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'modalAlumno' %}', '#modalAlumnos')">
+      Buscar Alumno
+    </button>
+    {{forms.datos_alumno|as_crispy_field}}  
+    
+  </div>
+  <div class="row align-items-center justify-content-start">
                 
     <div class="d-grid gap-2">
         <input class="btn btn-lg btn-success " type="submit" value="Guardar">
@@ -30,6 +42,17 @@
 
 </div>
 </form>
-     
-  
+
+
+<div class="modal fade" id="modalCobros" role="dialog">
+</div>
+
+<div class="modal fade" id="modalAlumnos" role="dialog">
+</div>
+
+
 {% endblock %}
+
+{% block scripts %}
+<script  type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>  
+{% endblock scripts %}

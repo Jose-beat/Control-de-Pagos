@@ -55,3 +55,11 @@ def eliminar_cobro(request, id):
     cobro =  get_object_or_404(Cobro, id=id)
     cobro.delete()
     return redirect(to="lista_cobros")
+
+def modalCobro(request):
+    cobros = Cobro.objects.all()
+    data = {
+        'cobros': cobros
+    }
+    return render(request,'cobros/modalCobro.html', data)
+     

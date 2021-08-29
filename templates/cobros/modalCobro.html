@@ -1,0 +1,40 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cobros</h5>
+        <button onclick="cerrarModal('#modalCobros')" type="button" class="btn" data-dismiss="modal" aria-label="Close">
+          <span  aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% for p in cobros %}
+        <tr>
+            <td></td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.descripcion }}</td>
+            <td>{{ p.monto }}</td>
+            
+            <td>{{ p.created }}</td>
+            <td>{{ p.tipo_Cobro }}</td>
+            <td>
+                <div class="btn-group-vertical">
+                <a href="{% url 'editar_cobro' p.id %}" class="btn btn-primary btn-sm">Editar</a>
+                &nbsp;
+                <a href="{% url 'eliminar_cobro' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+
+                <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValor('#modalCobros', '#id_datos_cobro', '{{ p.id }}')">
+                    Seleccionar
+                </button>
+
+                </div>
+               
+            </td>
+    
+        </tr>
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button  onclick="cerrarModal('#modalCobros')" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>

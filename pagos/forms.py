@@ -46,6 +46,23 @@ class FormPago(forms.ModelForm):
 
           model=Pago
           fields = '__all__'
+          labels = {
+               "datos_cobro": "",
+               "datos_alumno": ""
+          }
           widgets = {
-               'numero_tramite' : NumberInput(attrs={'readonly':True, 'value': act_tramite})
+               'numero_tramite' : NumberInput(attrs={'readonly':True, 'value': act_tramite}),
+               'datos_cobro' : Select(attrs={'readonly':True,'type': "text",
+                                             'class' : 'form-select',
+                                             'placeholder': 'Cobros',
+                                             'aria-label':'Añadir un cobro',
+                                             'aria-describedby': 'button-addon1'}
+                                   ),
+               'datos_alumno': Input(attrs={'readonly':True,
+                                             'type': "text",
+                                             'class' : 'form-select',
+                                             'placeholder': 'Alumno',
+                                             'aria-label':'Añadir un alumno',
+                                             'aria-describedby': 'button-addon1'})
+               #<input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
           }

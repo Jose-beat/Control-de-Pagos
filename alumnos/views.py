@@ -139,6 +139,32 @@ def muestraAlumnos(request):
 
 
       return render(request, "alumnos/muestra_alumnos.html", {'alumnos' : alumnos})
+
+def modalAlumno(request):
+      queryset = request.GET.get("buscarEnModal")
+      print(queryset)
+      alumnos_totales = Alumno.objects.all()
+      #Funcion de barra de busqueda 
+      if queryset:
+            alumnos_totales = Alumno.objects.filter(
+                  Q(matricula__icontains = queryset) 
+                
+            )
+      #Seccion de paginacion 
+      paginator = Paginator(alumnos_totales, 7)
+      page = request.GET.get('page')
+      try:
+            alumnos = paginator.page(page)
+      except PageNotAnInteger: 
+            alumnos = paginator.page(1)
+      except EmptyPage:
+            alumnos = paginator.page(paginator.num_pages)
+
+
+
+      return render(request, "alumnos/modal_alumnos.html", {'alumnos' : alumnos})
+
+
 @login_required
 def alumno(request, alumno_id):
       pass
