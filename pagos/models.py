@@ -14,3 +14,20 @@ from django.db import models
 
 '''
 
+class Pago(models.Model):
+    numero_tramite = models.IntegerField(primary_key=True)
+    cantidad = models.IntegerField()
+    descuento = models.CharField(max_length=100)
+    importe_total = models.IntegerField()
+    datos_cobro =  models.ForeignKey("cobros.Cobro", on_delete=models.CASCADE)
+    datos_alumno = models.ForeignKey("alumnos.Alumno", on_delete=models.CASCADE)
+    
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Fecha de Creacion"
+    )
+    
+    updated = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Fecha de Edicion'
+    )

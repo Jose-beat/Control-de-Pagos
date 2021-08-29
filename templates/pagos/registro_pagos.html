@@ -9,5 +9,27 @@
   <li class="breadcrumb-item active" aria-current="page">Registrar un Pago</li>
 {% endblock %}
 {% block content %}
+{% include "componentes/alerts.html" %}
+{% load crispy_forms_tags %}
+<form action="" method="get"></form>
+<form action="" method="post">
+  {% csrf_token %}
+  <p>A well-known quote, contained in a blockquote element.</p>
+  {{forms.numero_tramite|as_crispy_field}}
+  {{forms.cantidad|as_crispy_field}}
+  {{forms.descuento|as_crispy_field}}
+  {{forms.importe_total|as_crispy_field}}
+  {{forms.datos_cobro|as_crispy_field}}
+  {{forms.datos_alumno|as_crispy_field}}
+  <div class="row align-items-center justify-content-start" style="position: relative; top: 10px;">
+                
+    <div class="d-grid gap-2">
+        <input class="btn btn-lg btn-success " type="submit" value="Guardar">
+    </div>
+
+
+</div>
+</form>
+     
   
 {% endblock %}
