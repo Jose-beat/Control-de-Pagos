@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import permission_required
 from .models import Pago
-from .forms import FormRegistroPago
+from .forms import FormRegistroPago, FormPago
 from alumnos.models import Alumno
 from cobros.models import Cobro
 from django.contrib import messages
 from .updates import act_tramite
 from django.db.models import Q
+from django.urls import reverse
 
 def index(request):
         return render(request, 'index.html')
@@ -16,7 +17,7 @@ model = Pago
 def registroPago(request):
         act_tramite()
         if request.method == 'POST':
-            form = FormRegistroPago(request.POST)
+            form = FormPago(request.POST)
             if form.is_valid():                  
                   form_data = form.cleaned_data
                   
@@ -24,8 +25,9 @@ def registroPago(request):
                         pagoM = Pago()
                         '''
                         '''
-                        pagoM.datos_cobro = Cobro.objects.get(nombre= form_data.get('datos_cobro'))
-                        pagoM.datos_alumno = Alumno.objects.get(matricula= form_data.get('datos_alumno'))
+                       
+                        pagoM.datos_cobro = Cobro.objects.get(nombre= str(form_data.get('datos_cobro')))
+                        pagoM.datos_alumno = Alumno.objects.get(matricula= str(form_data.get('datos_alumno')))
 
                         pago = model.objects.create(
 
@@ -46,12 +48,13 @@ def registroPago(request):
                         messages.success(request, 'El pago se realizo exitosamente.')
                         return redirect(reverse('registroPagos'))
                   except Exception as e:
-
+                        print("Desde la vista")
+                        print(e)
                         pagos_totales = Pago.objects.all()
-                        llave = form_data.get('tramite')
+                        llave = form_data.get('numero_tramite')
                         
-                        pagos_totales = Alumno.objects.filter(
-                              Q(tramite__icontains = llave) 
+                        pagos_totales = Pago.objects.filter(
+                              Q(numero_tramite__icontains = llave) 
                                )
                         if pagos_totales:
                               messages.error(request, 'El numero de tramite es invalido')
@@ -59,11 +62,11 @@ def registroPago(request):
                               print(e)
                               messages.error(request, 'El pago no se efectuo correctamente')
 
-                        return redirect(reverse('registroPago'))
+                        return redirect(reverse('registroPagos'))
                   #new_alumno = form.save()
         else:
             print("NO HAY VALIDEZ")
-            form = FormRegistroPago()
+            form = FormPago()
 
       
 

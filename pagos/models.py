@@ -31,3 +31,8 @@ class Pago(models.Model):
         auto_now=True,
         verbose_name='Fecha de Edicion'
     )
+    class Meta:
+            ordering=['numero_tramite']
+
+    def __str__(self):
+        return str(self.numero_tramite)

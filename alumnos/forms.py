@@ -50,7 +50,7 @@ try:
 except:
     CARRERAS = []
 
-
+#Este formulario ha sido descartado y proximamente ELIMINADO
 class RegistroAlumnos(forms.Form):
     matricula = forms.IntegerField( widget= forms.NumberInput(attrs={'readonly': True}))
     nombre =  forms.CharField()
@@ -99,4 +99,19 @@ class EditAlumnoForm(forms.ModelForm):
             
             #'carrera': Select(choices=CARRERAS)
         }
+class AlumnoFormM(forms.ModelForm):
     
+    class Meta:
+        model = Alumno
+        fields = '__all__'
+        widgets = {
+            #'grupo': Select(choices=grupo_lista[0:numero_grupos]),
+            'matricula': NumberInput(attrs={'readonly':True,  'value': act_matricula}),
+            'beca': Select(choices=BECAS),
+            'grado': Select(choices=GRADOS),
+            'grupo': Select(choices=GRUPOS),
+            'justificacion_estado': Select(choices=JUSTIFICACIONES),
+            'password' : Input(attrs={'type':'password'})
+            
+            #'carrera': Select(choices=CARRERAS)
+        }

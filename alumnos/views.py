@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import RegistroAlumnos as AlumnoForm, EditAlumnoForm
+from .forms import RegistroAlumnos as AlumnoForm, EditAlumnoForm, AlumnoFormM
 from django.db.models import Q
 from django.contrib import messages
 from django.urls import reverse
@@ -50,12 +50,9 @@ def alumnoEdit(username, email, active, password, name, lastname1, lastname2):
 @login_required
 def registroAlumnos(request):
 
-    
-      
-
       act_matricula()
       if request.method == 'POST':
-            form = AlumnoForm(request.POST ,request.FILES)
+            form = AlumnoFormM(request.POST ,request.FILES)
             if form.is_valid():                  
                   print("SI HAY VALIDEZ")
                   form_data = form.cleaned_data
@@ -111,7 +108,7 @@ def registroAlumnos(request):
                   #new_alumno = form.save()
       else:
             print("NO HAY VALIDEZ")
-            form = AlumnoForm()
+            form = AlumnoFormM()
 
       
       return render(request, "alumnos/registro_alumnos.html", {'forms': form})
