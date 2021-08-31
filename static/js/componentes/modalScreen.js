@@ -50,12 +50,43 @@ function cerrarModal(modalName){
      
 }
 
-function cambiarValor(modalName, idInput, valor, valores){
-    var $ = jQuery.noConflict();
+function cambiarValorAlumno(modalName, idInput, valor, valoresAlumno){
+        var $ = jQuery.noConflict();
         console.log("Cambio de valor: " + valor)
         console.log("Elemento a cambiar: " + idInput)
-        console.log("Mis valores: " + valores)
+        document.getElementById("matricula").innerHTML = valoresAlumno.matricula
+        document.getElementById("nombreAlumno").innerHTML = valoresAlumno.nombre
+        document.getElementById("apellidos").innerHTML = valoresAlumno.apellidos
+        document.getElementById("domicilio").innerHTML = valoresAlumno.domicilio
+        document.getElementById("carrera").innerHTML = valoresAlumno.carrera
+        document.getElementById("telefono").innerHTML = valoresAlumno.telefono
+        document.getElementById("email").innerHTML = valoresAlumno.email
+        console.log(valoresAlumno)
         
+        if(valoresAlumno.matricula){
+            console.log("Hay un alumno")
+        }else{
+            console.log("no hay Alumno")   
+        }
+
+    
+
         $(idInput).val(valor)
         cerrarModal(modalName)
+}
+
+
+function cambiarValorCobro(modalName, idInput, valor, valoresCobro){
+    document.getElementById("idCobro").innerHTML = valoresCobro.idCobro
+    document.getElementById("nombreCobro").innerHTML = valoresCobro.nombre
+    document.getElementById("descripcion").innerHTML = valoresCobro.descripcion
+    document.getElementById("monto").innerHTML = valoresCobro.monto
+    document.getElementById("tipoCobro").innerHTML = valoresCobro.tipoCobro
+
+    var $ = jQuery.noConflict();
+
+    console.log(valoresCobro)
+
+    $(idInput).val(valor)
+    cerrarModal(modalName)
 }

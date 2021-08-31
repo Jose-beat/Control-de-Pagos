@@ -22,7 +22,13 @@
                 &nbsp;
                 <a href="{% url 'eliminar_cobro' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
 
-                <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValor('#modalCobros', '#id_datos_cobro', '{{ p.id }}')">
+                <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValorCobro('#modalCobros', '#id_datos_cobro','{{ p.id }}',  
+                { idCobro : '{{ p.id }}', 
+                nombre :  '{{ p.nombre }}', 
+                descripcion : '{{ p.descripcion }}', 
+                monto : '{{ p.monto }}', 
+                creacion : '{{ p.created }}', 
+                tipoCobro : '{{ p.tipo_Cobro }}'})">
                     Seleccionar
                 </button>
 
@@ -32,7 +38,7 @@
     
         </tr>
         {% endfor %}
-      </div>
+      </div>{{ p.id }}
       <div class="modal-footer">
         <button  onclick="cerrarModal('#modalCobros')" type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
       </div>

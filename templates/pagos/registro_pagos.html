@@ -30,13 +30,17 @@
     </button>
     {{forms.datos_cobro|as_crispy_field}}
   </div>
+  
+  <h4 >Codigo del Pago: </h4>
+    <h5 id="idCobro" ></h5>
   <h4>Nombre del Pago: </h4>
-
+    <h5 id="nombreCobro" ></h5>
   <h4>Descripcion del Pago: </h4>
-
+    <h5 id="descripcion" ></h5>
   <h4>Monto a Pagar: </h4>
-
-  <h4>Tipo de Pago: </h4>
+    <h5 id="monto" ></h5>
+  <h4 >Tipo de Pago: </h4>
+    <h5 id="tipoCobro" ></h5>
 </div>
 
 <div class="border  border-4">
@@ -48,19 +52,19 @@
   </div>
 
   <h4>Matricula: </h4>
-
+    <h5 id="matricula" ></h5>
   <h4>Nombre: </h4>
-
+    <h5 id="nombreAlumno"></h5>
   <h4>Apellidos: </h4>
-
+    <h5 id="apellidos" ></h5>
   <h4>Domicilio: </h4>
-
+    <h5 id="domicilio" ></h5>
   <h4>Carrera: </h4>
-
+    <h5 id="carrera" ></h5>
   <h4>Telefono: </h4>
-
+    <h5 id="telefono" ></h5>
   <h4>Email: </h4>
-
+    <h5 id="email" ></h5>
 </div>
   <div class="row align-items-center justify-content-start">
                 
@@ -78,11 +82,11 @@
 {% endblock %}
 
 {% block modals %}
-        <div class="modal fade" id="modalCobros" role="dialog">
-</div>
+  <div class="modal fade" id="modalCobros" role="dialog">
+  </div>
 
-<div class="modal fade" id="modalAlumnos" role="dialog">
-</div>
+  <div class="modal fade" id="modalAlumnos" role="dialog">
+  </div>
 
 {% endblock modals %}
 

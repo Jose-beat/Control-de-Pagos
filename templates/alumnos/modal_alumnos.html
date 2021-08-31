@@ -46,7 +46,14 @@
                   {% endif %}
                 </td>
                 <td>
-                  <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValor('#modalAlumnos', '#id_datos_alumno', '{{ alumno.matricula }}', ['{{ alumno.matricula }}', '{{ alumno.matricula }}'])">
+                  <button id="SeleccionAlumno" class="btn btn-primary btn-sm" onclick="cambiarValorAlumno('#modalAlumnos', '#id_datos_alumno', '{{ alumno.matricula }}', 
+                  { matricula : '{{ alumno.matricula }}', 
+                    nombre : '{{ alumno.nombre }}',
+                    apellidos : '{{alumno.apellido_primero}} {{alumno.apellido_segundo}}',
+                    domicilio : '{{alumno.domicilio}}',
+                    carrera: '{{alumno.carrera}}',
+                    telefono: '{{alumno.telefono}}',
+                    email : '{{alumno.email}}'},)">
                     Seleccionar
                   </button>
                 </td>

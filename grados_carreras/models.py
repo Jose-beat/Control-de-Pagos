@@ -18,8 +18,8 @@ class Grados_carreras(models.Model):
     )
 
     class Meta:
-        ordering=['idCarrera']
+        ordering=['carrera']
 
     def __str__(self):
-        return str(self.idCarrera)
+        return str(self.carrera)
         
