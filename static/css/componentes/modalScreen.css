@@ -1,3 +1,14 @@
-#myModal{
-    background-color: rgba(0, 0, 0, 0.67) !important;
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+.modal-content{
+
+    z-index: 1 !important;
 }

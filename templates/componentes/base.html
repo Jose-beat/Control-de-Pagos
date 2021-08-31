@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
     <link href="{% static 'vendor/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet"/>
@@ -21,27 +21,28 @@
   <body>
     <div id="back"  >
     </div>
-  {% if user.is_authenticated %}
+    
+    
+    {% if user.is_authenticated %}
       {% include "componentes/sidebar.html" %} 
-  {% endif %}
-  {% include "componentes/nav.html" %} 
+    {% endif %}
 
+    {% include "componentes/nav.html" %} 
+  
   
 
 <div id="main">
-<div id="contenido"  class="container">
-
   {% if user.is_authenticated %}
-  <div id="sectionBread" class="card">
+  <div id="sectionBread" class="nav justify-content-center">
     <nav id="breadcrumber"  aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
         {% block pista %}{% endblock %}
       </ol>
     </nav>
+    {% endif %}
   </div>
-  {% endif %}
-
+<div id="contenido"  class="container">
 
       {% if user.is_authenticated %}
     
@@ -51,8 +52,10 @@
           </div>
           <div class="card-body">
             {% block content %}{% endblock %}
+          
           </div>
         </div>
+        
         
     
       {% else %}
@@ -66,6 +69,9 @@
     </div>
 
 </div>
+        {% block modals %}
+        {% endblock modals %}
+
     {% block scripts %} {% endblock %}
     <script defer src="{% static  'vendor/jquery/jquery-3.6.0.min.js' %}"></script>
     <script defer src="{% static  'vendor/popper/popper.min.js' %}"></script>

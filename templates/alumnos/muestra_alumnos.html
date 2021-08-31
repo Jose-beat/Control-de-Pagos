@@ -2,6 +2,9 @@
 
 {% load static %}
 {% block title %}Alumnos en Sistema{% endblock %}
+{% block headers %}
+  <link rel="stylesheet" href="{% static 'css/muestras.css' %}">
+{% endblock headers %}
 {% block seccion %}<i class="fa fa-graduation-cap"></i> Alumnos en Sistema{% endblock %}
 {% block pista %}<li class="breadcrumb-item active" aria-current="page">Alumnos</li>{% endblock %}
 {% block content %}

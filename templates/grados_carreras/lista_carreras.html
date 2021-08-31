@@ -6,6 +6,7 @@
 {% block headers %}
   <link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
   <link rel="stylesheet" href="{% static 'css/lista_carreras.css' %}">
+  <link rel="stylesheet" href="{% static 'css/muestras.css' %}">
 {% endblock headers %}
 {% block seccion %}<i class="fa fa-sitemap icono"></i> Lista de Carreras{% endblock %}
 {% block pista %}<li class="breadcrumb-item active" aria-current="page">Grados y Carreras</li>{% endblock %}
@@ -53,12 +54,14 @@
    </tbody>
    </table>
    </div>
-<div class="modal fade" id="myModal" role="dialog">
+
 </div>
 
     
     {% endblock %}
-
+      {% block modals %}
+        <div class="modal fade" id="myModal" role="dialog">
+      {% endblock modals %}
 
 
     {% block scripts %}

@@ -17,9 +17,9 @@
         {% else %}
           <i id="iconUser"  class="fa fa-user"></i>
         {% endif %}
-        
-        
         {{request.user}} <i class="fa fa-angle-down"></i></button>
+
+        
       <div   id="listAction" class="w3-dropdown-content w3-bar-block w3-card-4" >
       <a href="{% url 'signup' %}" class="w3-bar-item w3-button">Crear Perfil</a>
       <a href="{% url 'profiles:list' %}" class="w3-bar-item w3-button">Perfiles creados</a>

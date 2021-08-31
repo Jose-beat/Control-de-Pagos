@@ -1,12 +1,13 @@
-body{
-    margin:0px; 
-    padding:0px; 
-    border:0px;
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
 }
 #marco{
     position: relative;
-    top: 30px;
-    
+    top: 60px;
+    z-index: 0;
 }
 
 .asteriskField {
@@ -16,6 +17,7 @@ body{
 #main{
     position: relative;
     top: 50px;
+    z-index: 0;
     
 }
 

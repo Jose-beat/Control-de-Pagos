@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block title %}Registro de Pago {% endblock %}
+{% block headers %}
+  <link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
+{% endblock headers %}
 {% block seccion %}<i class="fa fa-money-check-edit-alt "></i> Registrar Pago{% endblock %}
 {% block pista %}
   <li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Pagos</a></li>
@@ -19,20 +22,24 @@
   {{forms.cantidad|as_crispy_field}}
   {{forms.descuento|as_crispy_field}}
   {{forms.importe_total|as_crispy_field}}
+  
+<div class="border  border-4">
   <div class="input-group mb-3">
     <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'ver_cobro' %}', '#modalCobros')">
       Buscar Cobro
     </button>
     {{forms.datos_cobro|as_crispy_field}}
   </div>
+</div>
 
+<div class="border  border-4">
   <div class="input-group ">
     <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'modalAlumno' %}', '#modalAlumnos')">
       Buscar Alumno
     </button>
     {{forms.datos_alumno|as_crispy_field}}  
-    
   </div>
+</div>
   <div class="row align-items-center justify-content-start">
                 
     <div class="d-grid gap-2">
@@ -44,14 +51,18 @@
 </form>
 
 
-<div class="modal fade" id="modalCobros" role="dialog">
+
+
+{% endblock %}
+
+{% block modals %}
+        <div class="modal fade" id="modalCobros" role="dialog">
 </div>
 
 <div class="modal fade" id="modalAlumnos" role="dialog">
 </div>
 
-
-{% endblock %}
+{% endblock modals %}
 
 {% block scripts %}
 <script  type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>  
