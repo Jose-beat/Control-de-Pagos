@@ -2,11 +2,11 @@ let cerrar = document.getElementById("cerrar");
 let modal = document.getElementById("myModal");
 let seleccionCobro = document.getElementById("SeleccionCobro");
 let navegacion = document.getElementById("navegacion");
-let marco = document.getElementById("main");
+let main = document.getElementById("main");
 
 function abriModalVista(url){
     navegacion.style.zIndex = 0;
-    marco.style.zIndex = -1;
+    main.style.zIndex = -1;
     var $ = jQuery.noConflict();
 
     $('#myModal').load(url, function(){
@@ -17,7 +17,7 @@ function abriModalVista(url){
 
 function cerrarModalVista(){
     navegacion.style.zIndex = 1;
-    marco.style.zIndex = 0;
+    main.style.zIndex = 0;
     var $ = jQuery.noConflict();
         console.log("Cerrar")
         $('#myModal').modal('toggle');
@@ -27,7 +27,7 @@ function cerrarModalVista(){
 
 function abriModal(url, modalName){
     navegacion.style.zIndex = 0;
-    marco.style.zIndex = -1;
+    main.style.zIndex = -1;
     var $ = jQuery.noConflict();
 
     $(modalName).load(url, function(){
@@ -39,7 +39,7 @@ function abriModal(url, modalName){
 
 function cerrarModal(modalName){
     navegacion.style.zIndex = 1;
-    marco.style.zIndex = 0;
+    main.style.zIndex = 0;
     var $ = jQuery.noConflict();
         console.log("Cerrar")
         $(modalName).modal('toggle');
