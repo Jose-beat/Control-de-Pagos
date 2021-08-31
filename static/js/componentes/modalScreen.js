@@ -6,7 +6,7 @@ let main = document.getElementById("main");
 
 function abriModalVista(url){
     navegacion.style.zIndex = 0;
-    main.style.zIndex = -1;
+    
     var $ = jQuery.noConflict();
 
     $('#myModal').load(url, function(){
@@ -17,10 +17,12 @@ function abriModalVista(url){
 
 function cerrarModalVista(){
     navegacion.style.zIndex = 1;
-    main.style.zIndex = 0;
+    
     var $ = jQuery.noConflict();
         console.log("Cerrar")
         $('#myModal').modal('toggle');
+        
+        
      
      
 }
