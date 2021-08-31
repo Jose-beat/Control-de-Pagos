@@ -3,6 +3,7 @@ let modal = document.getElementById("myModal");
 let seleccionCobro = document.getElementById("SeleccionCobro");
 let navegacion = document.getElementById("navegacion");
 let main = document.getElementById("main");
+let monto = 0;
 
 function abriModalVista(url){
     navegacion.style.zIndex = 0;
@@ -61,22 +62,39 @@ function cambiarValorAlumno(modalName, idInput, valor, valoresAlumno){
         document.getElementById("carrera").innerHTML = valoresAlumno.carrera
         document.getElementById("telefono").innerHTML = valoresAlumno.telefono
         document.getElementById("email").innerHTML = valoresAlumno.email
-        console.log(valoresAlumno)
         
-        if(valoresAlumno.matricula){
-            console.log("Hay un alumno")
+        
+        $('#id_descuento').val(valoresAlumno.descuento)
+        let descuento = $('#id_descuento').val()
+
+        if(descuento !== "0"){
+            parseInt(descuento);
+            let procentaje = descuento / 100;
+
+            let totalDescuento = monto * procentaje;
+
+            console.log("DESCUENTAZO: " + totalDescuento)
+            total_sin_beca($('#id_cantidad').val(), monto)
+            console.log("Antes del descuento " + $('#id_importe_total').val() )
+            
+            let total = $('#id_importe_total').val() - totalDescuento
+
+            $('#id_importe_total').val(total)
         }else{
-            console.log("no hay Alumno")   
+            total_sin_beca($('#id_cantidad').val(), monto)
         }
-
-    
-
+        console.log(valoresAlumno)
+     
         $(idInput).val(valor)
         cerrarModal(modalName)
+
 }
 
 
+
+
 function cambiarValorCobro(modalName, idInput, valor, valoresCobro){
+    monto = valoresCobro.monto
     document.getElementById("idCobro").innerHTML = valoresCobro.idCobro
     document.getElementById("nombreCobro").innerHTML = valoresCobro.nombre
     document.getElementById("descripcion").innerHTML = valoresCobro.descripcion
@@ -84,9 +102,19 @@ function cambiarValorCobro(modalName, idInput, valor, valoresCobro){
     document.getElementById("tipoCobro").innerHTML = valoresCobro.tipoCobro
 
     var $ = jQuery.noConflict();
-
+  
+    total_sin_beca($('#id_cantidad').val(), monto)
     console.log(valoresCobro)
 
     $(idInput).val(valor)
     cerrarModal(modalName)
+}
+
+function total_sin_beca(cantidad, monto){
+    var $ = jQuery.noConflict();
+
+    if(cantidad){
+        let total = cantidad * monto
+        $('#id_importe_total').val(total)
+    }
 }

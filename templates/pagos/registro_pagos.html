@@ -4,12 +4,13 @@
 
 {% block title %}Registro de Pago {% endblock %}
 {% block headers %}
-  <link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
+<link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagos/registroPagos.css' %}">
 {% endblock headers %}
 {% block seccion %}<i class="fa fa-money-check-edit-alt "></i> Registrar Pago{% endblock %}
 {% block pista %}
-  <li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Pagos</a></li>
-  <li class="breadcrumb-item active" aria-current="page">Registrar un Pago</li>
+<li class="breadcrumb-item"><a href="{% url 'muestraGrados' %}">Pagos</a></li>
+<li class="breadcrumb-item active" aria-current="page">Registrar un Pago</li>
 {% endblock %}
 {% block content %}
 {% include "componentes/alerts.html" %}
@@ -17,63 +18,170 @@
 
 <form action="" method="post">
   {% csrf_token %}
-  <p>A well-known quote, contained in a blockquote element.</p>
-  {{forms.numero_tramite|as_crispy_field}}
-  {{forms.cantidad|as_crispy_field}}
-  {{forms.descuento|as_crispy_field}}
-  {{forms.importe_total|as_crispy_field}}
-  
-<div class="border  border-4">
-  <div class="input-group mb-3">
-    <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'ver_cobro' %}', '#modalCobros')">
-      Buscar Cobro
-    </button>
-    {{forms.datos_cobro|as_crispy_field}}
-  </div>
-  
-  <h4 >Codigo del Pago: </h4>
-    <h5 id="idCobro" ></h5>
-  <h4>Nombre del Pago: </h4>
-    <h5 id="nombreCobro" ></h5>
-  <h4>Descripcion del Pago: </h4>
-    <h5 id="descripcion" ></h5>
-  <h4>Monto a Pagar: </h4>
-    <h5 id="monto" ></h5>
-  <h4 >Tipo de Pago: </h4>
-    <h5 id="tipoCobro" ></h5>
-</div>
+  <div class="container">
+    <div class="row justify-content-end">
 
-<div class="border  border-4">
-  <div class="input-group ">
-    <button class="btn btn-outline-primary" type="button" onclick="abriModal('{% url 'modalAlumno' %}', '#modalAlumnos')">
-      Buscar Alumno
-    </button>
-    {{forms.datos_alumno|as_crispy_field}}  
-  </div>
+      <div class="border  border-4">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-sm-4 form-floating">
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-primary" type="button"
+                onclick="abriModal('{% url 'ver_cobro' %}', '#modalCobros')">
+                Buscar Cobro
+              </button>
+              {{forms.datos_cobro|as_crispy_field}}
+            </div>
+          </div>
+          <div class="col-sm-6 form-floating">
+            {{forms.numero_tramite|as_crispy_field}}
+          </div>
+        </div>
 
-  <h4>Matricula: </h4>
-    <h5 id="matricula" ></h5>
-  <h4>Nombre: </h4>
-    <h5 id="nombreAlumno"></h5>
-  <h4>Apellidos: </h4>
-    <h5 id="apellidos" ></h5>
-  <h4>Domicilio: </h4>
-    <h5 id="domicilio" ></h5>
-  <h4>Carrera: </h4>
-    <h5 id="carrera" ></h5>
-  <h4>Telefono: </h4>
-    <h5 id="telefono" ></h5>
-  <h4>Email: </h4>
-    <h5 id="email" ></h5>
-</div>
-  <div class="row align-items-center justify-content-start">
-                
-    <div class="d-grid gap-2">
-        <input class="btn btn-lg btn-success " type="submit" value="Guardar">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-sm-2 form-floating">
+            <h4 class="titulo">Codigo del Pago: </h4>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="idCobro"></h5>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h4>Nombre del Pago: </h4>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="nombreCobro"></h5>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h4>Descripcion del Pago: </h4>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="descripcion"></h5>
+          </div>
+        </div>
+
+        <div class="row align-items-center justify-content-start">
+          <div class="col-sm-2 form-floating">
+            <h4>Monto a Pagar: </h4>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="monto"></h5>
+          </div>
+          <div class="col-sm-4 form-floating">
+            {{forms.cantidad|as_crispy_field}}
+          </div>
+          <div class="col-sm-4 form-floating">
+            {{forms.descuento|as_crispy_field}}
+          </div>
+        </div>
+
+        <div class="row align-items-center justify-content-start">
+          
+          <div class="col-sm-2 form-floating">
+            <h4>Tipo de Pago: </h4>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="tipoCobro"></h5>
+          </div>
+          <div class="col-sm-4 form-floating">
+            {{forms.importe_total|as_crispy_field}}
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="border  border-4">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-sm-6 form-floating">
+        <div class="input-group ">
+          <button class="btn btn-outline-primary" type="button"
+            onclick="abriModal('{% url 'modalAlumno' %}', '#modalAlumnos')">
+            Buscar Alumno
+          </button>
+          {{forms.datos_alumno|as_crispy_field}}
+        </div>
+      </div>
+     
+      
+      </div>
+
+      <div class="row align-items-center justify-content-start">
+        <div class="col-sm-2 form-floating">
+          <h4>Matricula: </h4>
+          
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h5 id="matricula"></h5>
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h4>Nombre: </h4>
+        </div>
+        
+        <div class="col-sm-2 form-floating">
+          <h5 id="nombreAlumno"></h5>
+        </div>
+        
+        <div class="col-sm-2 form-floating">
+          <h4>Apellidos: </h4>
+        </div>
+        
+        <div class="col-sm-2 form-floating">
+          <h5 id="apellidos"></h5>
+        </div>
+        
+        
+      </div>
+
+      <div class="row align-items-center justify-content-start">
+        <div class="col-sm-2 form-floating">
+          <h4>Domicilio: </h4>
+          
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h5 id="domicilio"></h5>
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h4>Carrera: </h4>
+        </div>
+        
+        <div class="col-sm-3 form-floating">
+          <h5 id="carrera"></h5>
+        </div>
+     
+      </div>
+      <div class="row align-items-center justify-content-start">
+        <div class="col-sm-2 form-floating">
+          <h4>Telefono: </h4>
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h5 id="telefono"></h5>
+        </div>
+        <div class="col-sm-2 form-floating">
+          <h4>Email: </h4>
+        </div>
+        
+        <div class="col-sm-3 form-floating">
+          <h5 id="email"></h5>
+        </div>
+        
+      </div>
+      
+      
+    
+
+       
+        
+      </div>
+      <div class="row align-items-center justify-content-start">
+
+        <div class="d-grid gap-2">
+          <input class="btn btn-lg btn-success " type="submit" value="Guardar">
+        </div>
+
+
+      </div>
     </div>
-
-
-</div>
+  </div>
 </form>
 
 
@@ -82,14 +190,15 @@
 {% endblock %}
 
 {% block modals %}
-  <div class="modal fade" id="modalCobros" role="dialog">
-  </div>
+<div class="modal fade" id="modalCobros" role="dialog">
+</div>
 
-  <div class="modal fade" id="modalAlumnos" role="dialog">
-  </div>
+<div class="modal fade" id="modalAlumnos" role="dialog">
+</div>
 
 {% endblock modals %}
 
 {% block scripts %}
-<script  type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>  
+<script type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/Pagos.js' %}"></script>
 {% endblock scripts %}

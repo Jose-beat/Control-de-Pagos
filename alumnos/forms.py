@@ -20,6 +20,7 @@ GRUPOS = [
 CARRERAS = []
 GRADOS = []
 BECAS = [
+    ("0", "Sin Beca"),
     ("100","Beca de Excelencia (100%)" ),
     ("50", "Beca de Excelencia (50%)"),
     

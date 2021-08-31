@@ -51,6 +51,9 @@ class FormPago(forms.ModelForm):
                "datos_alumno": ""
           }
           widgets = {
+               'cantidad' : NumberInput(attrs={'value':1}),
+               'importe_total' : NumberInput(attrs={'readonly':True}),
+               'descuento' : NumberInput(attrs={'readonly':True}),
                'numero_tramite' : NumberInput(attrs={'readonly':True, 'value': act_tramite}),
                'datos_cobro' : Select(attrs={'readonly':True,'type': "text",
                                              'class' : 'form-select',
