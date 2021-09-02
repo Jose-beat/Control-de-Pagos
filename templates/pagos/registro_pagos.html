@@ -19,9 +19,14 @@
 <form action="" method="post">
   {% csrf_token %}
   <div class="container">
-    <div class="row justify-content-end">
 
-      <div class="border  border-4">
+
+      <div class="card text-center mb-3">
+        <div class="card-header">
+          Pago a Realizar
+        </div>
+        <div class="card-body">
+          
         <div class="row align-items-center justify-content-start">
           <div class="col-sm-4 form-floating">
             <div class="input-group mb-3">
@@ -32,65 +37,89 @@
               {{forms.datos_cobro|as_crispy_field}}
             </div>
           </div>
-          <div class="col-sm-6 form-floating">
+          <div class="col-sm-2 form-floating">
+            <strong class="titulo">Numero de Tramite: </strong>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h4 id="tramite"></h4>
+          </div>
+          <div class="col-sm-1 form-floating">
             {{forms.numero_tramite|as_crispy_field}}
+          </div>
+          <div class="col-sm-2 form-floating">
+            {{forms.cantidad|as_crispy_field}}
           </div>
         </div>
 
         <div class="row align-items-center justify-content-start">
           <div class="col-sm-2 form-floating">
-            <h4 class="titulo">Codigo del Pago: </h4>
+            <strong class="titulo">Codigo del Pago: </strong>
           </div>
           <div class="col-sm-2 form-floating">
             <h5 id="idCobro"></h5>
           </div>
           <div class="col-sm-2 form-floating">
-            <h4>Nombre del Pago: </h4>
+            <strong>Nombre del Pago: </strong>
           </div>
           <div class="col-sm-2 form-floating">
             <h5 id="nombreCobro"></h5>
           </div>
-          <div class="col-sm-2 form-floating">
-            <h4>Descripcion del Pago: </h4>
+          <div class="col-sm-4 form-floating">
+            {{forms.descuento|as_crispy_field}}
           </div>
-          <div class="col-sm-2 form-floating">
-            <h5 id="descripcion"></h5>
-          </div>
+         
+          
         </div>
 
         <div class="row align-items-center justify-content-start">
           <div class="col-sm-2 form-floating">
-            <h4>Monto a Pagar: </h4>
+            <strong>Monto a Pagar: </strong>
           </div>
           <div class="col-sm-2 form-floating">
             <h5 id="monto"></h5>
           </div>
-          <div class="col-sm-4 form-floating">
-            {{forms.cantidad|as_crispy_field}}
+          <div class="col-sm-2 form-floating">
+            <strong>Descripcion del Pago: </strong>
+          </div>
+          <div class="col-sm-2 form-floating">
+            <h5 id="descripcion"></h5>
           </div>
           <div class="col-sm-4 form-floating">
-            {{forms.descuento|as_crispy_field}}
+            {{forms.importe_total|as_crispy_field}}
           </div>
+         
         </div>
 
         <div class="row align-items-center justify-content-start">
           
           <div class="col-sm-2 form-floating">
-            <h4>Tipo de Pago: </h4>
+            <strong>Tipo de Pago: </strong>
           </div>
           <div class="col-sm-2 form-floating">
             <h5 id="tipoCobro"></h5>
           </div>
-          <div class="col-sm-4 form-floating">
-            {{forms.importe_total|as_crispy_field}}
-          </div>
+        
+          
 
         </div>
 
       </div>
+      
+        
+        <div class="card-footer text-muted">
+          Nota: El costo puede bajar si al alumno cuenta con una beca
+        </div>
+      
+        </div>
 
 
-      <div class="border  border-4">
+      <div class="card text-center mb-3">
+        <div class="card-header">
+          Datos del Alumno
+        </div>
+        <div class="card-body">
+
+      
         <div class="row align-items-center justify-content-start">
           <div class="col-sm-6 form-floating">
         <div class="input-group ">
@@ -104,17 +133,17 @@
      
       
       </div>
-
+      
       <div class="row align-items-center justify-content-start">
         <div class="col-sm-2 form-floating">
-          <h4>Matricula: </h4>
+          <strong>Matricula: </strong>
           
         </div>
         <div class="col-sm-2 form-floating">
           <h5 id="matricula"></h5>
         </div>
         <div class="col-sm-2 form-floating">
-          <h4>Nombre: </h4>
+          <strong>Nombre: </strong>
         </div>
         
         <div class="col-sm-2 form-floating">
@@ -122,7 +151,7 @@
         </div>
         
         <div class="col-sm-2 form-floating">
-          <h4>Apellidos: </h4>
+          <strong>Apellidos: </strong>
         </div>
         
         <div class="col-sm-2 form-floating">
@@ -134,14 +163,14 @@
 
       <div class="row align-items-center justify-content-start">
         <div class="col-sm-2 form-floating">
-          <h4>Domicilio: </h4>
+          <strong>Domicilio: </strong>
           
         </div>
         <div class="col-sm-2 form-floating">
           <h5 id="domicilio"></h5>
         </div>
         <div class="col-sm-2 form-floating">
-          <h4>Carrera: </h4>
+          <strong>Carrera: </strong>
         </div>
         
         <div class="col-sm-3 form-floating">
@@ -151,13 +180,13 @@
       </div>
       <div class="row align-items-center justify-content-start">
         <div class="col-sm-2 form-floating">
-          <h4>Telefono: </h4>
+          <strong>Telefono: </strong>
         </div>
         <div class="col-sm-2 form-floating">
           <h5 id="telefono"></h5>
         </div>
         <div class="col-sm-2 form-floating">
-          <h4>Email: </h4>
+          <strong>Email: </strong>
         </div>
         
         <div class="col-sm-3 form-floating">
@@ -166,12 +195,19 @@
         
       </div>
       
+    </div>
       
+        
+    <div class="card-footer text-muted">
+      El alumno debe estar registrado
+    </div>
+  
+    </div>
     
 
        
         
-      </div>
+      
       <div class="row align-items-center justify-content-start">
 
         <div class="d-grid gap-2">
@@ -180,7 +216,8 @@
 
 
       </div>
-    </div>
+    
+  </div>
   </div>
 </form>
 

@@ -4,6 +4,7 @@ let seleccionCobro = document.getElementById("SeleccionCobro");
 let navegacion = document.getElementById("navegacion");
 let main = document.getElementById("main");
 let monto = 0;
+let tramite = document.getElementById("tramite");
 
 function abriModalVista(url){
     navegacion.style.zIndex = 0;
@@ -100,7 +101,7 @@ function cambiarValorCobro(modalName, idInput, valor, valoresCobro){
     document.getElementById("descripcion").innerHTML = valoresCobro.descripcion
     document.getElementById("monto").innerHTML = valoresCobro.monto
     document.getElementById("tipoCobro").innerHTML = valoresCobro.tipoCobro
-
+    asig_tramite()
     var $ = jQuery.noConflict();
   
     total_sin_beca($('#id_cantidad').val(), monto)
@@ -117,4 +118,12 @@ function total_sin_beca(cantidad, monto){
         let total = cantidad * monto
         $('#id_importe_total').val(total)
     }
+}
+
+
+function asig_tramite(){
+    
+    var $ = jQuery.noConflict();
+
+    tramite.innerHTML = "N° " + $('#id_numero_tramite').val()
 }

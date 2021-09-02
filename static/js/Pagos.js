@@ -20,6 +20,7 @@ cantidad.addEventListener('change', (event) => {
 
             let total_con_descuento = $('#id_importe_total').val() - totalDescuento
             $('#id_importe_total').val(total_con_descuento)
+            
 
     }else{
         let total_sin_descuento = cantidad * monto
@@ -34,7 +35,7 @@ importeTotal.addEventListener('change', (event) => {
     var $ = jQuery.noConflict();
     let valor = event.target.value;
     console.log(valor)
-    
-    
-    
+
 });
+
+
