@@ -59,7 +59,7 @@ def registroAlumnos(request):
                   
                   try:
                         alumn = Alumno()
-                        alumn.grado_carrera = Grados_carreras.objects.get(idCarrera= form_data.get('carrera'))
+                        alumn.grado_carrera = Grados_carreras.objects.get(carrera= form_data.get('carrera'))
                         alumnoUser(
                               form_data.get('matricula'),
                               form_data.get('email'),

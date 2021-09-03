@@ -59,10 +59,10 @@ def registroGrados(request):
                         llave = form_data.get('idCarrera')
 
                         if carreras_totales:
-                              messages.error(request, 'El alumno ya existe')
+                              messages.error(request, 'La carrera ya existe')
                         else:
                               messages.error(
-                                  request, 'El alumno no se registro en el sistema.')
+                                  request, 'La carrera no se registro en el sistema.')
 
                         return redirect(reverse('registroGrados'))
                   # new_alumno = form.save()
