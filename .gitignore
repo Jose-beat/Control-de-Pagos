@@ -4,18 +4,18 @@ core/__pycache__
 core/migrations
 core/migrations/__pycache__
 
-alumnos/__pycache__
-alumnos/migrations
-alumnos/migrations/__pycache__
+admin/alumnos/__pycache__
+admin/alumnos/migrations
+admin/alumnos/migrations/__pycache__
 
-pagos/__pycache__
-pagos/migrations
-pagos/migrations/__pycache__
+admin/pagos/__pycache__
+admin/pagos/migrations
+admin/pagos/migrations/__pycache__
 
 
-grados_carreras/__pycache__
-grados_carreras/migrations
-grados_carreras/migrations/__pycache__
+admin/grados_carreras/__pycache__
+admin/grados_carreras/migrations
+admin/grados_carreras/migrations/__pycache__
 
 registration/__pycache__
 registration/migrations
@@ -33,9 +33,9 @@ usuari_alumno/__pycache__
 usuari_alumno/migrations
 usuari_alumno/migrations/__pycache__
 
-cobros/__pycache__
-cobros/migrations
-cobros/migrations/__pycache__
+admin/cobros/__pycache__
+admin/cobros/migrations
+admin/cobros/migrations/__pycache__
 
 media/profiles/*
 media/alumnos/*
