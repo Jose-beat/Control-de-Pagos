@@ -45,10 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #   <======= Apps recien creadas ==========>    
-    'pagos',
-    'alumnos',
-    'cobros',
-    'grados_carreras',
+    'admin.pagos',
+    'admin.alumnos',
+    'admin.cobros',
+    'admin.grados_carreras',
 #   <======= Paquetes  ==========>    
     'crispy_forms',
 #   Para los registros

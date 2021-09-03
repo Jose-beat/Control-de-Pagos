@@ -19,18 +19,18 @@ from django.conf import settings
 from profiles.urls import profiles_patterns
 #from core import views as core_views
 from django.conf.urls.static import static
-from pagos.views import index
+from admin.pagos.views import index
 urlpatterns = [
     
     path('', index, name="home"),
     #path('', include('cobros.urls')),
     #path('registro', core_views.registro, name="registro"),
     #path('registro_alumno', core_views.registro_alumno, name="registro_alumno"),
-    path('alumnos/', include('alumnos.urls')),
+    path('alumnos/', include('admin.alumnos.urls')),
     path('admin/', admin.site.urls),
-    path('carrera/', include('grados_carreras.urls')),
-    path('cobros/', include('cobros.urls')),
-    path('pagos/', include('pagos.urls')),
+    path('carrera/', include('admin.grados_carreras.urls')),
+    path('cobros/', include('admin.cobros.urls')),
+    path('pagos/', include('admin.pagos.urls')),
 
     #path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
