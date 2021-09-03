@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import permission_required
 from .models import Pago
 from .forms import FormRegistroPago, FormPago
@@ -8,6 +9,7 @@ from django.contrib import messages
 from .updates import act_tramite
 from django.db.models import Q
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 def index(request):
         return render(request, 'index.html')
@@ -74,3 +76,40 @@ def registroPago(request):
 
         
         return render(request, "pagos/registro_pagos.html",{'forms': form})
+
+
+
+          
+@login_required
+def muestraPagos(request):
+
+      queryset = request.GET.get("buscar")
+      print(queryset)
+      pagos_totales = Pago.objects.all()
+      #Funcion de barra de busqueda 
+      if queryset:
+            pagos_totales = Pago.objects.filter(
+                  Q(numero_tramite__icontains = queryset) 
+                
+            )
+      #Seccion de paginacion 
+      paginator = Paginator(pagos_totales, 7)
+      page = request.GET.get('page')
+      try:
+            pagos = paginator.page(page)
+      except PageNotAnInteger: 
+            pagos = paginator.page(1)
+      except EmptyPage:
+            pagos = paginator.page(paginator.num_pages)
+
+
+
+      return render(request, "pagos/muestra_pagos.html", {'pagos' : pagos})
+
+
+@login_required
+def pago(request, tramite_id):
+      pass
+      pago = get_object_or_404(Pago, numero_tramite=tramite_id)
+      print(tramite_id)
+      return render(request, 'pagos/pago.html', {'pago': pago})

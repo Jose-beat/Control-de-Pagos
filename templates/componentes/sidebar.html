@@ -2,9 +2,9 @@
 <div class="w3-sidebar w3-bar-block  w3-card w3-animate-left" id="mySidebar">
    <!-- <button class="w3-bar-item  w3-teal w3-button " onclick="w3_close()">Cerrar &times;</button>-->
    <button class="w3-button  w3-block w3-left-align w3-signal-blue" id="titulo_sidebar" onclick="w3_close()">
-    <i class="fa fa-arrow-left icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-github-alt"></i></span>
+    <i class="fa fa-money icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-arrow-left"></i></span>
    </button>
-   <a class="w3-button w3-block w3-left-align w3-border-bottom" href="{% url 'index' %}">
+   <a class="w3-button w3-block w3-left-align w3-border-bottom w3-hover-black" href="{% url 'index' %}">
     <i class="fa fa-home icono"></i> <span class="seccion">Home</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
    </a>
  
@@ -13,7 +13,7 @@
     </button>
     
     <div id="demoAcc" class="w3-hide w3-white w3-card w3-border-bottom">
-            <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom w3-highway-blue">
+            <a href="{% url 'registroAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">
               <i class="fa fa-user-plus icono"></i> <span class="seccion">Registrar nuevo Alumno</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
             </a>
             <a href="{% url 'muestraAlumnos' %}" class="w3-bar-item w3-button w3-border-bottom">
@@ -58,7 +58,7 @@
       <a href="{% url 'registroPagos' %}" class="w3-bar-item w3-button w3-border-bottom">
           <i class="fa fa-money icono"></i> <span class="seccion">Registrar un Pago</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
       </a>
-      <a href="#" class="w3-bar-item w3-button">
+      <a href="{% url 'muestraPagos' %}" class="w3-bar-item w3-button">
         <i class="fa fa-home icono"></i> <span class="seccion">Lista de Pago</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
       </a>
   </div>

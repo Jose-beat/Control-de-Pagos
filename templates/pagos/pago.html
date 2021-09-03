@@ -1,0 +1,21 @@
+{% extends 'componentes/base.html' %}
+{% load static %}
+{% block title %}Informacion del Pago{% endblock %}
+{% block headers %}{% endblock %}
+{% block seccion %} <i class="fa fa-graduation-cap"></i> Informacion del Pago{% endblock %}
+
+{% block pista %}
+  <li class="breadcrumb-item"><a href="{% url 'muestraPagos' %}">Pagos</a></li>
+  <li class="breadcrumb-item active" aria-current="page">N° {{ pago.numero_tramite }}</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    
+
+
+</div>
+
+        
+
+{% endblock %}

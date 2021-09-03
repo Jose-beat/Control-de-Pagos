@@ -1,0 +1,73 @@
+{% extends 'componentes/base.html' %}
+
+{% load static %}
+{% block title %}Historal de Pagos{% endblock %}
+{% block headers %}
+  <link rel="stylesheet" href="{% static 'css/muestras.css' %}">
+{% endblock headers %}
+{% block seccion %}<i class="fa fa-graduation-cap"></i> Historial de Pagos{% endblock %}
+{% block pista %}<li class="breadcrumb-item active" aria-current="page">Pagos</li>{% endblock %}
+{% block content %}
+    {% include "componentes/alerts.html" %}     
+   
+<div class="container" >
+    
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'registroPagos' %}" class="btn btn-outline-secondary"><i class="fa fa-address-card"></i> Realizar un Pago </a>
+  </div>  
+  <br>
+    <div class="row">
+        <form  method="get">      
+          
+      
+          <div class="input-group mb-3">
+              
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i> Buscar Numero de Tramite</button>
+              </div>
+                <input name="buscar" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Indique el numero de Tramite" style="width: 250px;">
+            </div>
+                   
+           </form>
+    </div>
+<div class="row">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Numero de Tramite</th>
+        <th>Nombre del Pago</th>
+        <th>Precio</th>
+        <th>Alumno</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+    {% for pago in pagos %}
+    
+      <tr>
+        <td> 
+          <a class="btn btn-outline-primary" href="{% url 'pago' pago.numero_tramite %}">
+              N° {{pago.numero_tramite}}
+          </a>
+        </td>
+        
+        <td>{{pago.datos_cobro.nombre}}</td>
+        <td>{{pago.importe_total}} $</td>
+        <td>{{pago.datos_alumno.nombre}}</td>
+        
+      </tr>
+    
+    
+    
+
+    
+    {% endfor %}
+  </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+{% endblock %}
+
