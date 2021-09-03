@@ -58,7 +58,16 @@ if(document.getElementById("id_imagen_perfil") !== null){
 }
 
 
-document.getElementById("id_estado").className += " form-check-input";
-document.getElementsByClassName("form-check-label")[0].className += " form-check-label"
-document.getElementsByClassName("form-check-label")[0].innerHTML = "Alumno Activo";
+
+if(document.getElementById("id_estado")===null){
+
+}else{
+  document.getElementById("id_estado").className += " form-check-input";
+}
+
+if(document.getElementsByClassName("form-check-label")[0]){
+  document.getElementsByClassName("form-check-label")[0].className += " form-check-label"
+  document.getElementsByClassName("form-check-label")[0].innerHTML = "Alumno Activo";
+}
+
 

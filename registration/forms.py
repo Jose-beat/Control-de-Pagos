@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import widgets
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
@@ -21,15 +22,22 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['avatar', 'bio', 'link', 'telefono', 'nombre', 'apellidos', 'clave','domicilio']
+        labels = {
+            'avatar': 'Imagen de Perfil',
+            'bio': 'Puesto',
+            'link': 'Red Social',
+            'clave': 'ID',
+
+        }
         widgets = {
-            'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file mt-3'}),
-            'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'Biografía'}),
-            'link': forms.URLInput(attrs={'class':'form-control mt-3', 'placeholder':'Enlace'}),
-            'telefono': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'telefono'}),
-            'nombre': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'nombre'}),
-            'apellidos': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'apellidos'}),
-            'clave': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'ID'}),
-            'domicilio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':1, 'placeholder':'Domicilio'}),
+            'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file', 'id':'id_imagen_perfil'}),
+            'bio': widgets.Input(attrs={}),
+            'link': widgets.URLInput(attrs={'class':'form-control', 'placeholder':'Enlace'}),
+            'telefono': widgets.Input(attrs={'class':'form-control', 'rows':1, 'placeholder':'telefono'}),
+            'nombre': widgets.Input(attrs={'class':'form-control ', 'rows':1, 'placeholder':'nombre'}),
+            'apellidos': widgets.Input(attrs={'class':'form-control ', 'rows':1, 'placeholder':'apellidos'}),
+            'clave': widgets.PasswordInput(attrs={'class':'form-control', 'rows':1, 'placeholder':'ID'}),
+            'domicilio': widgets.Input(attrs={'class':'form-control', 'rows':1, 'placeholder':'Domicilio'}),
 
         }
 
