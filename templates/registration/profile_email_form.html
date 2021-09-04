@@ -1,6 +1,11 @@
 {% extends 'componentes/base.html' %}
 {% load static %}
 {% block title %}Email{% endblock %}
+{% block seccion %} <i class="fa fa-at"></i> Cambiar Correo Electronico{% endblock %}
+{% block pista %}
+  <li class="breadcrumb-item"> <a href="{% url 'profile' %}">Perfil</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Cambiar Correo Electronico</li>
+{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;} label{display:none}</style>
 <main role="main">
