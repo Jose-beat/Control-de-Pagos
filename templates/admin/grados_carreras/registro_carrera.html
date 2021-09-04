@@ -10,7 +10,7 @@
 {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-
+{% include "componentes/alerts.html" %}
 <form action="" method="POST">
     {% csrf_token %}
     {{mensaje}}

@@ -19,6 +19,8 @@ class Grados_carreras(models.Model):
 
     class Meta:
         ordering=['carrera']
+        verbose_name = "Grado y Carrera"
+        verbose_name_plural = "Grados y Carreras"
 
     def __str__(self):
         return str(self.carrera)

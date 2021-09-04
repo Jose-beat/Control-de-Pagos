@@ -58,8 +58,13 @@ def registroGrados(request):
                         carreras_totales = Grados_carreras.objects.all()
                         llave = form_data.get('idCarrera')
 
+                        carreras_totales = Grados_carreras.objects.filter(
+                              Q(idCarrera__icontains = llave)
+                        )
+
                         if carreras_totales:
                               messages.error(request, 'La carrera ya existe')
+                              print('Ya existe carnal')
                         else:
                               messages.error(
                                   request, 'La carrera no se registro en el sistema.')
