@@ -67,23 +67,28 @@ function cambiarValorAlumno(modalName, idInput, valor, valoresAlumno){
         
         $('#id_descuento').val(valoresAlumno.descuento)
         let descuento = $('#id_descuento').val()
+        console.log(document.getElementById('aplicaBeca'))
+        if(document.getElementById('aplicaBeca').innerHTML !== null && document.getElementById('aplicaBeca').innerHTML !== "False"){
+         if(descuento !== "0"){
+                parseInt(descuento);
+                let procentaje = descuento / 100;
 
-        if(descuento !== "0"){
-            parseInt(descuento);
-            let procentaje = descuento / 100;
+                let totalDescuento = monto * procentaje;
 
-            let totalDescuento = monto * procentaje;
+                console.log("DESCUENTAZO: " + totalDescuento)
+                total_sin_beca($('#id_cantidad').val(), monto)
+                console.log("Antes del descuento " + $('#id_importe_total').val() )
+                
+                let total = $('#id_importe_total').val() - totalDescuento
 
-            console.log("DESCUENTAZO: " + totalDescuento)
-            total_sin_beca($('#id_cantidad').val(), monto)
-            console.log("Antes del descuento " + $('#id_importe_total').val() )
-            
-            let total = $('#id_importe_total').val() - totalDescuento
-
-            $('#id_importe_total').val(total)
+                $('#id_importe_total').val(total)
+            }else{
+                total_sin_beca($('#id_cantidad').val(), monto)
+            }
         }else{
-            total_sin_beca($('#id_cantidad').val(), monto)
+            $('#id_descuento').val(0)
         }
+
         console.log(valoresAlumno)
      
         $(idInput).val(valor)
@@ -101,6 +106,7 @@ function cambiarValorCobro(modalName, idInput, valor, valoresCobro){
     document.getElementById("descripcion").innerHTML = valoresCobro.descripcion
     document.getElementById("monto").innerHTML = valoresCobro.monto
     document.getElementById("tipoCobro").innerHTML = valoresCobro.tipoCobro
+    document.getElementById("aplicaBeca").innerHTML = valoresCobro.aplicaBeca
     asig_tramite()
     var $ = jQuery.noConflict();
   

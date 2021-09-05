@@ -1,20 +1,20 @@
 <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="z-index: 1;">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title">{{carrera.carrera}}</h5>
+      <h5 class="modal-title"> <i class="fa fa-sitemap"></i> {{carrera.carrera}}</h5>
       <button onclick="cerrarModalVista()" type="button" class="btn" data-dismiss="modal" aria-label="Close">
         <span  aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <p>{{carrera.idCarrera}}</p>
-      <p>{{carrera.carrera}}</p>
-      <p>{{carrera.nivel}}</p>
-      <p>{{carrera.cantidad_grados}}</p>
-      <p>{{carrera.cantidad_grupos}}</p>
-      <p>{{carrera.idCarrera}}</p>
+      <p><strong>Codigo de la Carrera:</strong> {{carrera.idCarrera}}</p>
+      <p><strong>Nombre de la Carrera:</strong> {{carrera.carrera}}</p>
+      <p><strong>Nivel de la Carrera:</strong> {{carrera.nivel}}</p>
+      <p><strong>Cantidad de Grados:</strong> {{carrera.cantidad_grados}}</p>
+      <p><strong>Cantidad de Grupos:</strong> {{carrera.cantidad_grupos}}</p>
+      
       <a href="{% url 'EditGrado' carrera.idCarrera %}" class="btn btn btn-warning">
-        Editar Datos
+       <i class="fa fa-edit"></i> Editar Datos
       </a>
     </div>
     <div class="modal-footer">

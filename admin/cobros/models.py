@@ -26,6 +26,8 @@ class Cobro(models.Model):
     
     tipo_Cobro= models.TextField(choices=CLASIFICACION_CHOISE,
         verbose_name="Tipo de pago")
+
+    aplica_descuento = models.BooleanField()
     
     created = models.DateTimeField(
         auto_now_add=True,

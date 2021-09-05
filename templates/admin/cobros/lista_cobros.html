@@ -31,6 +31,7 @@
             <td>Monto</td>
             <td>Fecha</td>
             <td>Tipo de Pago</td>
+            <td>Aplicacion de Beca</td>
             <td>opciones</td>
         </tr>
     </thead>
@@ -44,6 +45,7 @@
             
             <td>{{ p.created }}</td>
             <td>{{ p.tipo_Cobro }}</td>
+            <td>{{ p.aplica_descuento }}</td>
             <td>
                 <div class="btn-group-vertical">
                 <a href="{% url 'editar_cobro' p.id %}" class="btn btn-primary btn-sm">Editar</a>
