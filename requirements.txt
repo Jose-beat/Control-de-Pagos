@@ -3,6 +3,13 @@
 #Crispy-forms
 #django-crispy-forms
 #Pillow
-django-crispy-forms==1.11.2
-pillow==8.2.0
+#Paquete para el Framework django
 django==3.2.2
+#Paquete para la libreria django-crispy-forms
+django-crispy-forms==1.11.2
+#Paquete para la libreria de formularios pillow
+pillow==8.2.0
+#Paquete para el gestor PostgresSQL
+psycopg2==2.9.1
+#Paquete para el gestor Mysql
+mysqlclient==2.0.3

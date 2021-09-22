@@ -49,9 +49,14 @@ INSTALLED_APPS = [
     'admin.alumnos',
     'admin.cobros',
     'admin.grados_carreras',
+    
 #   <======= Paquetes  ==========>    
     'crispy_forms',
-#   Para los registros
+#    <==========Paquetes para gestores DB ==========>
+#   <---postgresql--->
+    'psycopg2',
+
+
     
 ]
 
@@ -73,8 +78,6 @@ TEMPLATES = [
         'DIRS': [
             #<===============Templates================>
             'templates',
-
-
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -93,12 +96,21 @@ WSGI_APPLICATION = 'Control_de_Pagos.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+#   'ENGINE': 'django.db.backends.postgresql_psycopg2', # Conexion PostgreSQL
+    'ENGINE': 'django.db.backends.mysql', # Conexion Mysql
+    'NAME': 'control_pagos',
+    'USER': 'root',
+    'PASSWORD': '',
+    'HOST': 'localhost',
+#   'PORT': '5432',
+    'PORT': '',
     }
+
+  
+
+
 }
 
 
