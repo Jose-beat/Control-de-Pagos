@@ -10,6 +10,13 @@ from .updates import act_tramite
 from django.db.models import Q
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.views.generic import ListView
+
+
+
 
 def index(request):
         return render(request, 'index.html')
@@ -113,3 +120,53 @@ def pago(request, tramite_id):
       pago = get_object_or_404(Pago, numero_tramite=tramite_id)
       print(tramite_id)
       return render(request, 'admin/pagos/pago.html', {'pago': pago})
+
+#def pago_PDF(request):
+#   return render(request, "admin/pagos/pago_PDF.html")
+
+class pdfListView(ListView):
+      model=Pago
+      template_name ='admin/pagos/muestra_pagos.html'
+
+
+def render_PDF(request, *args, **kwargs):
+
+    
+    tramite_id = kwargs.get('tramite_id')
+    pago = get_object_or_404(Pago, numero_tramite=tramite_id)
+
+    template_path = 'admin/pagos/pago_PDF.html'
+    context = {'pago': pago}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = ' filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response,)
+    # if error then show some funy view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+
+def pago_PDF(request):
+    template_path = 'admin/pagos/pago_PDF.html'
+    context = {'myvar': 'this is your template context'}
+    # Create a Django response object, and specify content_type as pdf
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = ' filename="report.pdf"'
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
+
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response,)
+    # if error then show some funy view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response

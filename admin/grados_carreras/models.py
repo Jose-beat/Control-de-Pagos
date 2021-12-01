@@ -7,6 +7,7 @@ class Grados_carreras(models.Model):
     nivel = models.CharField(max_length=100, blank=True, null=True,  )
     cantidad_grados = models.IntegerField()
     cantidad_grupos = models.IntegerField()
+    periodo = models.CharField(max_length=100, blank=True,  )
     created = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Fecha de Creacion"

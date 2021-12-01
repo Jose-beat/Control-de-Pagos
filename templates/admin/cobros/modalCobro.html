@@ -23,19 +23,17 @@
         <tbody>
           {% for p in cobros %}
           <tr>
-              <td></td>
+              <td>{{ p.id }}</td>
               <td>{{ p.nombre }}</td>
               <td>{{ p.descripcion }}</td>
-              <td>{{ p.monto }}</td>
+              <td>$ {{ p.monto }}</td>
               
               <td>{{ p.created }}</td>
               <td>{{ p.tipo_Cobro }}</td>
               <td>{{ p.aplica_descuento }}</td>
               <td>
                   <div class="btn-group-vertical">
-                  <a href="{% url 'editar_cobro' p.id %}" class="btn btn-primary btn-sm">Editar</a>
-                  &nbsp;
-                  <a href="{% url 'eliminar_cobro' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                  
   
                   <button id="SeleccionCobro" class="btn btn-primary btn-sm" onclick="cambiarValorCobro('#modalCobros', '#id_datos_cobro','{{ p.id }}',  
                   { idCobro : '{{ p.id }}', 

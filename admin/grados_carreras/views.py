@@ -48,6 +48,7 @@ def registroGrados(request):
                               idCarrera=form_data.get('idCarrera'),
                               carrera=form_data.get('carrera'),
                               nivel = form_data.get('nivel'),
+                              periodo = form_data.get('periodo'),
                               cantidad_grados=form_data.get('cantidad_grados'),
                               cantidad_grupos=form_data.get('cantidad_grupos'),
                         )

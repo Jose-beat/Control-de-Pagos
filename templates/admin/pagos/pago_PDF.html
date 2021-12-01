@@ -1,22 +1,14 @@
-{% extends 'componentes/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Pago {{pago.numero_tramite}} </title>
+</head>
+<body>
 
-{% load static %}
-
-{% block title %}Registro de Pago {% endblock %}
-{% block headers %}
-<link rel="stylesheet" href="{% static 'css/componentes/modalScreen.css' %}">
-<link rel="stylesheet" href="{% static 'css/pagos/registroPagos.css' %}">
-{% endblock headers %}
-{% block seccion %}<i class="fa fa-money-check-edit-alt "></i> Orden de Pago{% endblock %}
-{% block pista %}
-<li class="breadcrumb-item"><a href="{% url 'muestraPagos' %}">Pagos</a></li>
-<li class="breadcrumb-item active" aria-current="page">Orden de Pago</li>
-{% endblock %}
-{% block content %}
-{% include "componentes/alerts.html" %}
-{% load crispy_forms_tags %}
-
-
+  {{pago}}
     <div class="card  mb-3">
 
         <div class="col-sm-12">
@@ -145,21 +137,6 @@
   
 
 
-
-
-
-{% endblock %}
-
-{% block modals %}
-<div class="modal fade" id="modalCobros" role="dialog">
-</div>
-
-<div class="modal fade" id="modalAlumnos" role="dialog">
-</div>
-
-{% endblock modals %}
-
-{% block scripts %}
-<script type="text/javascript" src="{% static 'js/componentes/modalScreen.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/Pagos.js' %}"></script>
-{% endblock scripts %}
+    
+</body>
+</html>

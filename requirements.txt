@@ -13,3 +13,5 @@ pillow==8.2.0
 psycopg2==2.9.1
 #Paquete para el gestor Mysql
 mysqlclient==2.0.3
+#Paquete para gestor de PDF
+xhtml2pdf==0.2.5

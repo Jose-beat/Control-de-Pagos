@@ -8,6 +8,11 @@ NIVEL = [
     ('Posgrado', 'Posgrado'),
     ('Maestria', 'Maestria'),
 ]
+
+PERIODO =[
+    ('Semestre', 'Semestre'),
+    ('Cuatrimestre', 'Cuatrimestre')
+]
 GRADOS = []
 GRUPOS = []
 for i in range(1,13):
@@ -19,6 +24,7 @@ class RegistroGrados(forms.Form):
     idCarrera = forms.CharField(max_length=5)
     carrera =  forms.CharField()
     nivel = forms.ChoiceField(choices=NIVEL, label="Nivel de Estudio")
+    periodo = forms.ChoiceField(choices=PERIODO, label="Periodo")
     cantidad_grados = forms.ChoiceField(choices=GRADOS, label="Cantidad de Grados")
     cantidad_grupos = forms.ChoiceField(choices=GRUPOS, label="Cantidad de Grupos")
     
@@ -29,8 +35,9 @@ class EditGradoForm(forms.ModelForm):
     class Meta:
 
         model=Grados_carreras
-        fields = ['idCarrera', 'carrera', 'nivel', 'cantidad_grados', 'cantidad_grupos']
+        fields = ['idCarrera', 'carrera', 'nivel', 'periodo', 'cantidad_grados', 'cantidad_grupos']
         
         widgets = {
-            'nivel': Select(choices=NIVEL)
+            'nivel': Select(choices=NIVEL),
+            'periodo': Select(choices=PERIODO),
         }

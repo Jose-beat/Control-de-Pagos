@@ -34,10 +34,11 @@
   <table class="table">
     <thead class="table-dark">
       <tr>
-        <th>Numero de Tramite</th>
+        <th>Folio de seguimiento:</th>
         <th>Nombre del Pago</th>
         <th>Precio</th>
         <th>Alumno</th>
+        <th>PDF</th>
       </tr>
     </thead>
     
@@ -54,7 +55,11 @@
         <td>{{pago.datos_cobro.nombre}}</td>
         <td>{{pago.importe_total}} $</td>
         <td>{{pago.datos_alumno.nombre}}</td>
-        
+        <td>
+          <a class="btn btn-outline-primary" href="{% url 'pdf' pago.numero_tramite %}">
+            PDF{{pago.numero_tramite}}
+          </a>
+        </td>
       </tr>
     
     

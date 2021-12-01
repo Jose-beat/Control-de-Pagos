@@ -39,9 +39,10 @@
         {% for p in cobros %}
         <tr>
             <td></td>
+            <td>{{ p.id }}</td>
             <td>{{ p.nombre }}</td>
             <td>{{ p.descripcion }}</td>
-            <td>{{ p.monto }}</td>
+            <td>$ {{ p.monto }}</td>
             
             <td>{{ p.created }}</td>
             <td>{{ p.tipo_Cobro }}</td>

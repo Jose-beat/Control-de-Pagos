@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'admin.cobros',
     'admin.grados_carreras',
     
+    
 #   <======= Paquetes  ==========>    
     'crispy_forms',
 #    <==========Paquetes para gestores DB ==========>

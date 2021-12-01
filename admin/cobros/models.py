@@ -4,13 +4,9 @@ from admin.alumnos.models import Alumno
 #seleccion de menu
 
 CLASIFICACION_CHOISE = [
-    ('Inscripción', 'Inscripción'),
-    ('Reinscripción', 'Reinscripción'),
-    ('Intereses', 'Intereses'),
-    ('Colegiatura', 'Colegiatura'),
-    ('Conatancias', 'Conatancias'),
-    ('Kardex', 'Kardex'),
-    ('Credencial', 'Credencial'),
+    ('En Ventanilla', 'En Ventanilla'),
+    ('En Linea', 'En Linea'),
+   
   ]
 
 
