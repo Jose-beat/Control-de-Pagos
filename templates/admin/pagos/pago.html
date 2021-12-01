@@ -134,9 +134,9 @@
       </div>
     </div>
         
-        <div class="d-grid gap-2">
-          <input class="btn btn-lg btn-success " type="submit" value="Imprimir Orden">
-        </div>
+    <a class="btn btn-lg btn-success" href="{% url 'pdf' pago.numero_tramite %}">
+      Imprimir Orden {{pago.numero_tramite}}
+    </a>
 
 
       
