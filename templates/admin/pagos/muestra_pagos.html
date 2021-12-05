@@ -36,7 +36,9 @@
       <tr>
         <th>Folio de seguimiento:</th>
         <th>Nombre del Pago</th>
+        
         <th>Precio</th>
+        <th>Estado del Pago</th>
         <th>Alumno</th>
         <th>PDF</th>
       </tr>
@@ -54,6 +56,13 @@
         
         <td>{{pago.datos_cobro.nombre}}</td>
         <td>{{pago.importe_total}} $</td>
+        {% if  pago.estado %}
+        
+          <td><span class="badge bg-success">Pagado</span></td>
+        {% else %}
+        <td><span class="badge bg-danger">Falta de Pago</span></td>
+        {% endif %}
+        
         <td>{{pago.datos_alumno.nombre}}</td>
         <td>
           <a class="btn btn-outline-primary" href="{% url 'pdf' pago.numero_tramite %}">

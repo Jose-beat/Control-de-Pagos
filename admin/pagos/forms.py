@@ -8,6 +8,11 @@ from django.forms.widgets import Select, SelectMultiple, PasswordInput, NumberIn
 COBROS=[]
 ALUMNOS=[]
 
+PAYMENTSTATE = [
+    (True,'Pagado'),
+    (False,'Falta Pago'),
+
+]
 try:
     
     cobro = Cobro.objects.all()
@@ -28,6 +33,8 @@ class FormRegistroPago(forms.Form):
 
     cantidad = forms.IntegerField()
 
+    estado = forms.Select(choices=PAYMENTSTATE)
+    
     descuento = forms.IntegerField()
 
     importe_total = forms.IntegerField()
@@ -54,6 +61,7 @@ class FormPago(forms.ModelForm):
           widgets = {
                'cantidad' : NumberInput(attrs={'value':1}),
                'importe_total' : NumberInput(attrs={'readonly':True}),
+               'estado' : Select(choices=PAYMENTSTATE, attrs={}),
                'descuento' : NumberInput(attrs={'readonly':True}),
                'numero_tramite' : NumberInput(attrs={'readonly':True, 'value': act_tramite, 'hidden':True}),
                'datos_cobro' : Select(attrs={'readonly':True,'type': "text",

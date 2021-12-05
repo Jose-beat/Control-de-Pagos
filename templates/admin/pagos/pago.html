@@ -39,6 +39,16 @@
                     <strong >Monto a Pagar:</strong>
                     ${{pago.importe_total}}
                   </li>
+                  <li class="list-group-item">
+                    <strong >Estado del Pago:</strong>
+                    {% if  pago.estado %}
+                      <td><span class="badge bg-success">Pagado</span></td>
+                    {% else %}
+                    <td><span class="badge bg-danger">Falta de Pago</span></td>
+                    {% endif %}
+                    
+                  </li>
+
 
                   <li class="list-group-item">
                     <strong >Descripción del Pago:</strong>
