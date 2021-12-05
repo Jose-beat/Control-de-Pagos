@@ -1,6 +1,8 @@
 {% extends 'componentes/base.html' %}
 {% load static %}
 {% block title %}Perfiles{% endblock %}
+{% block pista %}<li class="breadcrumb-item active" aria-current="page">Lista de Usuarios</li>{% endblock %}
+{% block seccion %}<i class="fa fa-users-cog icono"></i> Lista de Usuarios{% endblock %}
 {% block content %}
 <style>.profile-avatar{float:left;width:4rem;height:4rem}.profile-data{padding-left:4.5rem;padding-top:.4rem;}</style>
 <main role="main">
@@ -16,7 +18,7 @@
                   {% if profile.avatar %}
                     <img src="{{profile.avatar.url}}" class="img-fluid profile-avatar">
                   {% else %}
-                    <img src="{% static 'registration/img/no-avatar.jpg' %}" class="img-fluid profile-avatar">
+                    <img src="{% static 'css/img/profile.jpg' %}" class="img-fluid profile-avatar">
                   {% endif %}
                   <p class="profile-data">
                     <b>{{profile.user|truncatechars:"16"}}</b><br>
