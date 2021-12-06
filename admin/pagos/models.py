@@ -17,6 +17,7 @@ from django.db import models
 class Pago(models.Model):
     numero_tramite = models.IntegerField(primary_key=True)
     cantidad = models.IntegerField()
+    estado = models.BooleanField()
     descuento = models.CharField(max_length=100)
     importe_total = models.IntegerField()
     datos_cobro =  models.ForeignKey("cobros.Cobro", on_delete=models.CASCADE)
