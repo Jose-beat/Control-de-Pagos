@@ -58,7 +58,7 @@
 {color:#fff;background-color:#904684}
 
 .w3-signal-blue
-{color:#fff;background-color:#154889}
+{color:#fff;background-color:#f96332}
 
 .w3-signal-green
 {color:#fff;background-color:#317f43}
@@ -112,7 +112,7 @@
 {color:#fff;background-color:#004d33}
 
 .w3-highway-blue
-{color:#fff;background-color:#00477e}
+{color:#fff;background-color:#1E5DBA}
 
 /*HIGHWAY COLORS*/
 .w3-highway-brown
@@ -134,7 +134,15 @@
 {color:#fff;background-color:#004d33}
 
 .w3-highway-blue
-{color:#fff;background-color:#00477e}
+{   color: #fff;
+    background-color: #1a2538;
+    height: 180px;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    position: relative;
+    overflow: hidden;
+}
 
 
 

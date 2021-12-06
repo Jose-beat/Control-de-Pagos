@@ -1,0 +1,84 @@
+{% load static %}
+<div class="sidebar" data-color="orange">
+  <!--
+    Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+-->
+  <div class="logo">
+    
+    <button class="w3-button  w3-block w3-left-align w3-signal-blue" id="titulo_sidebar" onclick="w3_close()">
+      <i class="fa fa-money icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-arrow-left"></i></span>
+     </button>
+     <a class="w3-button w3-block w3-left-align w3-border-bottom w3-hover-black" href="{% url 'index' %}">
+      <i class="fa fa-home icono"></i> <span class="seccion">Home</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
+     </a>
+  </div>
+  <div class="sidebar-wrapper" id="sidebar-wrapper">
+    <ul class="nav">
+    
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger btn1">Alumnos</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'registroAlumnos' %}">Registrar Nuevo Alumno</a>
+            <a class="dropdown-item" href="{% url 'muestraAlumnos' %}">Lista de Alumnos</a>
+               <div class="dropdown-divider"></div>
+            
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger btn1">Cobros</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'registro_cobro' %}">Registrar Cobro</a>
+            <a class="dropdown-item" href="{% url 'lista_cobros' %}">Lista de Cobros</a>
+            <div class="dropdown-divider"></div>
+            
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger btn1">Grados y Carreras </button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'registroGrados' %}">Registrar  Carrera</a>
+            <a class="dropdown-item" href="{% url 'muestraGrados' %}">Lista de Carreras</a>
+            
+            <div class="dropdown-divider"></div>
+            </div>
+        </div>
+      </li>
+      <li>
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger btn1">Registro de Pago</button>
+          <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'registroPagos' %}">Registrar un Pago</a>
+            <a class="dropdown-item" href="{% url 'muestraPagos' %}">Lista de Pago</a>
+            
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+      </li>
+      
+     
+      
+    </ul>
+  </div>
+</div>
+
+{% block scripts %} <script defer src="{% static  'js/sidebar.js' %}"></script> {% endblock %}

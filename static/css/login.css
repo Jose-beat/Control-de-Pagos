@@ -2,14 +2,27 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-image: url('img/utt.jpg');
+  background-image: url('img/utt4.png');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
 }
+.mantra{
+  background-color: white;
+}
 
 .contenedor{
+  position: relative;
+  background-color: #fff;
+  left: 26%;
+  top: 30px;
+  width: 400px;
+  height: 400px;
+  padding: 50px;
+  z-index: initial;
+}
+.contenedor1{
   position: relative;
   background-color: #fff;
   left: 26%;
@@ -43,13 +56,13 @@ body {
  
   .contenedor{
     position: relative;
-    
     left: 10%;
     top: 100px;
     width: 400px;
     height: 400px;
     padding: 50px;
-    
+    margin-left: 20%;
+    background-color: #ffffff00;
   }
   .aviso{
     position: relative;
@@ -76,7 +89,11 @@ body {
   .aviso{
     position: relative;
     width: 100%;  
-    z-index: 3;
+    z-index: 30;
 }
+
+
+
+
 
 }

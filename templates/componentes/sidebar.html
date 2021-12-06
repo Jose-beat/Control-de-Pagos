@@ -1,9 +1,21 @@
 {% load static %}
 <div class="w3-sidebar w3-bar-block  w3-card w3-animate-left" id="mySidebar">
    <!-- <button class="w3-bar-item  w3-teal w3-button " onclick="w3_close()">Cerrar &times;</button>-->
-   <button class="w3-button  w3-block w3-left-align w3-signal-blue" id="titulo_sidebar" onclick="w3_close()">
-    <i class="fa fa-money icono"></i> <span class="seccion">Sistema de Pagos</span> <span class="flecha"><i class="fa fa-arrow-left"></i></span>
+   <button class="w3-button w3-block w3-left-align w3-border-bottom w3-hover-black" id="titulo_sidebar" onclick="w3_close()">
+     <span class="flecha"><i class="fa fa-arrow-left"></i></span><span class="seccion text-center">Sistema de Pagos</span>
    </button>
+   <div class="author">
+    <a href="#">
+      <img class="avatar border-gray center" src="{% static 'img/logo1.png' %}" >
+      
+    </a>
+    
+  </div>
+
+   <div>
+    <img class="mx-auto rounded-circle" src="{% static 'img/logo1.jpg' %}" width="30" height="30" alt="">
+  </div>
+
    <a class="w3-button w3-block w3-left-align w3-border-bottom w3-hover-black" href="{% url 'index' %}">
     <i class="fa fa-home icono"></i> <span class="seccion">Home</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
    </a>
@@ -62,6 +74,14 @@
         <i class="fa fa-home icono"></i> <span class="seccion">Lista de Pago</span> <span class="flecha"><i class="fa fa-angle-right"></i></span>
       </a>
   </div>
+
+
+
+
+  
+
+
+
 
   <button id="btnUsr" class="w3-button w3-block w3-left-align w3-border-bottom" onclick="myAccFunc5()">
     {% if request.user.profile.avatar %}

@@ -3,11 +3,13 @@ html {
 }
 body {
     min-height: 100%;
+    background-color: #ebecf1;;
 }
 #marco{
     position: relative;
     top: 60px;
-    z-index: 0;
+    z-index: 20;
+    border-radius: 15px;
 }
 
 .asteriskField {
@@ -23,4 +25,18 @@ body {
 
 .botoIdentify{
     width: 100px;
+}
+
+.cabezera{
+    background-color: #6c7ae0;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 40;
 }

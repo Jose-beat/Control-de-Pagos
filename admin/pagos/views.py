@@ -22,6 +22,9 @@ def index(request):
         return render(request, 'index.html')
 model = Pago
 
+def inicial(request):
+        return render(request, 'inicial.html')
+
 
 def registroPago(request):
         act_tramite()

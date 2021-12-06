@@ -1,4 +1,4 @@
-{% extends 'componentes/base.html' %}
+{% extends 'componentes/base2.html' %}
 
 {% load static %}
 
@@ -24,14 +24,17 @@
         </div>
 
       {% endif %}     
+
+      <br><br><br>
       <div class="col-md-9 mx-auto mb-5">
    
         
       <div class="login-form">   
         <form class="contenedor" action="" method="post">
         {% csrf_token %}
-          <h3 class="mb-4">Iniciar sesión</h3>
-            <h2 class="text-center">Control de Pagos</h2>       
+        <h2 class="text-center color">Control de Pagos</h2> 
+          <h3 class="mb-4 color text-center">Iniciar sesión</h3>
+                  
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Username" required="required" name="username" id="id_username">
             </div>
@@ -41,11 +44,11 @@
             </div>
             <br>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block col-12">Login</button>
+                <button type="submit" class="btn btn-primary btn-block col-12 color">Login</button>
             </div>
             <br>
             <div class="clearfix">
-                <label class="pull-left checkbox-inline"><input type="checkbox"> Rememberme</label>
+                <label class="pull-left checkbox-inline color"><input type="checkbox"> Rememberme</label>
                 
             </div>        
         </form>
