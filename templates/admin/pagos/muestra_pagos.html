@@ -13,7 +13,7 @@
 <div class="container" >
     
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a href="{% url 'registroPagos' %}" class="btn btn-outline-secondary"><i class="fa fa-address-card"></i> Realizar un Pago </a>
+    <a href="{% url 'registroPagos' %}" class="btn btn-secondary"><i class="fa fa-address-card"></i> Realizar un Pago </a>
   </div>  
   <br>
     <div class="row">
@@ -24,7 +24,7 @@
               
               <div class="input-group-prepend">
                 
-                <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i> Buscar Numero de Tramite</button>
+                <button class="btn btn btn-secondary" type="submit"><i class="fa fa-search"></i> Buscar Numero de Tramite</button>
                 &nbsp;&nbsp;
               </div>
                 <input name="buscar" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Indique el numero de Tramite" >
@@ -40,9 +40,10 @@
         <th>Nombre del Pago</th>
         
         <th>Precio</th>
-        <th>Estado del Pago</th>
         <th>Alumno</th>
         <th>PDF</th>
+        <th>Estado del Pago</th>
+        <th>Editar</th>
       </tr>
     </thead>
     
@@ -58,12 +59,7 @@
         
         <td>{{pago.datos_cobro.nombre}}</td>
         <td>{{pago.importe_total}} $</td>
-        {% if  pago.estado %}
-        
-          <td><span class="badge bg-success">Pagado</span></td>
-        {% else %}
-        <td><span class="badge bg-danger">Falta de Pago</span></td>
-        {% endif %}
+       
         
         <td>{{pago.datos_alumno.nombre}}</td>
         <td>
@@ -71,6 +67,12 @@
             PDF{{pago.numero_tramite}}
           </a>
         </td>
+        {% if  pago.estado %}
+        
+        <td><span class="badge bg-success">Pagado</span></td>
+      {% else %}
+      <td><span class="badge bg-danger">Falta de Pago</span></td>
+      {% endif %}
       </tr>
     
     

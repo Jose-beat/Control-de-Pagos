@@ -45,6 +45,7 @@ def registroPago(request):
 
                                 numero_tramite = form_data.get('numero_tramite'),
 
+                                estado = form_data.get('estado'),
                                 cantidad = form_data.get('cantidad'),
 
                                 descuento = form_data.get('descuento'),

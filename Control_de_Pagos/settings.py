@@ -30,7 +30,7 @@ DEBUG = True
 
 #!!!!!!!!!!!!!!!!!COLOCAR EL HOST DONDE ESTARA ALOJADA LA APLICACION¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ["*"]
+#ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

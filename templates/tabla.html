@@ -1,7 +1,30 @@
 
   
     <form>
+
+
       <div class="row">
+        <div class="row align-items-center justify-content-start">
+          <div class="col-sm-13">
+              <div class="card mb-3" style="max-width: 640px;">
+                  <div class="row g-0">
+                      <div class="col-md-4">
+                          <img id="profileImage" src="{% static 'css/img/profile.jpg' %}"
+                              class="img-fluid rounded-start" alt="Imagen del Perfil">
+                      </div>
+                      <div class="col-md-8">
+                          <div class="card-body">
+                              <div class="input-group mb-3">
+                                  {{forms.imagen_perfil|as_crispy_field}}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
         <div class="col-md-5 pr-1">
           <div class="form-group">
             <label>Company (disabled)</label>
